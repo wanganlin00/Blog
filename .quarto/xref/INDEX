@@ -22,5 +22,11 @@
   },
   "posts/圆角条形图/index.qmd": {
     "index.html": "1046f21b"
+  },
+  "posts/ggprism/index.qmd": {
+    "index.html": "8179d46e"
+  },
+  "posts/圆角柱状图/index.qmd": {
+    "index.html": "5c12a985"
   }
 }
