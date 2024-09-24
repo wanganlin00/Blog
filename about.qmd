@@ -9,4 +9,4 @@ about:
       href: https://github.com
 ---
 
-About this blog
+博客

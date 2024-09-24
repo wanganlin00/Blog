@@ -1,0 +1,15 @@
+---
+title: "ggprism: GraphPad Prism 风格"
+date: "2024-09-24"
+date-modified: today
+categories: [graphics, bar charts]
+image: "example.svg"
+---
+
+## 先决条件
+
+```{r}
+# install.packages("ggprism")
+library(ggprism)
+```
+
