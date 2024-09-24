@@ -28,5 +28,14 @@
   },
   "posts/圆角柱状图/index.qmd": {
     "index.html": "5c12a985"
+  },
+  "posts/UCSC/UCSC.qmd": {
+    "UCSC.html": "11ede4d6"
+  },
+  "posts/RT-qPCR/RT-qPCR.qmd": {
+    "RT-qPCR.html": "406e474d"
+  },
+  "posts/TCGA/TCGA.qmd": {
+    "TCGA.html": "c474280c"
   }
 }

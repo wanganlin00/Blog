@@ -1,12 +1,9 @@
 ---
-execute: 
-  cache: true
-  message: false
-
-knitr: 
-  opts_chunk: 
-    collaspe: TRUE
-    comment: "#>"
+title: "TCGA"
+date: "2024-09-24"
+date-modified: today
+categories: [bioinformatics, database]
+image: "example.svg"
 ---
 
 # TCGA数据库
@@ -33,7 +30,6 @@ file_sample <- tibble(sample_id,file_name=json$file_name)
 
 ```
 
-
 ```{r}
 #获取gdc_download文件夹下的所有TSV表达文件的 路径+文件名
 count_file <- list.files("data/gdc_download_20240704_131631.625023",pattern = "*.tsv",recursive = TRUE)
@@ -43,7 +39,6 @@ count_file_name <- str_split(count_file,pattern = '/')
 count_file_name <- sapply(count_file_name,function(x){x[2]})
 
 ```
-
 
 ## 计数矩阵
 
@@ -65,8 +60,7 @@ write.csv(matrix,'data/COUNT_matrix.csv',row.names = TRUE)
 
 ## normal 和 tumor
 
- 
- 根据TCGA样本的命名可以区分正常组织和肿瘤样本的测序结果 其中 14、15位置编号大于10 表示正常
+根据TCGA样本的命名可以区分正常组织和肿瘤样本的测序结果 其中 14、15位置编号大于10 表示正常
 
 ```{r}
 COUNT_matrix <- read_csv('data/COUNT_matrix.csv') |> column_to_rownames(var = "...1")
@@ -97,9 +91,6 @@ clinical_matrix <- left_join(sample_case,clinical,by = join_by(case_id))
 clinical_matrix <- clinical_matrix |> select(-case_id)
 ```
 
-
-
-
 ## miRNA 计数矩阵
 
 ```{r eval=FALSE}
@@ -128,4 +119,3 @@ for (i in 1:length(count_file)){
 ## TCGAWorkflow
 
 <https://bioconductor.org/packages/release/workflows/html/TCGAWorkflow.html>
-

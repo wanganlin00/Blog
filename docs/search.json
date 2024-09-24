@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "HomePage",
+    "section": "",
+    "text": "ggprism: GraphPad Prism 风格\n\n\n\n\n\n\ngraphics\n\n\nthemes\n\n\nggplot2 extension\n\n\n\n\n\n\n\n\n\nSep 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nggpattern: ggplot2 with geometric texture amd images\n\n\n\n\n\n\ngraphics\n\n\nggplot2 extension\n\n\n\n\n\n\n\n\n\nSep 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nggforce: 圆角柱状图\n\n\n\n\n\n\ngraphics\n\n\nggplot2 extesion\n\n\n\n\n\n\n\n\n\nSep 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nUCSC\n\n\n\n\n\n\nbioinformatics\n\n\ndatabase\n\n\n\n\n\n\n\n\n\nSep 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nTCGA\n\n\n\n\n\n\nbioinformatics\n\n\ndatabase\n\n\n\n\n\n\n\n\n\nSep 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nRT-qPCR\n\n\n\n\n\n\nbioinformatics\n\n\nprotocols\n\n\n\n\n\n\n\n\n\nSep 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\niterated function system\n\n\n\n\n\n\ngraphics\n\n\nart\n\n\n\n\n\n\n\n\n\nSep 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nwelcome\n\n\n\n\n\n\n\n\n\nSep 23, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/UCSC/UCSC.html",
+    "href": "posts/UCSC/UCSC.html",
+    "title": "UCSC",
+    "section": "",
+    "text": "UCSC\nrtracklayer"
+  },
+  {
+    "objectID": "posts/圆角柱状图/index.html",
+    "href": "posts/圆角柱状图/index.html",
+    "title": "ggforce: 圆角柱状图",
+    "section": "",
+    "text": "Show the codelibrary(ggforce)"
+  },
+  {
+    "objectID": "posts/圆角柱状图/index.html#先决条件",
+    "href": "posts/圆角柱状图/index.html#先决条件",
+    "title": "ggforce: 圆角柱状图",
+    "section": "",
+    "text": "Show the codelibrary(ggforce)"
+  },
+  {
+    "objectID": "posts/圆角柱状图/index.html#geom_shape",
+    "href": "posts/圆角柱状图/index.html#geom_shape",
+    "title": "ggforce: 圆角柱状图",
+    "section": "geom_shape()",
+    "text": "geom_shape()\n连续X\n\nShow the codeshape &lt;- data.frame(\n  x = c(0.25, 0.75,0.75,0.25),\n  y = c(0, 0,1,1)\n)\n\nggplot(shape, aes(x = x, y = y)) +\n  #geom_polygon(fill = 'red') +\n  geom_shape(radius = unit(0.5, 'cm'))+\n    scale_x_continuous(breaks = seq(0,2,1), limits = c(0,2))\n\n\n\n\n\n\n\n分类X\n\nShow the codedf &lt;- data.frame(trt = c(\"a\", \"b\", \"c\"), outcome = c(2.3, 1.9, 3.2))\n\nwidth &lt;- .9\n\ndf &lt;- df |&gt;\n    mutate(trt = factor(trt)) |&gt;\n    dplyr::reframe(\n        data.frame(\n            x = rep(as.numeric(trt) + width / 2 * c(-1, 1), each = 2), # 指定条形图四个角的坐标\n            outcome = c(c(0, outcome), rev(c(0, outcome)))\n        ),\n        .by = trt\n    )\ndf\n\n   trt    x outcome\n1    a 0.55     0.0\n2    a 0.55     2.3\n3    a 1.45     2.3\n4    a 1.45     0.0\n5    b 1.55     0.0\n6    b 1.55     1.9\n7    b 2.45     1.9\n8    b 2.45     0.0\n9    c 2.55     0.0\n10   c 2.55     3.2\n11   c 3.45     3.2\n12   c 3.45     0.0\n\nShow the codeggplot(df, aes(x, outcome, fill = trt)) +\n    geom_shape(radius = .05)+\n    scale_x_continuous(breaks = 1:3,labels = c(\"a\",\"b\",\"c\"))+\n    theme(\n        axis.title.x = element_blank()\n    )\n\n\n\n\n\n\n\n\nShow the codelibrary(ggforce)\nggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +\n  geom_point() +\n  facet_zoom(x = Species == \"versicolor\")"
+  },
+  {
+    "objectID": "posts/TCGA/TCGA.html",
+    "href": "posts/TCGA/TCGA.html",
+    "title": "TCGA",
+    "section": "",
+    "text": "https://portal.gdc.cancer.gov/\nhttps://www.jingege.wang/2024/02/25/tcga-gdc-data-portal-2-0/\nhttps://www.jingege.wang/2022/07/16/tcgar/\n\nShow the codelibrary(jsonlite)\n\njson &lt;- jsonlite::fromJSON(\"data/metadata.cart.2024-07-04.json\") |&gt; as_tibble()\n\njson |&gt; select(associated_entities)\n\n# A tibble: 536 × 1\n   associated_entities\n   &lt;list&gt;             \n 1 &lt;df [1 × 4]&gt;       \n 2 &lt;df [1 × 4]&gt;       \n 3 &lt;df [1 × 4]&gt;       \n 4 &lt;df [1 × 4]&gt;       \n 5 &lt;df [1 × 4]&gt;       \n 6 &lt;df [1 × 4]&gt;       \n 7 &lt;df [1 × 4]&gt;       \n 8 &lt;df [1 × 4]&gt;       \n 9 &lt;df [1 × 4]&gt;       \n10 &lt;df [1 × 4]&gt;       \n# ℹ 526 more rows\n\nShow the codejson$associated_entities[[1]]\n\n           entity_submitter_id entity_type                              case_id\n1 TCGA-38-7271-01A-11R-2039-07     aliquot 8214a0d1-5e2d-4a7a-acb1-e5580755db83\n                             entity_id\n1 8d895d3d-9598-459b-813e-3fc84dd3efe8\n\nShow the code# sample_id &lt;- map_vec(json$associated_entities,~ .x[,1])\nsample_id &lt;- sapply(json$associated_entities,function(x){x[,1]})\n\n\nfile_sample &lt;- tibble(sample_id,file_name=json$file_name) \n\n\n\nShow the code#获取gdc_download文件夹下的所有TSV表达文件的 路径+文件名\ncount_file &lt;- list.files(\"data/gdc_download_20240704_131631.625023\",pattern = \"*.tsv\",recursive = TRUE)\n#在count_file中分割出文件名\ncount_file_name &lt;- str_split(count_file,pattern = '/') \n\ncount_file_name &lt;- sapply(count_file_name,function(x){x[2]})\n\n\n\n\nShow the codematrix = data.frame(matrix(nrow=60660,ncol=0))\n\n\nfor (i in 1:length(count_file)) {\n    path = paste0('data/gdc_download_20240704_131631.625023/',\n                  count_file[i])\n    data &lt;- read_tsv(path, col_names = T, skip = 1)\n    data &lt;- data[-c(1:4), c(1, 4)] |&gt; column_to_rownames(var = \"gene_id\")  #取出ESEMBL_id列1 和 unstranded列 4，即count数据，对应其它数据，第2列为gene symbol\n    colnames(data) &lt;- file_sample$sample_id[which(file_sample$file_name == count_file_name[i])]\n    \n    matrix &lt;- cbind(matrix, data)\n}\nwrite.csv(matrix,'data/COUNT_matrix.csv',row.names = TRUE)\n\n\n\n根据TCGA样本的命名可以区分正常组织和肿瘤样本的测序结果 其中 14、15位置编号大于10 表示正常\n\nShow the codeCOUNT_matrix &lt;- read_csv('data/COUNT_matrix.csv') |&gt; column_to_rownames(var = \"...1\")\n\n\nstr_sub(colnames(COUNT_matrix),14,15) |&gt; table()\n\n\n 01  02  11 \n481   2  53 \n\n\n\n\nShow the codejson &lt;- jsonlite::fromJSON(\"data/metadata.cart.2024-07-04.json\")\n\nentity_submitter_id &lt;- sapply(json$associated_entities,function(x){x[,1]})\ncase_id &lt;- sapply(json$associated_entities,function(x){x[,3]})\nsample_case &lt;- t(rbind(entity_submitter_id,case_id)) |&gt; as_tibble()\n\nclinical &lt;- read.delim('data/clinical.cart.2024-07-04/clinical.tsv',header = T)\n\nclinical &lt;- clinical |&gt; distinct(case_id,.keep_all = TRUE)\n\n\n\n\n\nclinical_matrix &lt;- left_join(sample_case,clinical,by = join_by(case_id))\n\nclinical_matrix &lt;- clinical_matrix |&gt; select(-case_id)\n\n\n\n\nShow the codejson &lt;- jsonlite::fromJSON(\"metadata.cart.2022-09-27.json\")\n\n#id &lt;- json$associated_entities[[1]][,1]\nsample_id &lt;- sapply(json$associated_entities,function(x){x[,1]})\nfile_sample &lt;- data.frame(sample_id,file_name=json$file_name)  \n\n#获取gdc_download文件夹下的所有miRNA表达文件的 路径+文件名\ncount_file &lt;- list.files('gdc_download_20220927_150057.906231',pattern = '*quantification.txt',recursive = TRUE)\n#在count_file中分割出文件名\ncount_file_name &lt;- strsplit(count_file,split='/')\ncount_file_name &lt;- sapply(count_file_name,function(x){x[2]})\n\nmatrix = data.frame(matrix(nrow=1881,ncol=0))\nfor (i in 1:length(count_file)){\n  path = paste0('gdc_download_20220927_150057.906231//',count_file[i])\n  data&lt;- read.delim(path,fill = TRUE,header = T,row.names = 1)\n  data &lt;- data[1]   #取出count列（第1列），rpm列（第2列）\n  colnames(data) &lt;- file_sample$sample_id[which(file_sample$file_name==count_file_name[i])]\n  matrix &lt;- cbind(matrix,data)\n}\n\n\n\nhttps://bioconductor.org/packages/release/workflows/html/TCGAWorkflow.html"
+  },
+  {
+    "objectID": "posts/TCGA/TCGA.html#计数矩阵",
+    "href": "posts/TCGA/TCGA.html#计数矩阵",
+    "title": "TCGA",
+    "section": "",
+    "text": "Show the codematrix = data.frame(matrix(nrow=60660,ncol=0))\n\n\nfor (i in 1:length(count_file)) {\n    path = paste0('data/gdc_download_20240704_131631.625023/',\n                  count_file[i])\n    data &lt;- read_tsv(path, col_names = T, skip = 1)\n    data &lt;- data[-c(1:4), c(1, 4)] |&gt; column_to_rownames(var = \"gene_id\")  #取出ESEMBL_id列1 和 unstranded列 4，即count数据，对应其它数据，第2列为gene symbol\n    colnames(data) &lt;- file_sample$sample_id[which(file_sample$file_name == count_file_name[i])]\n    \n    matrix &lt;- cbind(matrix, data)\n}\nwrite.csv(matrix,'data/COUNT_matrix.csv',row.names = TRUE)"
+  },
+  {
+    "objectID": "posts/TCGA/TCGA.html#normal-和-tumor",
+    "href": "posts/TCGA/TCGA.html#normal-和-tumor",
+    "title": "TCGA",
+    "section": "",
+    "text": "根据TCGA样本的命名可以区分正常组织和肿瘤样本的测序结果 其中 14、15位置编号大于10 表示正常\n\nShow the codeCOUNT_matrix &lt;- read_csv('data/COUNT_matrix.csv') |&gt; column_to_rownames(var = \"...1\")\n\n\nstr_sub(colnames(COUNT_matrix),14,15) |&gt; table()\n\n\n 01  02  11 \n481   2  53"
+  },
+  {
+    "objectID": "posts/TCGA/TCGA.html#表型矩阵",
+    "href": "posts/TCGA/TCGA.html#表型矩阵",
+    "title": "TCGA",
+    "section": "",
+    "text": "Show the codejson &lt;- jsonlite::fromJSON(\"data/metadata.cart.2024-07-04.json\")\n\nentity_submitter_id &lt;- sapply(json$associated_entities,function(x){x[,1]})\ncase_id &lt;- sapply(json$associated_entities,function(x){x[,3]})\nsample_case &lt;- t(rbind(entity_submitter_id,case_id)) |&gt; as_tibble()\n\nclinical &lt;- read.delim('data/clinical.cart.2024-07-04/clinical.tsv',header = T)\n\nclinical &lt;- clinical |&gt; distinct(case_id,.keep_all = TRUE)\n\n\n\n\n\nclinical_matrix &lt;- left_join(sample_case,clinical,by = join_by(case_id))\n\nclinical_matrix &lt;- clinical_matrix |&gt; select(-case_id)"
+  },
+  {
+    "objectID": "posts/TCGA/TCGA.html#mirna-计数矩阵",
+    "href": "posts/TCGA/TCGA.html#mirna-计数矩阵",
+    "title": "TCGA",
+    "section": "",
+    "text": "Show the codejson &lt;- jsonlite::fromJSON(\"metadata.cart.2022-09-27.json\")\n\n#id &lt;- json$associated_entities[[1]][,1]\nsample_id &lt;- sapply(json$associated_entities,function(x){x[,1]})\nfile_sample &lt;- data.frame(sample_id,file_name=json$file_name)  \n\n#获取gdc_download文件夹下的所有miRNA表达文件的 路径+文件名\ncount_file &lt;- list.files('gdc_download_20220927_150057.906231',pattern = '*quantification.txt',recursive = TRUE)\n#在count_file中分割出文件名\ncount_file_name &lt;- strsplit(count_file,split='/')\ncount_file_name &lt;- sapply(count_file_name,function(x){x[2]})\n\nmatrix = data.frame(matrix(nrow=1881,ncol=0))\nfor (i in 1:length(count_file)){\n  path = paste0('gdc_download_20220927_150057.906231//',count_file[i])\n  data&lt;- read.delim(path,fill = TRUE,header = T,row.names = 1)\n  data &lt;- data[1]   #取出count列（第1列），rpm列（第2列）\n  colnames(data) &lt;- file_sample$sample_id[which(file_sample$file_name==count_file_name[i])]\n  matrix &lt;- cbind(matrix,data)\n}"
+  },
+  {
+    "objectID": "posts/TCGA/TCGA.html#tcgaworkflow",
+    "href": "posts/TCGA/TCGA.html#tcgaworkflow",
+    "title": "TCGA",
+    "section": "",
+    "text": "https://bioconductor.org/packages/release/workflows/html/TCGAWorkflow.html"
+  },
+  {
+    "objectID": "posts/RT-qPCR/RT-qPCR.html",
+    "href": "posts/RT-qPCR/RT-qPCR.html",
+    "title": "RT-qPCR",
+    "section": "",
+    "text": "RT-qPCR\nhttps://bioconductor.org/packages/3.19/bioc/html/ReadqPCR.html"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post.Welcome!"
+  }
+]

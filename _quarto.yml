@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "WANGANLIN's Blog"
@@ -18,6 +19,7 @@ theme:
 execute: 
   warning: false
   message: false
+  cache: true
 
 toc: true
 code-fold: show
