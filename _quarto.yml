@@ -1,0 +1,33 @@
+project:
+  type: website
+
+website:
+  title: "WANGANLIN's Blog"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/
+      
+
+
+theme:
+  light: flatly
+  dark: darkly
+
+execute: 
+  warning: false
+  message: false
+
+
+code-fold: true
+code-summary: "Show the code"
+code-link: true
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+editor: visual
+

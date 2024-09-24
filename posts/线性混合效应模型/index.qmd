@@ -1,0 +1,14 @@
+---
+title: "线性混合效应模型"
+date: "2024-09-23"
+date-modified: today
+categories: [statistics]
+draft: true
+
+---
+
+```{r}
+library(lme4)
+library(lmerTest)
+```
+
