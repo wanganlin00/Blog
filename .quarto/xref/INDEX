@@ -37,5 +37,20 @@
   },
   "posts/TCGA/TCGA.qmd": {
     "TCGA.html": "c474280c"
+  },
+  "posts/ggpattern/ggpattern.qmd": {
+    "ggpattern.html": "eaa41263"
+  },
+  "posts/ggprism/ggprism.qmd": {
+    "ggprism.html": "4d3e2f27"
+  },
+  "posts/iterated function system/iterated function system.qmd": {
+    "iterated function system.html": "181c9f14"
+  },
+  "posts/圆角柱状图/angle_rounded_barplot.qmd": {
+    "angle_rounded_barplot.html": "8de91e53"
+  },
+  "posts/线性混合效应模型/LME.qmd": {
+    "LME.html": "864d46e0"
   }
 }

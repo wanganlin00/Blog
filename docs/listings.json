@@ -2,13 +2,13 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/ggprism/index.html",
-      "/posts/ggpattern/index.html",
-      "/posts/圆角柱状图/index.html",
+      "/posts/ggprism/ggprism.html",
+      "/posts/ggpattern/ggpattern.html",
+      "/posts/圆角柱状图/angle_rounded_barplot.html",
       "/posts/UCSC/UCSC.html",
       "/posts/TCGA/TCGA.html",
       "/posts/RT-qPCR/RT-qPCR.html",
-      "/posts/iterated function system/index.html",
+      "/posts/iterated function system/iterated function system.html",
       "/posts/welcome/index.html"
     ]
   }
