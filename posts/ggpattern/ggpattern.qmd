@@ -150,17 +150,27 @@ ggplot(df, aes(group, value)) +
   scale_pattern_type_manual(values=c(NA, 'basket', 'matt', NA, 'twill_elongated'))
 ```
 
+
 ```{r}
 library(ggplot2)
 library(ggpattern)
 ToothGrowth$dose <- factor(ToothGrowth$dose)
 ggplot(ToothGrowth, aes(dose)) +
-  geom_bar_pattern(aes(fill=dose, pattern=dose, pattern_type=dose),colour='black') + 
-  theme_bw() +
-  labs(title = "Use 'stripe' and 'wave' patterns") + 
-  theme(legend.key.size = unit(1.5, 'cm')) +
-  scale_pattern_manual(values=c('stripe', 'wave', 'wave')) +
-  scale_pattern_type_manual(values=c(NA, 'triangle', 'sine'))
+    geom_bar_pattern(
+        aes(
+            fill = dose,
+            pattern = dose,
+            pattern_type = dose
+        ),
+        pattern_frequency = 5,
+        colour = 'black'
+    ) +
+    theme_bw() +
+    labs(title = "Use 'stripe' and 'wave' patterns") +
+    theme(legend.key.size = unit(1.5, 'cm')) +
+    scale_pattern_manual(values = c('stripe', 'wave', 'wave')) +
+    scale_pattern_type_manual(values = c(NA, 'triangle', 'sine'))
+
 ```
 
 ## ggpattern + ggh4x
