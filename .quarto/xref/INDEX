@@ -52,5 +52,8 @@
   },
   "posts/线性混合效应模型/LME.qmd": {
     "LME.html": "864d46e0"
+  },
+  "posts/PSM/PSM_NatureMethods.qmd": {
+    "PSM_NatureMethods.html": "c070f1b4"
   }
 }

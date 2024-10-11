@@ -1,0 +1,40 @@
+---
+title: "UCSC"
+date: "2024-09-24"
+date-modified: today
+categories: [bioinformatics, database]
+image: "example.svg"
+---
+
+
+# UCSC
+
+[rtracklayer](https://bioconductor.org/packages/release/bioc/html/rtracklayer.html)
+
+
+```{r message=FALSE}
+library(rtracklayer)
+library(AnnotationHub)
+
+ah <- AnnotationHub()
+ah
+```
+
+```{r}
+bw_ah <- subset(ah, rdataclass == "BigWigFile" & species == "Homo sapiens")
+bw_ah
+
+GR_ah<- subset(ah, rdataclass == "GRanges" & species == "Homo sapiens")
+
+gr <- GR_ah[1]
+```
+
+```{r}
+bw <- bw_ah[[1]]
+bw
+```
+
+```{r}
+bw_gr <- import(bw, which = gr[1:3])
+```
+

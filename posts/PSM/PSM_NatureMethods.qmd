@@ -1,0 +1,439 @@
+---
+title: "Nature Methods: Propensity score matching"
+date: "2024-10-11"
+date-modified: today
+categories: [propensity score]
+---
+
+## 倾向性得分匹配
+
+[Propensity score matching (Nature Methods)](https://www.nature.com/articles/s41592-024-02405-4)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(magrittr)
+library(tidyverse)
+library(MatchIt)
+library(cobalt)
+library(dagitty) 
+library(DescTools)
+library(scales)
+library(ggplot2)
+library(ctmle) # for bound() function
+aspect = 0.15 # for plots
+palette = c("#29abe2","#fbb03b")
+source("helpers.R")
+```
+
+```{r}
+# Simulate a study of bone density (bd) in a cohort of non-smokers and smokers.
+
+cohort_size = 1000
+
+# Bone density (bd) units g/cm^2 expressed as "T score" relative to young population. 
+# https://www.researchgate.net/publication/259608747_Age-Related_Changes_in_the_Prevalence_of_Osteoporosis_according_to_Gender_and_Skeletal_Site_The_Korea_National_Health_and_Nutrition_Examination_Survey_2008-2010
+# https://www.chatswooddensitometry.com.au/bone-density-results.html
+# T = 0 corresponds to about 1.2 g/cm^2
+#
+#              -2.5         -1.0
+# <--------------|------------|----------->
+#   osteoporosis   osteopenia   normal
+
+smoking_bd_true_effect           = -0.5
+max_individual_covariate_effect  = -0.5
+
+# "treatment" refers to membership in smoking group
+# covariate_effect - 0/1 - whether covariates impact bone density (for testing)
+# treatment_effect - 0/1 - whether smoking impacts bone density (for testing)
+make_cohort = function(covariate_effect=0,treatment_effect=0,seed,n=cohort_size) {
+set.seed(seed)
+blood = tibble(
+  id      = 1:n,
+  #############################################################
+  # ALCOHOL
+  # g/day
+  # https://pophealthmetrics.biomedcentral.com/articles/10.1186/1478-7954-10-6/tables/2
+  # Distribution below from Table 2 (male, USA2)
+  # Min.  1st Qu.   Median     Mean  3rd Qu.     Max.    sd
+  # 0.0003   1.8410   7.5948  14.5125  19.2759 142.6630 19
+  alcohol = rgamma(cohort_size,scale=25.65,shape=0.53),
+  #############################################################
+  # STRESS
+  # perceived stress scale (PSS), 0-40
+  # https://www.slu.edu/medicine/family-medicine/pdfs/perceived-stress-scale.pdf
+  # Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    sd
+  # 0.5266  6.9912 11.6250 12.4698 16.8827 37.3044  7.0
+  stress_base  = bound(50*rbeta(cohort_size,2,6),c(0,40)),
+  #############################################################
+  # CAFFEINE
+  # mg/day
+  # https://www.ncbi.nlm.nih.gov/books/NBK202226/
+  # table 2-1 avg 165 90% 379
+  # Min.  1st Qu.  Median    Mean 3rd Qu.    Max.  90% 
+  # 0.034  75.355 166.391 200.789 294.416 773.001  428
+  caffeine = 800*rbeta(cohort_size,1,3),
+) %>% 
+  mutate(
+         # +0.5 stress for each alcohol g/day (arbitrary increase)
+         # e.g. those in 75% of alcohol consumption drink 18 g/day = +9 stress ~ s.d. of stress distribution
+         alcohol_stress_effect = alcohol / 2,
+         stress = bound(stress_base + alcohol_stress_effect,c(0,40))) %>%
+  mutate(bd_base             = rnorm(cohort_size,0,0.5),
+         bd_covariate_effect = max_individual_covariate_effect*(
+                                  rescale(stress,  to=c(0,1)) + 
+                                  rescale(alcohol, to=c(0,1)) + 
+                                  rescale(caffeine,to=c(0,1)))) %>%
+  # Each covariate (arbitrarily) contributes equally to the treatment score
+  # based on subject's percentile value in the covariate's distribution.
+  # The score is then rescaled to a probability in the range [0,1], which is then used
+  # to generate assignment to control (treatment = 0) or treatment (treatment = 1) groups.
+  mutate(
+         treatment_score  = rescale(stress,  to=c(0,1)) + 
+                            rescale(alcohol, to=c(0,1)) + 
+                            rescale(caffeine,to=c(0,1)), 
+         treatment_p      = rescale(treatment_score, to = c(0.1,0.9)),
+         treatment        = rbinom(cohort_size, 1, treatment_p)) %>% 
+  # Bone density
+  mutate(
+         # reduction in bd if subject is a smoker
+         bd_treatment_effect = treatment*smoking_bd_true_effect,
+         # final bd, including covariate effects (if toggled) and treatment effect (if toggled)
+         bd = bd_base + covariate_effect*bd_covariate_effect + treatment_effect*bd_treatment_effect)
+}
+
+# 1. Pick a seed
+seed = 20 
+# 2. Cohort A : no treatment or covariate effects
+cohort_a = make_cohort(seed=seed,covariate_effect=0,treatment_effect=0)
+psych::describeBy(stress + alcohol + caffeine + bd ~ treatment, data = cohort_a)
+# 3. Cohort B : covariate effect, no treatment effect
+cohort_b = make_cohort(seed=seed,covariate_effect=1,treatment_effect=0)
+psych::describeBy(stress + alcohol + caffeine + bd ~ treatment, data = cohort_b)
+#hist(cohort$bp)
+# 4. Cohort C : covariate and treatment effects
+cohort_c = make_cohort(seed=seed,covariate_effect=1,treatment_effect=1)
+psych::describeBy(stress + alcohol + caffeine + bd ~ treatment, data = cohort_c)
+# Naive model that tests bp difference without accounting for covariates
+means  = cohort_c |> group_by(treatment) |> summarize(mean(bd))
+effect = as.numeric(means[2,2]-means[1,2])
+effect
+
+# Cohort A has no covariate or treatment effects. Both treated (smokers) and control (non-smokers)
+# should have the same distribution of bone density (bd)
+p1 = ggplot() + geom_density(data=cohort_a |> filter(treatment==T),aes(bd),color=palette[1]) +
+  geom_density(data=cohort_a |> filter(treatment==F),aes(bd),color="black") +
+  geom_vline(xintercept = cohort_a |> filter(treatment==T) |> select(bd) |> as_vector() |> mean(),color=palette[1]) +
+  geom_vline(xintercept = cohort_a |> filter(treatment==F) |> select(bd) |> as_vector() |> mean()) +
+  scale_x_continuous(lim=c(-2,2),breaks=seq(-2,2,by=0.5))
+
+# The magnitude of the covariate effect.
+p2 = ggplot() + geom_density(data=cohort_b |> filter(treatment==T),aes(bd_covariate_effect),color=palette[1]) +
+  geom_density(data=cohort_b |> filter(treatment==F),aes(bd_covariate_effect),color="black") +
+  geom_vline(xintercept = cohort_b |> filter(treatment==T) |> select(bd_covariate_effect) |> as_vector() |> mean(),color=palette[1]) +
+  geom_vline(xintercept = cohort_b |> filter(treatment==F) |> select(bd_covariate_effect) |> as_vector() |> mean()) +
+  scale_x_continuous(lim=c(-2,2),breaks=seq(-2,2,by=0.5))
+
+# Treatment probability.
+p2b = ggplot() + geom_density(data=cohort_b |> filter(treatment==T),aes(treatment_p),color=palette[1]) +
+  geom_density(data=cohort_b |> filter(treatment==F),aes(treatment_p),color="black") +
+  geom_vline(xintercept = cohort_b |> filter(treatment==T) |> select(treatment_p) |> as_vector() |> mean(),color=palette[1]) +
+  geom_vline(xintercept = cohort_b |> filter(treatment==F) |> select(treatment_p) |> as_vector() |> mean()) +
+  scale_x_continuous(lim=c(0,1),breaks=seq(0,1,by=.2))
+  
+# Cohort B : covariate effect but no treatment effect
+p3 = ggplot() + geom_density(data=cohort_b |> filter(treatment==T),aes(bd),color=palette[1]) +
+  geom_density(data=cohort_b |> filter(treatment==F),aes(bd),color="black") +
+  geom_vline(xintercept = cohort_b |> filter(treatment==T) |> select(bd) |> as_vector() |> mean(),color=palette[1]) +
+  geom_vline(xintercept = cohort_b |> filter(treatment==F) |> select(bd) |> as_vector() |> mean()) +
+  scale_x_continuous(lim=c(-2,2),breaks=seq(-2,2,by=0.5))
+
+# Cohort B : covariate and treatment effect
+p4 = ggplot() + geom_density(data=cohort_c |> filter(treatment==T),aes(bd),color=palette[1]) +
+  geom_density(data=cohort_c |> filter(treatment==F),aes(bd),color="black") +
+  geom_vline(xintercept = cohort_c |> filter(treatment==T) |> select(bd) |> as_vector() |> mean(),color=palette[1]) +
+  geom_vline(xintercept = cohort_c |> filter(treatment==F) |> select(bd) |> as_vector() |> mean()) +
+  scale_x_continuous(lim=c(-2,2),breaks=seq(-2,2,by=0.5))
+
+multiplot(plot_theme(p1,aspect),plot_theme(p2,aspect),plot_theme(p2b,aspect),plot_theme(p3,aspect),plot_theme(p4,aspect),cols=1)
+dev.copy2pdf(file = "fig-distributions.pdf",useDingbats=FALSE,width=5,height=3)
+
+cohort        = cohort_c
+model_matched = lm(bd ~ treatment, 
+                    data = cohort_c)
+summary(model_matched)
+```
+
+```{r}
+# propensity score matching with replacement
+matched_data = matchit(treatment ~ alcohol + stress + caffeine,
+                        data     = cohort,
+                        method   = "nearest",
+                        replace  = TRUE,
+                        caliper  = 0.1)
+
+cohort$w   = matched_data$weights
+cohort$ps  = matched_data$distance
+cohort$cat = 0
+
+cohort[cohort$w == 0 & cohort$treatment==F,]$cat=-2  # unmatched control
+cohort[cohort$w == 0 & cohort$treatment==T,]$cat=-1  # unmatched treat
+cohort[cohort$w > 0  & cohort$treatment==F,]$cat=0   # matched   control
+cohort[cohort$w > 0  & cohort$treatment==T,]$cat=1   # matched   treat
+cohort |> count(cat)
+```
+
+```{r}
+aspect = 1/3 # for plots
+
+# full cohort
+# plot densities of alcohol, stress, caffine
+
+varT = cohort|>filter(treatment==T)|>select(alcohol)
+varF = cohort|>filter(treatment==F)|>select(alcohol)
+p1 = ggplot() + 
+    geom_density(data=varF,aes(alcohol),color="black",size=1) +
+    geom_density(data=varT,aes(alcohol),color=palette[1],size=1) +
+    geom_vline(xintercept=varF|>as_vector()|>mean(),color="black") +
+    geom_vline(xintercept=varT|>as_vector()|>mean(),color=palette[1]) +
+    annotate("text",x=varF|>as_vector()|>mean()-1,y=0,label=varF|>as_vector()|>mean()|>round(1),color="black",size=3,hjust=1) +
+    annotate("text",x=varT|>as_vector()|>mean()+1,y=0,label=varT|>as_vector()|>mean()|>round(1),color=palette[1],size=3,hjust=0) +
+  scale_x_continuous(lim=c(0,100)) +
+  scale_y_continuous(lim=c(0,0.1))
+
+varT = cohort|>filter(treatment==T)|>select(stress)
+varF = cohort|>filter(treatment==F)|>select(stress)
+p2 = ggplot() + 
+    geom_density(data=varF,aes(stress),color="black",size=1) +
+    geom_density(data=varT,aes(stress),color=palette[1],size=1) +
+    geom_vline(xintercept=varF|>as_vector()|>mean(),color="black") +
+    geom_vline(xintercept=varT|>as_vector()|>mean(),color=palette[1]) +
+    annotate("text",x=varF|>as_vector()|>mean()-5,y=0,label=varF|>as_vector()|>mean()|>round(1),color="black",size=3,hjust=1) +
+    annotate("text",x=varT|>as_vector()|>mean()+5,y=0,label=varT|>as_vector()|>mean()|>round(1),color=palette[1],size=3,hjust=0) +
+  scale_x_continuous(lim=c(0,40)) +
+  scale_y_continuous(lim=c(0,0.06))
+
+varT = cohort|>filter(treatment==T)|>select(caffeine)
+varF = cohort|>filter(treatment==F)|>select(caffeine)
+p3 = ggplot() + 
+    geom_density(data=varF,aes(caffeine),color="black",size=1) +
+    geom_density(data=varT,aes(caffeine),color=palette[1],size=1) +
+    geom_vline(xintercept=varF|>as_vector()|>mean(),color="black") +
+    geom_vline(xintercept=varT|>as_vector()|>mean(),color=palette[1]) +
+    annotate("text",x=varF|>as_vector()|>mean()-1,y=0,label=varF|>as_vector()|>mean()|>round(1),color="black",size=3,hjust=1) +
+    annotate("text",x=varT|>as_vector()|>mean()+1,y=0,label=varT|>as_vector()|>mean()|>round(1),color=palette[1],size=3,hjust=0) + 
+    scale_x_continuous(lim=c(0,400),breaks=seq(0,400,by=50)) +
+    scale_y_continuous(lim=c(0,0.006))
+
+multiplot(plot_theme(p1,aspect),plot_theme(p2,aspect),plot_theme(p3,aspect),cols=1)
+dev.copy2pdf(file = "fig2a.pdf",useDingbats=FALSE,width=5,height=3)
+
+# matched/unmatched
+# plot densities of alcohol, cholesterol, caffeine
+
+varT   = cohort[matched_data$weights>0,]|>filter(treatment==T)|>select(alcohol)
+varF   = cohort[matched_data$weights>0,]|>filter(treatment==F)|>select(alcohol)
+varFun = cohort[matched_data$weights==0,]|>filter(treatment==F)|>select(alcohol)
+p1 = ggplot() + 
+    geom_density(data=varF,aes(alcohol),color="black",size=1) +
+    geom_density(data=varT,aes(alcohol),color=palette[1],size=1) +
+    geom_density(data=varFun,aes(alcohol),color=palette[2],size=1) +
+    geom_vline(xintercept=varF|>as_vector()|>mean(),color="black") +
+    geom_vline(xintercept=varT|>as_vector()|>mean(),color=palette[1]) +
+    geom_vline(xintercept=varFun|>as_vector()|>mean(),color=palette[2]) +
+    annotate("text",x=varF|>as_vector()|>mean()-1,y=0,label=varF|>as_vector()|>mean()|>round(1),color="black",size=3,hjust=1) +
+    annotate("text",x=varFun|>as_vector()|>mean()-1,y=0,label=varFun|>as_vector()|>mean()|>round(1),color=palette[2],size=3,hjust=1) +
+    annotate("text",x=varT|>as_vector()|>mean()+1,y=0,label=varT|>as_vector()|>mean()|>round(1),color=palette[1],size=3,hjust=0) +
+  scale_x_continuous(lim=c(0,100)) +
+  scale_y_continuous(lim=c(0,0.1))
+
+varT   = cohort[matched_data$weights>0,]|>filter(treatment==T)|>select(stress)
+varF   = cohort[matched_data$weights>0,]|>filter(treatment==F)|>select(stress)
+varFun = cohort[matched_data$weights==0,]|>filter(treatment==F)|>select(stress)
+p2 = ggplot() + 
+    geom_density(data=varF,aes(stress),color="black",size=1) +
+    geom_density(data=varT,aes(stress),color=palette[1],size=1) +
+    geom_density(data=varFun,aes(stress),color=palette[2],size=1) +
+    geom_vline(xintercept=varF|>as_vector()|>mean(),color="black") +
+    geom_vline(xintercept=varT|>as_vector()|>mean(),color=palette[1]) +
+    geom_vline(xintercept=varFun|>as_vector()|>mean(),color=palette[2]) +
+    annotate("text",x=varF|>as_vector()|>mean()-1,y=0,label=varF|>as_vector()|>mean()|>round(1),color="black",size=3,hjust=1) +
+    annotate("text",x=varFun|>as_vector()|>mean()-1,y=0,label=varFun|>as_vector()|>mean()|>round(1),color=palette[2],size=3,hjust=1) +
+    annotate("text",x=varT|>as_vector()|>mean()+1,y=0,label=varT|>as_vector()|>mean()|>round(1),color=palette[1],size=3,hjust=0) +
+  scale_x_continuous(lim=c(0,40)) +
+  scale_y_continuous(lim=c(0,0.06))
+
+varT   = cohort[matched_data$weights>0,]|>filter(treatment==T)|>select(caffeine)
+varF   = cohort[matched_data$weights>0,]|>filter(treatment==F)|>select(caffeine)
+varFun = cohort[matched_data$weights==0,]|>filter(treatment==F)|>select(caffeine)
+p3 = ggplot() + 
+    geom_density(data=varF,aes(caffeine),color="black",size=1) +
+    geom_density(data=varT,aes(caffeine),color=palette[1],size=1) +
+    geom_density(data=varFun,aes(caffeine),color=palette[2],size=1) +
+    geom_vline(xintercept=varF|>as_vector()|>mean(),color="black") +
+    geom_vline(xintercept=varT|>as_vector()|>mean(),color=palette[1]) +
+    geom_vline(xintercept=varFun|>as_vector()|>mean(),color=palette[2]) +
+    annotate("text",x=varF|>as_vector()|>mean()-1,y=0,label=varF|>as_vector()|>mean()|>round(1),color="black",size=3,hjust=1) +
+    annotate("text",x=varFun|>as_vector()|>mean()-1,y=0,label=varFun|>as_vector()|>mean()|>round(1),color=palette[2],size=3,hjust=1) +
+    annotate("text",x=varT|>as_vector()|>mean()+1,y=0,label=varT|>as_vector()|>mean()|>round(1),color=palette[1],size=3,hjust=0) +
+    scale_x_continuous(lim=c(0,400),breaks=seq(0,400,by=50)) +
+    scale_y_continuous(lim=c(0,0.006))
+
+multiplot(plot_theme(p1,aspect),plot_theme(p2,aspect),plot_theme(p3,aspect),cols=1)
+dev.copy2pdf(file = "fig2b.pdf",useDingbats=FALSE,width=5,height=3)
+```
+
+```{r}
+pdf("fig3a.pdf")
+plot(matched_data, type = "jitter", interactive = FALSE)
+dev.off()
+pdf("fig3b.pdf")
+love.plot(matched_data, binary = "std")
+dev.off()
+```
+
+```{r}
+# get the matched data set
+matched_data_for_real = match.data(matched_data)
+matched_data_for_real |> nrow()
+# new linear model with matched data
+model_matched = lm(bd ~ treatment, 
+                    data = matched_data_for_real)
+summary(model_matched)
+# get the same result by comparing means
+matched_data_for_real |>
+  filter(treatment==T) |>
+  summarize(blood_mean=mean(bd)) -
+  matched_data_for_real |>
+  filter(treatment==F) |>
+  summarize(blood_mean=mean(bd))
+```
+
+```{r}
+# jitter plot of unmatched data (entire cohort)
+bd_min = -3
+bd_max = 1.5
+p1 = ggplot(cohort, aes(x=treatment, y=bd)) +  
+  geom_jitter(width=0.2,shape=16,size=0.5) +
+  stat_summary(fun = "mean", geom = "crossbar", width = .5, color = "orange") +
+  annotate("text", x = 0.25, y = 0, hjust=0,size=3,label = cohort |> 
+             filter(treatment==F) |> 
+             select(bd) |> as_vector() |> mean() |> round(2)) +
+  annotate("text", x = 1.25, y = 0, hjust=0,size=3,label = cohort |> 
+             filter(treatment==T) |> 
+             select(bd) |> as_vector() |> mean() |> round(2)) +
+  scale_x_continuous(lim=c(-2.25,1.75))  +
+  scale_y_continuous(lim=c(bd_min,bd_max),breaks=seq(bd_min,bd_max,by=1))
+# jitter plot of matched data 
+p2 = ggplot(cohort, aes(x=cat, y=bd)) +  
+  geom_jitter(width=0.2,shape=16,size=0.5) +
+  stat_summary(fun = "mean", geom = "crossbar", width = .5, color = "orange") +
+  annotate("text",x=-1.75,y=0,hjust=0,size=3,
+             label=cohort|>filter(cat==-2)|>select(bd) |> as_vector() |> mean() |> round(1)) +
+  annotate("text",x=-0.75,y=0,hjust=0,size=3,
+             label=cohort|>filter(cat==-1)|>select(bd) |> as_vector() |> mean() |> round(2)) +
+  annotate("text",x=0.25,y=0,hjust=0,size=3,
+             label=cohort|>filter(cat==0)|>select(bd) |> as_vector() |> mean() |> round(2)) +
+  annotate("text",x=1.25,y=0,hjust=0,size=3,
+             label=cohort|>filter(cat==1)|>select(bd) |> as_vector() |> mean() |> round(2)) +
+  scale_x_continuous(lim=c(-2.25,1.75)) +
+  scale_y_continuous(lim=c(bd_min,bd_max),breaks=seq(bd_min,bd_max,by=1))
+
+# linear model with weights
+model_matched_wts = lm(bd ~ treatment, 
+                        data = matched_data_for_real,
+                        weights = weights)
+summary(model_matched_wts)
+
+data = matched_data_for_real 
+# plot
+wmean_f = as.numeric(data|>filter(treatment==F)|>select(bd, weights) |> summarize(weighted_mean=weighted.mean(bd, weights)))
+wmean_t = as.numeric(data|>filter(treatment==T)|>select(bd, weights) |> summarize(weighted_mean=weighted.mean(bd, weights)))
+p3 = ggplot(data, aes(x=treatment, y=bd)) +  
+  geom_jitter(width=0.2,shape=16,size=scales::rescale(matched_data_for_real$weights, to=c(0.25, 1.25))) +
+  annotate("segment",x=-0.25,y = as.numeric(wmean_f), xend=0.25, yend = as.numeric(wmean_f), color="orange")+
+  annotate("segment",x=0.75,y = as.numeric(wmean_t), xend=1.25, yend = as.numeric(wmean_t), color="orange")+
+  annotate("text",x=0.25,y=wmean_f,hjust=0,size=3,label=wmean_f |> round(2)) +
+  annotate("text",x=1.25,y=wmean_t,hjust=0,size=3,label=wmean_t |> round(2)) +
+  scale_x_continuous(lim=c(-2.25,1.75)) +
+  scale_y_continuous(lim=c(bd_min,bd_max),breaks=seq(bd_min,bd_max,by=1))
+
+aspect = 1
+multiplot(plot_theme(p1,aspect),plot_theme(p2,aspect),plot_theme(p3,aspect),cols=3)
+dev.copy2pdf(file = "fig4.pdf",useDingbats=FALSE,width=5,height=2)
+
+model_matched_wts
+```
+
+```{r echo=FALSE}
+# without replacement
+matched_data_noreplace = matchit(treatment ~ alcohol + stress + caffeine,
+                                  data = cohort,
+                                  method = "nearest",
+                                  replace = FALSE,
+                                  caliper = 0.1)
+
+matched_data_noreplace_for_real = match.data(matched_data_noreplace)
+model_matched_noreplace         = lm(bd ~ treatment, 
+                                      data = matched_data_noreplace_for_real)
+matched_data_noreplace_for_real |> filter(treatment==F) |> nrow()
+summary(model_matched_noreplace)
+# Fig.3a
+pdf("fig3c.pdf")
+plot(matched_data_noreplace, type = "jitter", interactive = FALSE)
+dev.off()
+
+# Fig.3b
+pdf("fig3d.pdf")
+love.plot(matched_data_noreplace, binary = "std")
+dev.off()
+
+cohort$w = matched_data_noreplace$weights
+cohort$cat = 0
+
+cohort[cohort$w == 0 & cohort$treatment==F,]$cat=-2  # unmatched control
+cohort[cohort$w == 0 & cohort$treatment==T,]$cat=-1  # unmatched treat
+cohort[cohort$w > 0  & cohort$treatment==F,]$cat=0   # matched   control
+cohort[cohort$w > 0  & cohort$treatment==T,]$cat=1   # matched   treat
+cohort |> count(cat)
+
+```
+
+```{r}
+# mahalanobis matching, not used 
+maha_matched = matchit(treatment ~ alcohol + stress + caffeine,
+                                              data = cohort,
+           distance = "mahalanobis", replace = TRUE)
+matched_data_maha = match.data(maha_matched)
+model_maha_matched = lm(bd ~ treatment, 
+                    data = matched_data_maha)
+summary(model_maha_matched)
+```
+
+```{r}
+# propensity score matching with replacement
+effect_by_caliper = function(caliper=0.1,replace=TRUE) {
+matched_data = matchit(treatment ~ alcohol + stress + caffeine,
+                        data     = cohort,
+                        method   = "nearest",
+                        replace  = replace,
+                        caliper  = caliper)
+# get the matched data set
+matched_data_for_real = match.data(matched_data)
+n = matched_data_for_real |> filter(treatment==T) |> filter(weights>0) |> nrow()
+d = matched_data_for_real |>
+    filter(treatment==T) |>
+    summarize(bd_mean=mean(bd)) -
+    matched_data_for_real |>
+    filter(treatment==F) |>
+    summarize(bd_mean=mean(bd))
+return(c(n=as.numeric(n),d=as.numeric(d)))
+}
+calipers   = seq(0.01,1,by=0.01)
+effects_r  = sapply(calipers,FUN=effect_by_caliper,replace=TRUE)
+effects_nr = sapply(calipers,FUN=effect_by_caliper,replace=FALSE)
+p1 = ggplot(data=data.frame(x=calipers,yr=effects_r[1,],ynr=effects_nr[1,])) + geom_line(aes(x=x,y=yr)) + geom_line(aes(x=x,y=ynr),color="brown")
+p2 = ggplot(data=data.frame(x=calipers,yr=effects_r[2,],ynr=effects_nr[2,])) + geom_line(aes(x=x,y=yr)) + geom_line(aes(x=x,y=ynr),color="brown")
+multiplot(plot_theme(p1,aspect),plot_theme(p2,aspect),cols=2)
+dev.copy2pdf(file = "fig5.pdf",useDingbats=FALSE,width=6,height=3)
+```
