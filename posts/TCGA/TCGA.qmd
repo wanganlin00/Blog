@@ -3,7 +3,7 @@ title: "TCGA"
 date: "2024-09-24"
 date-modified: today
 categories: [bioinformatics, database]
-image: "example.svg"
+# image: "example.svg"
 ---
 
 # TCGA数据库

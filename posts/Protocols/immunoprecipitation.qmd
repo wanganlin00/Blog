@@ -1,0 +1,16 @@
+---
+title: "immunoprecipitation"
+date: "2024-10-14"
+date-modified: today
+categories: [protocols,protein]
+---
+
+免疫沉淀
+
+## co-immunoprecipitation (Co-IP)
+
+完整[蛋白质复合物](https://en.wikipedia.org/wiki/Protein_complex "Protein complex")（即抗原以及与其结合的任何蛋白质或配体）的免疫沉淀称为免疫共沉淀 （Co-IP）。Co-IP 的工作原理是选择一种靶向已知蛋白质的抗体，该蛋白质被认为是更大蛋白质复合物的成员。通过用抗体靶向该*已知*成员，有可能将整个蛋白质复合物从溶液中拉出，从而识别复合物的*未知*成员。
+
+当复合物中涉及的蛋白质彼此紧密结合时，这种方法就会起作用，从而可以通过用抗体锁定一个成员来将复合物的多个成员从溶液中拉出。这种将蛋白质复合物从溶液中拉出的概念有时被称为“pull-down”。Co-IP 是一种强大的技术，分子生物学家经常使用它来分析[蛋白质-蛋白质相互作用](https://en.wikipedia.org/wiki/Protein%E2%80%93protein_interaction "Protein–protein interaction")。
+
+## Chromatin immunoprecipitation (ChIP)

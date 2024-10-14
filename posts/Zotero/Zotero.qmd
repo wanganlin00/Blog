@@ -2,8 +2,40 @@
 title: "Zotero"
 date: "2024-10-09"
 date-modified: today
-categories: [文献管理, Zotero]
+categories: [Zotero]
 # image: "example.svg"
 ---
 
-## 
+Zotero 7
+
+<https://zotero-zh.netlify.app/user-guide/plugins/style>
+
+## 标题进度条
+
+在标题列上右击，选择列设置（标题），进入设置窗口。
+
+Color: 颜色 Opacity: 透明度
+
+## 期刊标签
+
+### easyScholar 密钥
+
+密钥申请：在 easyScholar 官网首页登录后，点击右上角用户名进入后台，点击 「开放接口」，即可看见密钥。
+
+期刊标签
+
+密钥填写：直接填写到上方 Secret Key 里。
+
+## 标注
+
+通过Shift+P，点标注进入标注的自定义列表。
+
+左键单击：切换不同的标注方案
+
+左键单击方案名称：修改方案名称
+
+长按：修改已有标注。
+
+点击+：添加新的标注方案。
+
+长按颜色区域：删除标注方案
