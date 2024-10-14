@@ -121,5 +121,11 @@
   },
   "posts/Graphics/ggpattern/ggpattern.qmd": {
     "ggpattern.html": "6a8b2ea9"
+  },
+  "posts/Graphics/ggprism/ggprism.qmd": {
+    "ggprism.html": "b13c2a4e"
+  },
+  "posts/PropensityScore/PSM_NatureMethods.qmd": {
+    "PSM_NatureMethods.html": "e445ceb1"
   }
 }
