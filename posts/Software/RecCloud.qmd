@@ -1,0 +1,10 @@
+---
+title: "睿客云盘"
+date: "2024-10-19"
+date-modified: today
+categorires: [cloud]
+---
+
+睿客网（REC），即中国科学技术大学科研教学资源中心，为科大师生用户提供数据存储、备份、分享等服务的在线平台。
+
+[](https://rec.ustc.edu.cn/download)
