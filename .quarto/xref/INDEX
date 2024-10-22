@@ -127,5 +127,17 @@
   },
   "posts/PropensityScore/PSM_NatureMethods.qmd": {
     "PSM_NatureMethods.html": "e445ceb1"
+  },
+  "posts/Rprofile.site/Rprofile.site.qmd": {
+    "Rprofile.site.html": "0332176b"
+  },
+  "posts/Software/RecCloud.qmd": {
+    "RecCloud.html": "4cb0c22f"
+  },
+  "posts/PubMed/PubMed_retrieval.qmd": {
+    "PubMed_retrieval.html": "b76f6c78"
+  },
+  "posts/PropensityScore/psm.qmd": {
+    "psm.html": "125d2738"
   }
 }

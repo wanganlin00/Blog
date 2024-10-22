@@ -22,7 +22,7 @@ execute:
   cache: true
 
 toc: true
-code-fold: show
+code-fold: true
 code-summary: "Show the code"
 code-link: true
 

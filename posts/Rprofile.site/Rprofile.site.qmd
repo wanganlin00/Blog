@@ -1,0 +1,99 @@
+---
+title: "Rprofile.site"
+date: "2024-10-19"
+date-modified: today
+categories: [config, R]
+---
+
+
+```{r eval=FALSE}
+# ~\etc\Rprofile.site
+
+
+
+# set a CRAN mirror
+getOption("repos")
+options("BioC_mirror")
+
+# "https://mirrors.ustc.edu.cn/CRAN/"
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+options(BioC_mirror = "https://mirrors.tuna.tsinghua.edu.cn/bioconductor")
+
+
+
+# ~\etc\Rconsole    
+
+language=en
+
+# options(papersize="a4")
+# options(editor="notepad")
+# options(pager="internal")
+
+# set the default help type
+# options(help_type="text")
+options(help_type = "html")
+
+
+
+
+.First <- function() {
+  library(showtext, quietly = T)
+  # font_add("Times New Roman Regular", "C:/Windows/Fonts/times.ttf")
+  # font_add("Times New Roman Bold", "C:/Windows/Fonts/timesbd.ttf")
+  # font_add("Times New Roman Bold Italic", "C:/Windows/Fonts/timesbi.ttf")
+  # font_add("Times New Roman Italic", "C:/Windows/Fonts/timesi.ttf")
+  # font_add("黑体 常规", "C:/Windows/Fonts/simhei.ttf")
+  # font_add("楷体 常规", "C:/Windows/Fonts/simkai.ttf")
+  showtext_auto()
+  # library(data.table)
+  library(conflicted)
+  library(tidyverse)
+  library(patchwork)
+  # library(BiocManager)
+  library(readxl)
+  library(writexl)
+  conflicted::conflict_scout()
+  message(today())
+}
+
+
+.Last <- function() {
+
+}
+```
+
+
+
+```{r eval=FALSE}
+# 更新 R Gui
+
+# installr::updateR()
+
+tools <- c(
+  "installr", "devtools","remotes","conflicted", "reticulate", "BiocManager")
+
+
+needed <- c(
+  "tidyverse", "tidymodels", "readxl", "writexl", "survminer", "ggsurvfit"
+)
+
+# remotes::install_github("jbryer/psa", build_vignettes = TRUE, dependencies = "Enhances")
+
+optional <- c(
+  "ggpubr","pROC", "ggprism", "ggpattern", 
+  "pheatmap", "ggfortify", "ggrepel", "ggthemes","ggcorrplot", "ggpmisc", "plotly",
+  "ggraph", "tidygraph", "svglite",
+  
+  
+  "gt", "gtsummary", "tableone", "flextable",
+  
+  "esquisse", "styler"
+)
+
+
+lapply(tools, require)
+```
+
+
+tools -> 
+

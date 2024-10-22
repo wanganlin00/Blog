@@ -1,0 +1,53 @@
+---
+title: "PubMed retrieval"
+date: "2024-10-15"
+date-modified: today
+categories: [database]
+---
+
+## 布尔逻辑检索
+
+AND
+
+OR
+
+NOT
+
+## 截断和通配符
+
+-   通配符wildcard randomi?ed (randomised, randomized)
+-   截断（\*） 可替代 0 个或多个字符
+
+| 检索词                             | 结果 2024-10-15 |
+|------------------------------------|-----------------|
+| Osteoarthr\*\[Title/Abstract\]     | 104,730         |
+| Osteoarthrosis\[Title/Abstract\]   | 3,585           |
+| osteoarthritis\[Title/Abstract\]   | 95,813          |
+| Osteoarthritides\[Title/Abstract\] | 5               |
+
+## Filter
+
+"Clinical Trial" \[Publication Type\]
+
+"Randomized Controlled Trial" \[Publication Type\]
+
+## MSH
+
+MeSH (Medical Subject Headings)
+
+主题词 + 自由词
+
+| 主题词                        | 自由词 |
+|-------------------------------|--------|
+| Immune Checkpoint Inhibitors  |        |
+| Radiotherapy                  |        |
+| small cell lung carcinoma     |        |
+| drug treatment                |        |
+
+## 数据库
+
+### PubMed
+
+### Cochrane Central Register of Controlled Trials， CENTRAL
+
+### Embase
