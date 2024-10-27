@@ -9,7 +9,8 @@ categories: [config, R]
 ```{r eval=FALSE}
 # ~\etc\Rprofile.site
 
-
+options("timeout")
+options(timeout = 180)
 
 # set a CRAN mirror
 getOption("repos")
@@ -97,3 +98,6 @@ lapply(tools, require)
 
 tools -> 
 
+
+
+##
