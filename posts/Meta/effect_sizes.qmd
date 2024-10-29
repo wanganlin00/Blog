@@ -1,5 +1,5 @@
 ---
-title: "效应量"
+title: "效应大小"
 date: "2024-10-24"
 date-modified: today
 categories: [meta]
@@ -7,7 +7,7 @@ categories: [meta]
 
 [Doing Meta-Analysis in R: A Hands-on Guide](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/)
 
-效应量（effect sizes）+标准误
+效应大小（effect sizes）+标准误
 
 ## 观察性研究
 
