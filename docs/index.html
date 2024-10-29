@@ -79,7 +79,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
@@ -186,7 +187,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(24)</span></div><div class="category" data-category="DNA">DNA <span class="quarto-category-count">(5)</span></div><div class="category" data-category="PCR">PCR <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RNA">RNA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RNAi">RNAi <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Zotero">Zotero <span class="quarto-category-count">(1)</span></div><div class="category" data-category="art">art <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bioinformatics">bioinformatics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cell">cell <span class="quarto-category-count">(3)</span></div><div class="category" data-category="config">config <span class="quarto-category-count">(1)</span></div><div class="category" data-category="database">database <span class="quarto-category-count">(4)</span></div><div class="category" data-category="ggplot2 extension">ggplot2 extension <span class="quarto-category-count">(3)</span></div><div class="category" data-category="graphics">graphics <span class="quarto-category-count">(4)</span></div><div class="category" data-category="plasmid">plasmid <span class="quarto-category-count">(1)</span></div><div class="category" data-category="propensity score">propensity score <span class="quarto-category-count">(1)</span></div><div class="category" data-category="protein">protein <span class="quarto-category-count">(3)</span></div><div class="category" data-category="protocols">protocols <span class="quarto-category-count">(11)</span></div><div class="category" data-category="welcome">welcome <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(28)</span></div><div class="category" data-category="DNA">DNA <span class="quarto-category-count">(5)</span></div><div class="category" data-category="PCR">PCR <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RNA">RNA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RNAi">RNAi <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Zotero">Zotero <span class="quarto-category-count">(1)</span></div><div class="category" data-category="art">art <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bioinformatics">bioinformatics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cell">cell <span class="quarto-category-count">(3)</span></div><div class="category" data-category="config">config <span class="quarto-category-count">(1)</span></div><div class="category" data-category="database">database <span class="quarto-category-count">(4)</span></div><div class="category" data-category="ggplot2 extension">ggplot2 extension <span class="quarto-category-count">(3)</span></div><div class="category" data-category="graphics">graphics <span class="quarto-category-count">(4)</span></div><div class="category" data-category="meta">meta <span class="quarto-category-count">(4)</span></div><div class="category" data-category="plasmid">plasmid <span class="quarto-category-count">(1)</span></div><div class="category" data-category="propensity score">propensity score <span class="quarto-category-count">(1)</span></div><div class="category" data-category="protein">protein <span class="quarto-category-count">(3)</span></div><div class="category" data-category="protocols">protocols <span class="quarto-category-count">(11)</span></div><div class="category" data-category="welcome">welcome <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -200,7 +201,127 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1729267200000" data-listing-file-modified-sort="1729303413420" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="0" data-categories="meta" data-listing-date-sort="1730131200000" data-listing-file-modified-sort="1730199047452" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="3" data-listing-word-count-sort="535">
+<div class="thumbnail">
+<p><a href="./posts/Meta/ forest_plots.html" class="no-external"></a></p><a href="./posts/Meta/ forest_plots.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/Meta/ forest_plots.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/Meta/ forest_plots.html" class="no-external">森林图</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/Meta/ forest_plots.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('meta'); return false;">
+meta
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/Meta/ forest_plots.html" class="no-external"></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/Meta/ forest_plots.html" class="no-external">
+<div class="listing-date">
+Oct 29, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="meta" data-listing-date-sort="1729699200000" data-listing-file-modified-sort="1730198313989" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1315">
+<div class="thumbnail">
+<p><a href="./posts/Meta/BetweenStudyHeterogeneity.html" class="no-external"></a></p><a href="./posts/Meta/BetweenStudyHeterogeneity.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/Meta/BetweenStudyHeterogeneity.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/Meta/BetweenStudyHeterogeneity.html" class="no-external">研究间异质性</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/Meta/BetweenStudyHeterogeneity.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('meta'); return false;">
+meta
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/Meta/BetweenStudyHeterogeneity.html" class="no-external"></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/Meta/BetweenStudyHeterogeneity.html" class="no-external">
+<div class="listing-date">
+Oct 24, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="meta" data-listing-date-sort="1729699200000" data-listing-file-modified-sort="1730198362794" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="5" data-listing-word-count-sort="860">
+<div class="thumbnail">
+<p><a href="./posts/Meta/effect_sizes.html" class="no-external"></a></p><a href="./posts/Meta/effect_sizes.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/Meta/effect_sizes.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/Meta/effect_sizes.html" class="no-external">效应大小</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/Meta/effect_sizes.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('meta'); return false;">
+meta
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/Meta/effect_sizes.html" class="no-external"></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/Meta/effect_sizes.html" class="no-external">
+<div class="listing-date">
+Oct 24, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="meta" data-listing-date-sort="1729699200000" data-listing-file-modified-sort="1730198341331" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1240">
+<div class="thumbnail">
+<p><a href="./posts/Meta/pooling_effect_sizes.html" class="no-external"></a></p><a href="./posts/Meta/pooling_effect_sizes.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/Meta/pooling_effect_sizes.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/Meta/pooling_effect_sizes.html" class="no-external">pooling effect sizes</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/Meta/pooling_effect_sizes.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('meta'); return false;">
+meta
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/Meta/pooling_effect_sizes.html" class="no-external"></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/Meta/pooling_effect_sizes.html" class="no-external">
+<div class="listing-date">
+Oct 24, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1729267200000" data-listing-file-modified-sort="1729303413420" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="thumbnail">
 <p><a href="./posts/Software/RecCloud.html" class="no-external"></a></p><a href="./posts/Software/RecCloud.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -225,18 +346,18 @@ Oct 19, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="config,R" data-listing-date-sort="1729267200000" data-listing-file-modified-sort="1729386643845" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="162">
+<div class="quarto-post image-right" data-index="5" data-categories="config,R" data-listing-date-sort="1729267200000" data-listing-file-modified-sort="1730038765730" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="166">
 <div class="thumbnail">
-<p><a href="./posts/Rprofile.site/Rprofile.site.html" class="no-external"></a></p><a href="./posts/Rprofile.site/Rprofile.site.html" class="no-external">
+<p><a href="./posts/Config/Rprofile.site.html" class="no-external"></a></p><a href="./posts/Config/Rprofile.site.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/Rprofile.site/Rprofile.site.html" class="no-external"></a></p>
+</a><p><a href="./posts/Config/Rprofile.site.html" class="no-external"></a></p>
 </div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/Rprofile.site/Rprofile.site.html" class="no-external">Rprofile.site</a>
+<a href="./posts/Config/Rprofile.site.html" class="no-external">Rprofile.site</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/Rprofile.site/Rprofile.site.html" class="no-external"></a>
+<a href="./posts/Config/Rprofile.site.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('config'); return false;">
@@ -247,28 +368,18 @@ R
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/Rprofile.site/Rprofile.site.html" class="no-external">
-<details open="" class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># ~\etc\Rprofile.site</span></span>
-<span></span>
-<span></span>
-<span></span>
-<span><span class="co"># set a CRAN mirror</span></span>
-<span><span class="fu">getOption</span><span class="op">(</span><span class="st">"repos"</span><span class="op">)</span></span>
-<span><span class="fu">options</span><span class="op">(</span><span class="st">"BioC_mirror"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># "https://mirrors.ustc.edu.cn/CRAN/"</span></span>
-<span><span class="fu">options</span><span class="op">(</span>repos <span class="op">=</span> <span class="fu">c</span><span class="op">(</span>CRAN <span class="op">=</span> <span class="st">"https:/…</span><span class="op"></span><span class="op"></span></span><span><span class="fu"></span><span class="op"></span><span class="op"></span><span class="st"></span><span class="op"></span></span><span></span><span></span><span></span><span><span class="co"></span></span><span></span><span><span class="va"></span><span class="op"></span><span class="va"></span></span><span></span><span><span class="co"></span></span><span><span class="co"></span></span><span><span class="co"></span></span><span></span><span><span class="co"></span></span><span><span class="co"></span></span><span><span class="fu"></span><span class="op"></span><span class="op"></span><span class="st"></span><span class="op"></span></span><span></span><span></span><span></span><span></span><span><span class="va"></span><span class="op"></span><span class="kw"></span><span class="op"></span><span class="op"></span><span class="op"></span></span><span><span class="kw"></span><span class="op"></span><span class="va"></span><span class="op"></span><span class="cn"></span><span class="op"></span></span><span><span class="co"></span></span><span><span class="co"></span></span><span><span class="co"></span></span><span><span class="co"></span></span><span><span class="co"></span></span><span><span class="co"></span></span><span><span class="fu"></span><span class="op"></span><span class="op"></span></span><span><span class="co"></span></span><span><span class="kw"></span><span class="op"></span><span class="va"></span><span class="op"></span></span><span><span class="kw"></span><span class="op"></span><span class="va"></span><span class="op"></span></span><span><span class="kw"></span><span class="op"></span><span class="va"></span><span class="op"></span></span><span><span class="co"></span></span><span><span class="kw"></span><span class="op"></span><span class="va"></span><span class="op"></span></span><span><span class="kw"></span><span class="op"></span><span class="va"></span><span class="op"></span></span><span><span class="fu"></span><span class="fu"></span><span class="fu"></span><span class="op"></span><span class="op"></span></span><span><span class="fu"></span><span class="op"></span><span class="fu"></span><span class="op"></span><span class="op"></span><span class="op"></span></span><span><span class="op"></span></span><span></span><span></span><span><span class="va"></span><span class="op"></span><span class="kw"></span><span class="op"></span><span class="op"></span><span class="op"></span></span><span></span><span><span class="op"></span></span><span></span><span></span><span><span class="co"></span></span><span></span><span><span class="co"></span></span><span></span><span><span class="va"></span><span class="op"></span><span class="fu"></span><span class="op"></span></span><span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="op"></span></span><span></span><span></span><span><span class="va"></span><span class="op"></span><span class="fu"></span><span class="op"></span></span><span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span></span><span><span class="op"></span></span><span></span><span><span class="co"></span></span><span></span><span><span class="va"></span><span class="op"></span><span class="fu"></span><span class="op"></span></span><span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span></span><span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span></span><span><span class="st"></span><span class="st"></span><span class="st"></span></span><span></span><span></span><span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span></span><span></span><span><span class="st"></span><span class="st"></span></span><span><span class="op"></span></span><span></span><span></span><span><span class="fu"></span><span class="op"></span><span class="va"></span><span class="va"></span><span class="op"></span></span></code></pre></div></details></a>
+<a href="./posts/Config/Rprofile.site.html" class="no-external"></a>
 </div>
 </div>
 <div class="metadata">
-<a href="./posts/Rprofile.site/Rprofile.site.html" class="no-external">
+<a href="./posts/Config/Rprofile.site.html" class="no-external">
 <div class="listing-date">
 Oct 19, 2024
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="database" data-listing-date-sort="1728921600000" data-listing-file-modified-sort="1729387235067" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="2" data-listing-word-count-sort="246">
+<div class="quarto-post image-right" data-index="6" data-categories="database" data-listing-date-sort="1728921600000" data-listing-file-modified-sort="1729387235067" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="2" data-listing-word-count-sort="246">
 <div class="thumbnail">
 <p><a href="./posts/PubMed/PubMed_retrieval.html" class="no-external"></a></p><a href="./posts/PubMed/PubMed_retrieval.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -298,7 +409,7 @@ Oct 15, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="protocols,PCR,DNA,RNA" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728914352254" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="89">
+<div class="quarto-post image-right" data-index="7" data-categories="protocols,PCR,DNA,RNA" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728914352254" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="89">
 <div class="thumbnail">
 <p><a href="./posts/BioProtocols/real-time Reverse Transcription-PCR.html" class="no-external"></a></p><a href="./posts/BioProtocols/real-time Reverse Transcription-PCR.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -337,7 +448,7 @@ Oct 14, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="protocols,PCR,DNA" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728910872247" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="2" data-listing-word-count-sort="367">
+<div class="quarto-post image-right" data-index="8" data-categories="protocols,PCR,DNA" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728910872247" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="2" data-listing-word-count-sort="367">
 <div class="thumbnail">
 <p><a href="./posts/BioProtocols/PCR.html" class="no-external"></a></p><a href="./posts/BioProtocols/PCR.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -373,7 +484,7 @@ Oct 14, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="protocols,protein" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728910276691" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="11">
+<div class="quarto-post image-right" data-index="9" data-categories="protocols,protein" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1730201018494" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="11">
 <div class="thumbnail">
 <p><a href="./posts/BioProtocols/immunoprecipitation.html" class="no-external"></a></p><a href="./posts/BioProtocols/immunoprecipitation.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -395,7 +506,7 @@ protein
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/BioProtocols/immunoprecipitation.html" class="no-external"></a>
+<a href="./posts/BioProtocols/immunoprecipitation.html" class="no-external">免疫沉淀</a>
 </div>
 </div>
 <div class="metadata">
@@ -406,7 +517,7 @@ Oct 14, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="protocols,protein" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1729387021773" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="8">
+<div class="quarto-post image-right" data-index="10" data-categories="protocols,protein" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1729387021773" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="8">
 <div class="thumbnail">
 <p><a href="./posts/BioProtocols/ELISA.html" class="no-external"></a></p><a href="./posts/BioProtocols/ELISA.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -439,7 +550,7 @@ Oct 14, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="protocols,DNA,plasmid" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728910706821" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="3" data-listing-word-count-sort="408">
+<div class="quarto-post image-right" data-index="11" data-categories="protocols,DNA,plasmid" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728910706821" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="3" data-listing-word-count-sort="408">
 <div class="thumbnail">
 <p><a href="./posts/BioProtocols/Plasmid  DNA_purification_digestion_identification.html" class="no-external"></a></p><a href="./posts/BioProtocols/Plasmid  DNA_purification_digestion_identification.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -475,7 +586,7 @@ Oct 14, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="protocols,cell" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728910809516" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="121">
+<div class="quarto-post image-right" data-index="12" data-categories="protocols,cell" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728910809516" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="121">
 <div class="thumbnail">
 <p><a href="./posts/BioProtocols/PBMCs Isolation Freezing.html" class="no-external"></a></p><a href="./posts/BioProtocols/PBMCs Isolation Freezing.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -508,7 +619,7 @@ Oct 14, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="protocols,DNA" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728911122470" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
+<div class="quarto-post image-right" data-index="13" data-categories="protocols,DNA" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728911122470" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
 <div class="thumbnail">
 <p><a href="./posts/BioProtocols/GeneKnockout.html" class="no-external"></a></p><a href="./posts/BioProtocols/GeneKnockout.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -541,7 +652,7 @@ Oct 14, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="protocols,DNA,RNAi" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728911441111" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="3">
+<div class="quarto-post image-right" data-index="14" data-categories="protocols,DNA,RNAi" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728911441111" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="3">
 <div class="thumbnail">
 <p><a href="./posts/BioProtocols/GeneKnockdown.html" class="no-external"></a></p><a href="./posts/BioProtocols/GeneKnockdown.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -577,7 +688,7 @@ Oct 14, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="protocols,cell" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728912105760" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="21">
+<div class="quarto-post image-right" data-index="15" data-categories="protocols,cell" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728912105760" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="21">
 <div class="thumbnail">
 <p><a href="./posts/BioProtocols/flow_cytometry.html" class="no-external"></a></p><a href="./posts/BioProtocols/flow_cytometry.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -610,7 +721,7 @@ Oct 14, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="protocols,cell" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728914341101" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="2" data-listing-word-count-sort="366">
+<div class="quarto-post image-right" data-index="16" data-categories="protocols,cell" data-listing-date-sort="1728835200000" data-listing-file-modified-sort="1728914341101" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="2" data-listing-word-count-sort="366">
 <div class="thumbnail">
 <p><a href="./posts/BioProtocols/Transformation CaCl2.html" class="no-external"></a></p><a href="./posts/BioProtocols/Transformation CaCl2.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -643,7 +754,7 @@ Oct 14, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="propensity score" data-listing-date-sort="1728576000000" data-listing-file-modified-sort="1729387262354" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
+<div class="quarto-post image-right" data-index="17" data-categories="propensity score" data-listing-date-sort="1728576000000" data-listing-file-modified-sort="1729387262354" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <div class="thumbnail">
 <p><a href="./posts/PropensityScore/psm.html" class="no-external"></a></p><a href="./posts/PropensityScore/psm.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -673,7 +784,7 @@ Oct 11, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="Zotero" data-listing-date-sort="1728403200000" data-listing-file-modified-sort="1728912491544" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="15">
+<div class="quarto-post image-right" data-index="18" data-categories="Zotero" data-listing-date-sort="1728403200000" data-listing-file-modified-sort="1728912491544" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="15">
 <div class="thumbnail">
 <p><a href="./posts/Zotero/Zotero.html" class="no-external"></a></p><a href="./posts/Zotero/Zotero.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -703,7 +814,7 @@ Oct 9, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="graphics,ggplot2 extension" data-listing-date-sort="1727107200000" data-listing-file-modified-sort="1728914159906" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="8" data-listing-word-count-sort="1525">
+<div class="quarto-post image-right" data-index="19" data-categories="graphics,ggplot2 extension" data-listing-date-sort="1727107200000" data-listing-file-modified-sort="1728914159906" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="8" data-listing-word-count-sort="1525">
 <div class="thumbnail">
 <p><a href="./posts/Graphics/ggprism/ggprism.html" class="no-external"></a></p><a href="./posts/Graphics/ggprism/ggprism.html" class="no-external">
 <p><img loading="lazy" src="./posts/Graphics/ggprism/ggprism.svg" class="thumbnail-image"></p>
@@ -736,7 +847,7 @@ Sep 24, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="graphics,ggplot2 extension" data-listing-date-sort="1727107200000" data-listing-file-modified-sort="1728914080256" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="8" data-listing-word-count-sort="1535">
+<div class="quarto-post image-right" data-index="20" data-categories="graphics,ggplot2 extension" data-listing-date-sort="1727107200000" data-listing-file-modified-sort="1728914080256" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="8" data-listing-word-count-sort="1535">
 <div class="thumbnail">
 <p><a href="./posts/Graphics/ggpattern/ggpattern.html" class="no-external"></a></p><a href="./posts/Graphics/ggpattern/ggpattern.html" class="no-external">
 <p><img loading="lazy" src="./posts/Graphics/ggpattern/ggpattern.svg" class="thumbnail-image"></p>
@@ -769,7 +880,7 @@ Sep 24, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="graphics,ggplot2 extension" data-listing-date-sort="1727107200000" data-listing-file-modified-sort="1728914201175" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="195">
+<div class="quarto-post image-right" data-index="21" data-categories="graphics,ggplot2 extension" data-listing-date-sort="1727107200000" data-listing-file-modified-sort="1728914201175" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="195">
 <div class="thumbnail">
 <p><a href="./posts/Graphics/ggforce/angle_rounded_barplot.html" class="no-external"></a></p><a href="./posts/Graphics/ggforce/angle_rounded_barplot.html" class="no-external">
 <p><img loading="lazy" src="./posts/Graphics/ggforce/angle_rounded_barplot.svg" class="thumbnail-image"></p>
@@ -802,7 +913,7 @@ Sep 24, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="protocols,protein" data-listing-date-sort="1727107200000" data-listing-file-modified-sort="1728911615022" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="2" data-listing-word-count-sort="256">
+<div class="quarto-post image-right" data-index="22" data-categories="protocols,protein" data-listing-date-sort="1727107200000" data-listing-file-modified-sort="1730204205156" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="3" data-listing-word-count-sort="526">
 <div class="thumbnail">
 <p><a href="./posts/BioProtocols/WB.html" class="no-external"></a></p><a href="./posts/BioProtocols/WB.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -824,7 +935,7 @@ protein
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/BioProtocols/WB.html" class="no-external"></a>
+<a href="./posts/BioProtocols/WB.html" class="no-external">蛋白质免疫印迹（protein immunoblot）</a>
 </div>
 </div>
 <div class="metadata">
@@ -835,7 +946,7 @@ Sep 24, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-categories="bioinformatics,database" data-listing-date-sort="1727107200000" data-listing-file-modified-sort="1729260230041" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="36">
+<div class="quarto-post image-right" data-index="23" data-categories="bioinformatics,database" data-listing-date-sort="1727107200000" data-listing-file-modified-sort="1729260230041" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="36">
 <div class="thumbnail">
 <p><a href="./posts/UCSC/UCSC.html" class="no-external"></a></p><a href="./posts/UCSC/UCSC.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -868,7 +979,7 @@ Sep 24, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-categories="bioinformatics,database" data-listing-date-sort="1727107200000" data-listing-file-modified-sort="1728908837802" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="2" data-listing-word-count-sort="214">
+<div class="quarto-post image-right" data-index="24" data-categories="bioinformatics,database" data-listing-date-sort="1727107200000" data-listing-file-modified-sort="1728908837802" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="2" data-listing-word-count-sort="214">
 <div class="thumbnail">
 <p><a href="./posts/TCGA/TCGA.html" class="no-external"></a></p><a href="./posts/TCGA/TCGA.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -901,10 +1012,10 @@ Sep 24, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-categories="graphics,art" data-listing-date-sort="1727020800000" data-listing-file-modified-sort="1727102030715" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="3" data-listing-word-count-sort="494">
+<div class="quarto-post image-right" data-index="25" data-categories="graphics,art" data-listing-date-sort="1727020800000" data-listing-file-modified-sort="1727102030715" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="3" data-listing-word-count-sort="494">
 <div class="thumbnail">
 <p><a href="./posts/Graphics/Art/iterated function system.html" class="no-external"></a></p><a href="./posts/Graphics/Art/iterated function system.html" class="no-external">
-<p><img loading="lazy" src="./posts/Graphics/Art/fern.svg" class="thumbnail-image"></p>
+<p><img loading="lazy" data-src="./posts/Graphics/Art/fern.svg" class="thumbnail-image"></p>
 </a><p><a href="./posts/Graphics/Art/iterated function system.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -934,7 +1045,7 @@ Sep 23, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="22" data-categories="welcome" data-listing-date-sort="1727020800000" data-listing-file-modified-sort="1727179727265" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
+<div class="quarto-post image-right" data-index="26" data-categories="welcome" data-listing-date-sort="1727020800000" data-listing-file-modified-sort="1727179727265" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <div class="thumbnail">
 <p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -964,7 +1075,7 @@ Sep 23, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-categories="database" data-listing-date-sort="1726502400000" data-listing-file-modified-sort="1729260263835" data-listing-date-modified-sort="1729353600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="10">
+<div class="quarto-post image-right" data-index="27" data-categories="database" data-listing-date-sort="1726502400000" data-listing-file-modified-sort="1729260263835" data-listing-date-modified-sort="1730131200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="10">
 <div class="thumbnail">
 <p><a href="./posts/SEER/SEER.html" class="no-external"></a></p><a href="./posts/SEER/SEER.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -998,6 +1109,9 @@ Sep 17, 2024
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

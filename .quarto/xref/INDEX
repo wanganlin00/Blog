@@ -139,5 +139,11 @@
   },
   "posts/PropensityScore/psm.qmd": {
     "psm.html": "125d2738"
+  },
+  "posts/BioProtocols/WB.md": {
+    "WB.html": "b9df560e"
+  },
+  "posts/BioProtocols/immunoprecipitation.qmd": {
+    "immunoprecipitation.html": "ce016e2e"
   }
 }

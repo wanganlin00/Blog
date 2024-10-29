@@ -21,6 +21,8 @@ execute:
   message: false
   cache: true
 
+css: styles.css
+
 toc: true
 code-fold: true
 code-summary: "Show the code"
