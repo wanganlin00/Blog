@@ -65,6 +65,13 @@ options(help_type = "html")
 
 
 
+如果希望永久删除安装路径，可以直接编辑R的环境配置文件（例如 .Renviron），去掉相应的路径条目，然后重启R使更改生效。
+
+
+
+
+
+
 ```{r eval=FALSE}
 # 更新 R Gui
 
@@ -96,7 +103,6 @@ lapply(tools, require)
 ```
 
 
-tools -> 
 
 
 
