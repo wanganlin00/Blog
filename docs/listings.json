@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Graphics/ggforce/sina.html",
+      "/posts/Config/conda.html",
       "/posts/Meta/ forest_plots.html",
       "/posts/Meta/BetweenStudyHeterogeneity.html",
       "/posts/Meta/effect_sizes.html",

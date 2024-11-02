@@ -145,5 +145,8 @@
   },
   "posts/BioProtocols/immunoprecipitation.qmd": {
     "immunoprecipitation.html": "ce016e2e"
+  },
+  "posts/Graphics/ggforce/sina.qmd": {
+    "sina.html": "0abc0a95"
   }
 }
