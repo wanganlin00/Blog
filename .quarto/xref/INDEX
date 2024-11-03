@@ -146,7 +146,12 @@
   "posts/BioProtocols/immunoprecipitation.qmd": {
     "immunoprecipitation.html": "ce016e2e"
   },
+<<<<<<< Updated upstream
   "posts/Graphics/ggforce/sina.qmd": {
     "sina.html": "0abc0a95"
+=======
+  "posts/PubMed/Scopus.qmd": {
+    "Scopus.html": "5c131604"
+>>>>>>> Stashed changes
   }
 }

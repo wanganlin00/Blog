@@ -37,12 +37,12 @@ MeSH (Medical Subject Headings)
 
 主题词 + 自由词
 
-| 主题词                        | 自由词 |
-|-------------------------------|--------|
-| Immune Checkpoint Inhibitors  |        |
-| Radiotherapy                  |        |
-| small cell lung carcinoma     |        |
-| drug treatment                |        |
+| 主题词                       | 自由词 |
+|------------------------------|--------|
+| Immune Checkpoint Inhibitors |        |
+| Radiotherapy                 |        |
+| small cell lung carcinoma    |        |
+| drug treatment               |        |
 
 ## 数据库
 

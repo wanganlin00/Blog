@@ -1,0 +1,36 @@
+---
+title: "Scopus"
+date: "2024-10-30"
+date-modified: today
+categories: [database]
+---
+
+[图书馆首页 =\> 讲座培训 =\> 信息检索培训](https://wvpn.ustc.edu.cn/https/77726476706e69737468656265737421fcfe43d232237c53300d8db9d6562d/uncategorized/%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2%E6%95%99%E5%AD%A6/)
+
+## 检索技巧
+
+![](images/clipboard-3044001958.png)
+
+![](images/clipboard-1497778334.png)
+
+![](images/clipboard-3881716496.png)
+
+## 多角度研究成果分析
+
+作者档案
+
+自动追踪作者：主页设置通知
+
+## 期刊评价
+
+JCR 影响因子
+
+领域加权的引用影响（**FWCI** ）
+
+H-index
+
+CiteScore：期刊4年内
+
+![](images/clipboard-2794535103.png)
+
+![](images/clipboard-2581567008.png)

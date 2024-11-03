@@ -2,15 +2,20 @@
   {
     "listing": "/index.html",
     "items": [
+<<<<<<< Updated upstream
       "/posts/Graphics/ggforce/sina.html",
       "/posts/Config/conda.html",
+=======
+      "/posts/PubMed/Scopus.html",
+      "/posts/welcome/English.html",
+>>>>>>> Stashed changes
       "/posts/Meta/ forest_plots.html",
       "/posts/Meta/BetweenStudyHeterogeneity.html",
       "/posts/Meta/effect_sizes.html",
       "/posts/Meta/pooling_effect_sizes.html",
       "/posts/Software/RecCloud.html",
       "/posts/Config/Rprofile.site.html",
-      "/posts/PubMed/PubMed_retrieval.html",
+      "/posts/PubMed/PubMed.html",
       "/posts/BioProtocols/real-time Reverse Transcription-PCR.html",
       "/posts/BioProtocols/PCR.html",
       "/posts/BioProtocols/immunoprecipitation.html",
@@ -30,7 +35,7 @@
       "/posts/UCSC/UCSC.html",
       "/posts/TCGA/TCGA.html",
       "/posts/Graphics/Art/iterated function system.html",
-      "/posts/welcome/index.html",
+      "/posts/welcome/welcome.html",
       "/posts/SEER/SEER.html"
     ]
   }

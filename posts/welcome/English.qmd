@@ -1,0 +1,20 @@
+---
+title: "English Notes"
+date: "2024-10-30"
+date-modified: today
+categories: [language]
+---
+
+意群分割：chunk by chunk
+
+-   名词短语
+
+-   动词短语
+
+-   介词短语
+
+-   从句
+
+![](images/clipboard-2570615556.png)
+
+retelling

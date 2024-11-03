@@ -1,0 +1,14 @@
+---
+title: "Meta 回归"
+date: "2024-10-31"
+date-modified: today
+categories: [meta]
+---
+
+Meta-regression 通过假设混合效应模型来实现。由于抽样误差和研究之间的异质性，观察到的研究偏离了真实的总体效应，它还使用一个或多个变量来预测真实效应大小的差异。
+
+$$
+\hat\theta_k = \theta + \beta x_{k} + \epsilon_k+\zeta_k
+$$
+
+固定效应（$\beta$）和 随机效应（$\zeta_k$）
