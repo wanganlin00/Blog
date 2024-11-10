@@ -9,7 +9,7 @@ execute:
 
 <https://conda.io/projects/conda/en/latest/user-guide/getting-started.html> <https://docs.anaconda.com>
 
-miniconda内置包不全
+miniconda内置包不全，没有anaconda方便
 
 ## conda环境管理
 
@@ -20,7 +20,7 @@ conda_list()
 py_config(
 ```
 
-```{r eval=FALSE}
+```{r}
 use_condaenv(condaenv = "base", required = TRUE)
 
 
@@ -28,7 +28,7 @@ conda_create(envname = "r-reticulate")
 conda_install(envname = "base", packages = c("polars"))
 ```
 
-```{r eval=FALSE}
+```{r}
 conda_remove(envname = "r-reticulate")
 conda_clone()
 conda_export()
@@ -62,7 +62,7 @@ py_module_available("polars")
 
 ## 调用Python
 
-```{r}
+```{r eval=TRUE}
 # python脚本
 py_run_file("helloworld.py")
 

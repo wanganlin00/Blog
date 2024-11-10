@@ -1,157 +1,53 @@
 {
-  "about.qmd": {
-    "about.html": "821520ed"
-  },
   "index.qmd": {
-    "index.html": "6bd20b82"
+    "index.html": "31a7f071"
   },
-  "posts/post-with-code/index.qmd": {
-    "index.html": "b977436a"
+  "about.qmd": {
+    "about.html": "dece9478"
   },
-  "posts/welcome/index.qmd": {
-    "index.html": "49c9a004"
+  "posts/BioProtocols/animal_models.qmd": {
+    "animal_models.html": "e76791c6"
   },
-  "posts/线性混合效应模型/index.qmd": {
-    "index.html": "cd5dfd68"
+  "posts/BioProtocols/ELISA.md": {
+    "ELISA.html": "fbed78b7"
   },
-  "posts/iterated function system/index.qmd": {
-    "index.html": "8d7ce71c"
+  "posts/BioProtocols/flow_cytometry.md": {
+    "flow_cytometry.html": "b2121124"
   },
-  "posts/ggpattern/index.qmd": {
-    "index.html": "84289af7"
+  "posts/BioProtocols/GeneKnockdown.md": {
+    "GeneKnockdown.html": "a8691d7b"
   },
-  "posts/圆角条形图/index.qmd": {
-    "index.html": "1046f21b"
-  },
-  "posts/ggprism/index.qmd": {
-    "index.html": "8179d46e"
-  },
-  "posts/圆角柱状图/index.qmd": {
-    "index.html": "5c12a985"
-  },
-  "posts/UCSC/UCSC.qmd": {
-    "UCSC.html": "11ede4d6"
-  },
-  "posts/RT-qPCR/RT-qPCR.qmd": {
-    "RT-qPCR.html": "406e474d"
-  },
-  "posts/TCGA/TCGA.qmd": {
-    "TCGA.html": "c474280c"
-  },
-  "posts/ggpattern/ggpattern.qmd": {
-    "ggpattern.html": "eaa41263"
-  },
-  "posts/ggprism/ggprism.qmd": {
-    "ggprism.html": "4d3e2f27"
-  },
-  "posts/iterated function system/iterated function system.qmd": {
-    "iterated function system.html": "181c9f14"
-  },
-  "posts/圆角柱状图/angle_rounded_barplot.qmd": {
-    "angle_rounded_barplot.html": "8de91e53"
-  },
-  "posts/线性混合效应模型/LME.qmd": {
-    "LME.html": "864d46e0"
-  },
-  "posts/PSM/PSM_NatureMethods.qmd": {
-    "PSM_NatureMethods.html": "c070f1b4"
-  },
-  "posts/Zotero/Zotero.qmd": {
-    "Zotero.html": "ff06f1e7"
-  },
-  "posts/Protocols/ELISA.md": {
-    "ELISA.html": "bf5ef0ee"
-  },
-  "posts/Protocols/GeneKnockdown.md": {
-    "GeneKnockdown.html": "0696dfb2"
-  },
-  "posts/Protocols/GeneKnockout.md": {
-    "GeneKnockout.html": "726764c5"
-  },
-  "posts/Protocols/immunoprecipitation.qmd": {
-    "immunoprecipitation.html": "f185ccb8"
-  },
-  "posts/Protocols/index.md": {
-    "index.html": "e97e9db6"
-  },
-  "posts/Protocols/PBMCs Isolation Freezing.md": {
-    "PBMCs Isolation Freezing.html": "ad55a524"
-  },
-  "posts/Protocols/PCR.md": {
-    "PCR.html": "86d9563d"
-  },
-  "posts/Protocols/Plasmid  DNA_purification_digestion_identification.md": {
-    "Plasmid  DNA_purification_digestion_identification.html": "5638358e"
-  },
-  "posts/Protocols/real-time Reverse Transcription-PCR.md": {
-    "real-time Reverse Transcription-PCR.html": "770340e6"
-  },
-  "posts/Protocols/Transformation CaCl2.md": {
-    "Transformation CaCl2.html": "39f6c000"
-  },
-  "posts/Protocols/WB.md": {
-    "WB.html": "4bc92960"
-  },
-  "posts/Protocols/流式细胞术.md": {
-    "流式细胞术.html": "c66045da"
-  },
-  "posts/Graphics/angle_rounded_barplot.qmd": {
-    "angle_rounded_barplot.html": "ef1569e7"
-  },
-  "posts/Graphics/ggpattern.qmd": {
-    "ggpattern.html": "d813223d"
-  },
-  "posts/Graphics/ggprism.qmd": {
-    "ggprism.html": "80c59dc1"
-  },
-  "posts/Graphics/iterated function system.qmd": {
-    "iterated function system.html": "c9c26e4a"
-  },
-  "posts/Protocols/flow_cytometry.md": {
-    "flow_cytometry.html": "aea793bb"
-  },
-  "posts/Statistics/LME.qmd": {
-    "LME.html": "0508c28c"
-  },
-  "posts/Graphics/Art/iterated function system.qmd": {
-    "iterated function system.html": "1c505182"
-  },
-  "posts/Graphics/ggforce/angle_rounded_barplot.qmd": {
-    "angle_rounded_barplot.html": "94fed684"
-  },
-  "posts/Graphics/ggpattern/ggpattern.qmd": {
-    "ggpattern.html": "6a8b2ea9"
-  },
-  "posts/Graphics/ggprism/ggprism.qmd": {
-    "ggprism.html": "b13c2a4e"
-  },
-  "posts/PropensityScore/PSM_NatureMethods.qmd": {
-    "PSM_NatureMethods.html": "e445ceb1"
-  },
-  "posts/Rprofile.site/Rprofile.site.qmd": {
-    "Rprofile.site.html": "0332176b"
-  },
-  "posts/Software/RecCloud.qmd": {
-    "RecCloud.html": "4cb0c22f"
-  },
-  "posts/PubMed/PubMed_retrieval.qmd": {
-    "PubMed_retrieval.html": "b76f6c78"
-  },
-  "posts/PropensityScore/psm.qmd": {
-    "psm.html": "125d2738"
-  },
-  "posts/BioProtocols/WB.md": {
-    "WB.html": "b9df560e"
+  "posts/BioProtocols/GeneKnockout.md": {
+    "GeneKnockout.html": "2661ccfe"
   },
   "posts/BioProtocols/immunoprecipitation.qmd": {
-    "immunoprecipitation.html": "ce016e2e"
+    "immunoprecipitation.html": "c847b836"
   },
-<<<<<<< Updated upstream
-  "posts/Graphics/ggforce/sina.qmd": {
-    "sina.html": "0abc0a95"
-=======
-  "posts/PubMed/Scopus.qmd": {
-    "Scopus.html": "5c131604"
->>>>>>> Stashed changes
+  "posts/BioProtocols/PBMCs Isolation Freezing.md": {
+    "PBMCs Isolation Freezing.html": "400802bb"
+  },
+  "posts/BioProtocols/PCR.md": {
+    "PCR.html": "4b7f88ef"
+  },
+  "posts/BioProtocols/Plasmid  DNA_purification_digestion_identification.md": {
+    "Plasmid  DNA_purification_digestion_identification.html": "4f1429af"
+  },
+  "posts/BioProtocols/real-time Reverse Transcription-PCR.md": {
+    "real-time Reverse Transcription-PCR.html": "4f8018d4"
+  },
+  "posts/BioProtocols/Transformation CaCl2.md": {
+    "Transformation CaCl2.html": "b76d8294"
+  },
+  "posts/BioProtocols/WB.md": {
+    "WB.html": "b60c5d5c"
+  },
+  "posts/cancer_database/SEER/SEER.qmd": {
+    "SEER.html": "0534fc13"
+  },
+  "posts/cancer_database/TCGA/TCGA.qmd": {
+    "TCGA.html": "d2654051"
+  },
+  "posts/cancer_database/UCSC/UCSC.qmd": {
+    "UCSC.html": "ff5d1c9e"
   }
 }

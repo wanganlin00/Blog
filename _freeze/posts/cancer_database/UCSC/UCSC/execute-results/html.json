@@ -1,0 +1,15 @@
+{
+  "hash": "1369d5e26513d534495d12b030c1bf26",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"UCSC\"\ndate: \"2024-09-24\"\ndate-modified: today\ncategories: [bioinformatics, database]\nexecute: \n  eval: false\n---\n\n\n\n\n\n# UCSC\n\n[rtracklayer](https://bioconductor.org/packages/release/bioc/html/rtracklayer.html)\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(rtracklayer)\nlibrary(AnnotationHub)\n\n# 第一次会下载 \nah <- AnnotationHub()\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nah\n\n# C:/Users/DELL/AppData/Local/R/cache/R/AnnotationHub/\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nOrgDb_Human <- subset(ah, rdataclass == \"OrgDb\" & species == \"Homo sapiens\")\nOrgDb_Human\n\norg <- OrgDb_Human[[1]]\norg\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nGRanges_Human <- subset(ah, rdataclass == \"GRanges\" & species == \"Homo sapiens\")\n\ngr <- GRanges_Human[1]\ngr\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

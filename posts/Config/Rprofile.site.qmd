@@ -3,11 +3,21 @@ title: "Rprofile.site"
 date: "2024-10-19"
 date-modified: today
 categories: [config, R]
+execute: 
+  eval: false
 ---
 
-```{r eval=FALSE}
-# ~\etc\Rprofile.site
+## 初始化 
 
+### \~\etc\Rconsole 
+
+```         
+language=en
+```
+
+### \~etc\Rprofile.site
+
+```{r}
 options("timeout")
 options(timeout = 180)
 
@@ -18,23 +28,6 @@ options("BioC_mirror")
 # "https://mirrors.ustc.edu.cn/CRAN/"
 options(repos = c(CRAN = "https://cran.rstudio.com/"))
 options(BioC_mirror = "https://mirrors.tuna.tsinghua.edu.cn/bioconductor")
-
-
-
-# ~\etc\Rconsole    
-
-language=en
-
-# options(papersize="a4")
-# options(editor="notepad")
-# options(pager="internal")
-
-# set the default help type
-# options(help_type="text")
-options(help_type = "html")
-
-
-
 
 .First <- function() {
   library(showtext, quietly = T)
@@ -92,6 +85,8 @@ optional <- c(
 
 lapply(tools, require)
 ```
+
+### 安装路径
 
 ```{r}
 .libPaths()
