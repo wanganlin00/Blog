@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.32">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="dcterms.date" content="2024-10-24">
+<title>效应大小 – Blog</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-29dedaace5d8918e049944c60b75f171.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+</head>
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/wanganlin00"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">效应大小</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">meta</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 24, 2024</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">November 10, 2024</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#%E8%A7%82%E5%AF%9F%E6%80%A7%E7%A0%94%E7%A9%B6" id="toc-观察性研究" class="nav-link active" data-scroll-target="#%E8%A7%82%E5%AF%9F%E6%80%A7%E7%A0%94%E7%A9%B6">观察性研究</a>
+  <ul class="collapse">
+<li><a href="#%E7%AE%97%E6%9C%AF%E5%9D%87%E5%80%BC" id="toc-算术均值" class="nav-link" data-scroll-target="#%E7%AE%97%E6%9C%AF%E5%9D%87%E5%80%BC">算术均值</a></li>
+  <li><a href="#%E6%AF%94%E4%BE%8B" id="toc-比例" class="nav-link" data-scroll-target="#%E6%AF%94%E4%BE%8B">比例</a></li>
+  <li><a href="#%E7%9B%B8%E5%85%B3%E6%80%A7" id="toc-相关性" class="nav-link" data-scroll-target="#%E7%9B%B8%E5%85%B3%E6%80%A7">相关性</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E5%AE%9E%E9%AA%8C%E6%80%A7%E7%A0%94%E7%A9%B6" id="toc-实验性研究" class="nav-link" data-scroll-target="#%E5%AE%9E%E9%AA%8C%E6%80%A7%E7%A0%94%E7%A9%B6">实验性研究</a>
+  <ul class="collapse">
+<li><a href="#standardized-mean-differences" id="toc-standardized-mean-differences" class="nav-link" data-scroll-target="#standardized-mean-differences"><strong>(Standardized) Mean Differences</strong></a></li>
+  <li><a href="#%E5%AF%B9%E6%95%B0%E9%A3%8E%E9%99%A9%E6%AF%94" id="toc-对数风险比" class="nav-link" data-scroll-target="#%E5%AF%B9%E6%95%B0%E9%A3%8E%E9%99%A9%E6%AF%94">(对数)风险比</a></li>
+  <li><a href="#%E6%AF%94%E5%80%BC%E6%AF%94" id="toc-比值比" class="nav-link" data-scroll-target="#%E6%AF%94%E5%80%BC%E6%AF%94">比值比</a></li>
+  <li><a href="#%E5%8F%91%E7%97%85%E7%8E%87%E6%AF%94-incidence-rate-ratios" id="toc-发病率比-incidence-rate-ratios" class="nav-link" data-scroll-target="#%E5%8F%91%E7%97%85%E7%8E%87%E6%AF%94-incidence-rate-ratios"><strong>发病率比 Incidence Rate Ratios</strong></a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E6%A0%A1%E6%AD%A3" id="toc-校正" class="nav-link" data-scroll-target="#%E6%A0%A1%E6%AD%A3">校正</a>
+  <ul class="collapse">
+<li><a href="#%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%81%8F%E5%80%9A" id="toc-小样本偏倚" class="nav-link" data-scroll-target="#%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%81%8F%E5%80%9A">小样本偏倚</a></li>
+  <li><a href="#%E4%B8%8D%E5%8F%AF%E9%9D%A0" id="toc-不可靠" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%8F%AF%E9%9D%A0">不可靠</a></li>
+  <li><a href="#%E8%8C%83%E5%9B%B4%E9%99%90%E5%88%B6" id="toc-范围限制" class="nav-link" data-scroll-target="#%E8%8C%83%E5%9B%B4%E9%99%90%E5%88%B6">范围限制</a></li>
+  </ul>
+</li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p><a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/">Doing Meta-Analysis in R: A Hands-on Guide</a></p>
+<p>效应大小（effect sizes）+标准误</p>
+<section id="观察性研究" class="level2"><h2 class="anchored" data-anchor-id="观察性研究">观察性研究</h2>
+<section id="算术均值" class="level3"><h3 class="anchored" data-anchor-id="算术均值">算术均值</h3>
+<p><span class="math display">\[
+\bar x =\frac{\sum_{i=1}^n x_i}{n}
+\]</span></p>
+<p><span class="math display">\[
+SE_{\bar x} = \frac{s}{\sqrt{n}}
+\]</span></p>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span><span class="va">sample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">50</span>, mean <span class="op">=</span> <span class="fl">20</span>, sd <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">sample</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 20.17202</code></pre>
+</div>
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">sample</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">50</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6546889</code></pre>
+</div>
+</div>
+<p>要对均值进行荟萃分析，我们的数据集至少应包含以下列：</p>
+<ul>
+<li><p><strong><code>n</code></strong> 研究中观测值的数量 （样本量）。</p></li>
+<li><p><strong><code>mean</code></strong> 研究中报告的平均值。</p></li>
+<li><p><strong><code>sd</code></strong> 研究中报告的变量的标准差。</p></li>
+</ul></section><section id="比例" class="level3"><h3 class="anchored" data-anchor-id="比例">比例</h3>
+<p><span class="math display">\[
+p=\frac{k}{n}
+\]</span></p>
+<p><span class="math display">\[
+SE_{p} = \sqrt{\frac{p(1-p)}{n}}
+\]</span></p>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">k</span> <span class="op">&lt;-</span> <span class="fl">25</span></span>
+<span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">125</span></span>
+<span></span>
+<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="va">k</span><span class="op">/</span><span class="va">n</span></span>
+<span><span class="va">p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2</code></pre>
+</div>
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="op">(</span><span class="va">p</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">p</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="va">n</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.03577709</code></pre>
+</div>
+</div>
+<p>logit 转换确保采样分布大致正态</p>
+<p><span class="math display">\[
+p_{\text{logit}} = \log_{e} \left(\frac{p}{1-p}\right)
+\]</span></p>
+<p><span class="math display">\[
+SE_{p_{\text{logit}}} = \sqrt{\frac{1}{np}+\frac{1}{n(1-p)}}
+\]</span></p>
+<p><em>R</em>&nbsp;中使用的元分析函数会自动执行这种 logit 转换</p>
+<p>我们的数据集至少应包含以下列：</p>
+<ul>
+<li><p><strong><code>n</code></strong> 研究中的总样本量。</p></li>
+<li><p>k 研究中指定亚组的样本量。</p></li>
+</ul></section><section id="相关性" class="level3"><h3 class="anchored" data-anchor-id="相关性">相关性</h3>
+<section id="pearson-product-moment-correlation" class="level4"><h4 class="anchored" data-anchor-id="pearson-product-moment-correlation"><strong>Pearson Product-Moment Correlation</strong></h4>
+<p>两个连续变量</p>
+<p><span class="math display">\[
+r_{xy} = \frac{\sigma^{2}_{xy}}{\sigma_x \sigma_y}
+\]</span></p>
+<p><span class="math display">\[
+SE_{r_{xy}} = \frac{1-r_{xy}^2}{\sqrt{n-2}}
+\]</span></p>
+<ul>
+<li><p>r≈0.10：效果小。</p></li>
+<li><p>r≈0.30：中等效果。</p></li>
+<li><p>r≈0.50：大效果。</p></li>
+</ul>
+<p>在元分析中，相关性通常转化为&nbsp;<strong><em>Fisher’s z</em></strong></p>
+<p><span class="math display">\[
+z = 0.5\log_{e}\left(\frac{1+r}{1-r}\right)
+\]</span></p>
+<p><span class="math display">\[
+SE_{z} = \frac{1}{\sqrt{n-3}}
+\]</span></p>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">12345</span><span class="op">)</span></span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">50</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">10</span>, <span class="fl">3</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
+<span><span class="va">r</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2840509</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">z</span> <span class="op">&lt;-</span> <span class="fl">0.5</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">r</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">z</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2920831</code></pre>
+</div>
+</div>
+<p>在 <em>R</em> 中对相关性进行荟萃分析时手动转换。我们在数据集中唯一需要的列是：</p>
+<ul>
+<li><p><strong><code>COR</code></strong> 研究的（未转换的）相关系数。</p></li>
+<li><p><strong><code>n</code></strong>. 研究的样本量。</p></li>
+</ul></section><section id="point-biserial-correlation" class="level4"><h4 class="anchored" data-anchor-id="point-biserial-correlation"><strong>Point-Biserial Correlation</strong></h4>
+<p>y是连续变量，x是二分类变量</p>
+<p><span class="math display">\[
+{r_{pb}}= \frac{(\bar{y_1}-\bar{y_2})\sqrt{p_1(1-p_1)}}{s_y}
+\]</span></p>
+</section></section></section><section id="实验性研究" class="level2"><h2 class="anchored" data-anchor-id="实验性研究">实验性研究</h2>
+<section id="standardized-mean-differences" class="level3"><h3 class="anchored" data-anchor-id="standardized-mean-differences"><strong>(Standardized) Mean Differences</strong></h3>
+<section id="组间均值差值" class="level4"><h4 class="anchored" data-anchor-id="组间均值差值"><strong>组间均值差值</strong></h4>
+<p><span class="math display">\[
+\text{MD}_{\text{between}} = \bar{x}_1 - \bar{x}_2
+\]</span></p>
+<p><span class="math display">\[
+SE_{\text{MD}_{\text{between}}} = s_{\text{pooled}}\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}
+\]</span></p>
+<p>其中，<span class="math inline">\(s_{pooled}\)</span> 表示两组的合并标准差</p>
+<p><span class="math display">\[
+s_{\text{pooled}} = \sqrt{\frac{(n_1-1)s^2_1+(n_2-1)s^2_2}{(n_1-1)+(n_2-1)}}
+\]</span></p>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span><span class="va">x1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">20</span>, mean <span class="op">=</span> <span class="fl">10</span>, sd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
+<span><span class="va">x2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">20</span>, mean <span class="op">=</span> <span class="fl">15</span>, sd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">s1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">x1</span><span class="op">)</span></span>
+<span><span class="va">s2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">x2</span><span class="op">)</span></span>
+<span><span class="va">n1</span> <span class="op">&lt;-</span> <span class="fl">20</span></span>
+<span><span class="va">n2</span> <span class="op">&lt;-</span> <span class="fl">20</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Calculate the mean difference</span></span>
+<span><span class="va">MD</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x1</span><span class="op">)</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x2</span><span class="op">)</span></span>
+<span><span class="va">MD</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] -4.421357</code></pre>
+</div>
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Calculate s_pooled</span></span>
+<span><span class="va">s_pooled</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span></span>
+<span>  <span class="op">(</span><span class="op">(</span><span class="op">(</span><span class="va">n1</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">*</span><span class="va">s1</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="op">(</span><span class="va">n2</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">*</span><span class="va">s2</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">/</span></span>
+<span>    <span class="op">(</span><span class="op">(</span><span class="va">n1</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">+</span><span class="op">(</span><span class="va">n2</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Calculate the standard error</span></span>
+<span><span class="va">se</span> <span class="op">&lt;-</span> <span class="va">s_pooled</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="va">n1</span><span class="op">)</span><span class="op">+</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="va">n2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">se</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8577262</code></pre>
+</div>
+</div>
+<p>对于均差的荟萃分析，我们只需要在数据集中准备以下列：</p>
+<ul>
+<li><p><strong><code>n.e</code></strong>. 干预/实验组中的观察值数量。</p></li>
+<li><p><strong><code>mean.e</code></strong>. 干预/实验组的平均值。</p></li>
+<li><p><strong><code>sd.e</code></strong>. 干预/实验组的标准差。</p></li>
+<li><p><strong><code>n.c</code></strong>. 对照组中的观测值个数。</p></li>
+<li><p><strong><code>mean.c</code></strong>. 对照组的均值。</p></li>
+<li><p><strong><code>sd.c</code></strong>. 控制组中的标准差。</p></li>
+</ul></section><section id="组间标准化均值差值" class="level4"><h4 class="anchored" data-anchor-id="组间标准化均值差值"><strong>组间标准化均值差值</strong></h4>
+<p>在文献中，标准化均值差也通常称为&nbsp;<em><code>Cohen's d</code> 。</em></p>
+<p><span class="math display">\[
+\text{SMD}_{\text{between}} = \frac{\bar{x}_1 - \bar{x}_2}{s_{\text{pooled}}}
+\]</span></p>
+<p>通常使用 Cohen&nbsp;（<a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/references.html#ref-cohen1988statistical">1988</a>）&nbsp;的约定进行解释：</p>
+<ul>
+<li><p>SMD ≈ 0.20: small effect.</p></li>
+<li><p>SMD ≈ 0.50: moderate effect.</p></li>
+<li><p>SMD ≈ 0.80: large effect.</p></li>
+</ul>
+<p><span class="math display">\[
+SE_{\text{SMD}_{\text{between}}} = \sqrt{\frac{n_1+n_2}{n_1n_2} + \frac{\text{SMD}^2_{\text{between}}}{2(n_1+n_2)}}
+\]</span></p>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://strengejacke.github.io/esc">esc</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># This is just some example data that we made up</span></span>
+<span><span class="va">grp1m</span> <span class="op">&lt;-</span> <span class="fl">50</span>   <span class="co"># mean of group 1</span></span>
+<span><span class="va">grp2m</span> <span class="op">&lt;-</span> <span class="fl">60</span>   <span class="co"># mean of group 2</span></span>
+<span><span class="va">grp1sd</span> <span class="op">&lt;-</span> <span class="fl">10</span>  <span class="co"># sd of group 1</span></span>
+<span><span class="va">grp2sd</span> <span class="op">&lt;-</span> <span class="fl">10</span>  <span class="co"># sd of group 2</span></span>
+<span><span class="va">grp1n</span> <span class="op">&lt;-</span> <span class="fl">100</span>  <span class="co"># n of group1</span></span>
+<span><span class="va">grp2n</span> <span class="op">&lt;-</span> <span class="fl">100</span>  <span class="co"># n of group2</span></span>
+<span></span>
+<span><span class="co"># Calculate effect size</span></span>
+<span><span class="fu"><a href="https://strengejacke.github.io/esc/reference/esc_mean_sd.html">esc_mean_sd</a></span><span class="op">(</span>grp1m <span class="op">=</span> <span class="va">grp1m</span>, grp2m <span class="op">=</span> <span class="va">grp2m</span>, </span>
+<span>            grp1sd <span class="op">=</span> <span class="va">grp1sd</span>, grp2sd <span class="op">=</span> <span class="va">grp2sd</span>, </span>
+<span>            grp1n <span class="op">=</span> <span class="va">grp1n</span>, grp2n <span class="op">=</span> <span class="va">grp2n</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>
+Effect Size Calculation for Meta Analysis
+
+     Conversion: mean and sd to effect size d
+    Effect Size:  -1.0000
+ Standard Error:   0.1500
+       Variance:   0.0225
+       Lower CI:  -1.2940
+       Upper CI:  -0.7060
+         Weight:  44.4444</code></pre>
+</div>
+</div>
+<p><strong>小样本校正，Hedges’g</strong></p>
+<p>要对标准化均数差进行荟萃分析，我们的数据集至少应包含以下列：</p>
+<ul>
+<li><p><strong><code>n.e</code></strong>. 干预/实验组中的观察值数量。</p></li>
+<li><p><strong><code>mean.e</code></strong>. 干预/实验组的平均值。</p></li>
+<li><p><strong><code>sd.e</code></strong>. 干预/实验组的标准差。</p></li>
+<li><p><strong><code>n.c</code></strong>. 对照组中的观测值个数。</p></li>
+<li><p><strong><code>mean.c</code></strong>. 对照组的均值。</p></li>
+<li><p><strong><code>sd.c</code></strong>. 控制组中的标准差。</p></li>
+</ul></section><section id="组内标准化均值差值" class="level4"><h4 class="anchored" data-anchor-id="组内标准化均值差值"><strong>组内（标准化）均值差值</strong></h4>
+<p>当在两个不同的时间点（例如，干预前和干预后）测量同一组人时，通常会出现这种情况。</p>
+<p><span class="math display">\[
+\text{MD}_{\text{within}} = \bar{x}_{\text{t}_2} - \bar{x}_{\text{t}_1}
+\]</span></p>
+</section></section><section id="对数风险比" class="level3"><h3 class="anchored" data-anchor-id="对数风险比">(对数)风险比</h3>
+<table class="caption-top table">
+<thead><tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Event</th>
+<th style="text-align: left;">No Event</th>
+<th></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Treatment</td>
+<td style="text-align: center;">a</td>
+<td style="text-align: left;">b</td>
+<td>n treatntreat</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Control</td>
+<td style="text-align: center;">c</td>
+<td style="text-align: left;">d</td>
+<td>n control</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">n E</td>
+<td style="text-align: left;">n¬E</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[
+{p_{E}}_{\text{treat}} = \frac{a}{a+b} = \frac{a}{n_{\text{treat}}}
+\]</span></p>
+<p><span class="math display">\[
+{p_{E}}_{\text{control}} = \frac{c}{c+d} = \frac{c}{n_{\text{control}}}
+\]</span></p>
+<p><span class="math display">\[
+\text{RR} = \frac{{p_{E}}_{\text{treat}}}{{p_{E}}_{\text{control}}}
+\]</span></p>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Define data</span></span>
+<span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">46</span>         <span class="co"># events in the treatment group</span></span>
+<span><span class="va">c</span> <span class="op">&lt;-</span> <span class="fl">77</span>         <span class="co"># events in the control group</span></span>
+<span><span class="va">n_treat</span> <span class="op">&lt;-</span> <span class="fl">248</span>  <span class="co"># sample size treatment group</span></span>
+<span><span class="va">n_contr</span> <span class="op">&lt;-</span> <span class="fl">251</span>  <span class="co"># sample size control group</span></span>
+<span></span>
+<span><span class="co"># Calculate the risks</span></span>
+<span><span class="va">p_treat</span> <span class="op">&lt;-</span> <span class="va">a</span><span class="op">/</span><span class="va">n_treat</span></span>
+<span><span class="va">p_contr</span> <span class="op">&lt;-</span> <span class="va">c</span><span class="op">/</span><span class="va">n_contr</span></span>
+<span></span>
+<span><span class="co"># Calculate the risk ratio</span></span>
+<span><span class="va">rr</span> <span class="op">&lt;-</span> <span class="va">p_treat</span><span class="op">/</span><span class="va">p_contr</span></span>
+<span><span class="va">rr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6046292</code></pre>
+</div>
+</div>
+<p>log-risk ratio</p>
+<p><span class="math display">\[
+\log \text{RR}  = \log_{e}(\text{RR})
+\]</span></p>
+<p><span class="math display">\[
+SE_{\log \text{RR}} = \sqrt{\frac{1}{a}+\frac{1}{c} - \frac{1}{a+b} - \frac{1}{c+d}}
+\]</span></p>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Calculate the log-risk ratio and its standard error</span></span>
+<span><span class="va">log_rr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">rr</span><span class="op">)</span></span>
+<span><span class="va">log_rr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.5031398</code></pre>
+</div>
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">se_log_rr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="va">a</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="va">c</span><span class="op">)</span> <span class="op">-</span> <span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="va">n_treat</span><span class="op">)</span> <span class="op">-</span> <span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="va">n_contr</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">se_log_rr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1634314</code></pre>
+</div>
+</div>
+<p>continuity correction</p>
+<p>treatment arm continuity correction</p>
+<p>(fixed-effect)&nbsp;Mantel-Haenszel&nbsp;method</p>
+<p>我们的数据集中应包含以下列：</p>
+<ul>
+<li><p><strong><code>event.e</code></strong>. 处理组或实验组中的事件数。</p></li>
+<li><p><strong><code>n.e</code></strong>. 处理组或实验组的样本量。</p></li>
+<li><p><strong><code>event.c</code></strong>. 控制组中的事件数。</p></li>
+<li><p><strong><code>n.c</code></strong>. 对照组的样本量。</p></li>
+</ul></section><section id="比值比" class="level3"><h3 class="anchored" data-anchor-id="比值比">比值比</h3>
+<p><span class="math display">\[
+\text{OR} = \frac{a/b}{c/d}
+\]</span></p>
+<p><span class="math display">\[
+\log \text{OR}  = \log_{e}(\text{OR})
+\]</span></p>
+<p><span class="math display">\[
+SE_{\log \text{OR}}  = \sqrt{\frac{1}{a}+\frac{1}{b}+\frac{1}{c}+\frac{1}{d}}
+\]</span></p>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://strengejacke.github.io/esc">esc</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Define data</span></span>
+<span><span class="va">grp1yes</span> <span class="op">&lt;-</span> <span class="fl">45</span>  <span class="co"># events in the treatment group</span></span>
+<span><span class="va">grp1no</span> <span class="op">&lt;-</span> <span class="fl">98</span>   <span class="co"># non-events in the treatment group</span></span>
+<span><span class="va">grp2yes</span> <span class="op">&lt;-</span> <span class="fl">67</span>  <span class="co"># events in the control group</span></span>
+<span><span class="va">grp2no</span> <span class="op">&lt;-</span> <span class="fl">76</span>   <span class="co"># non-events in the control group</span></span>
+<span></span>
+<span><span class="co"># Calculate OR by setting es.type to "or"</span></span>
+<span><span class="fu"><a href="https://strengejacke.github.io/esc/reference/esc_2x2.html">esc_2x2</a></span><span class="op">(</span>grp1yes <span class="op">=</span> <span class="va">grp1yes</span>, grp1no <span class="op">=</span> <span class="va">grp1no</span>,</span>
+<span>        grp2yes <span class="op">=</span> <span class="va">grp2yes</span>, grp2no <span class="op">=</span> <span class="va">grp2no</span>,</span>
+<span>        es.type <span class="op">=</span> <span class="st">"or"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>
+Effect Size Calculation for Meta Analysis
+
+     Conversion: 2x2 table (OR) coefficient to effect size odds ratio
+    Effect Size:   0.5209
+ Standard Error:   0.2460
+       Variance:   0.0605
+       Lower CI:   0.3216
+       Upper CI:   0.8435
+         Weight:  16.5263</code></pre>
+</div>
+</div>
+<p><span class="math display">\[
+\text{RR} = \frac{\text{OR}}{\left(1-\dfrac{c}{n_{\text{control}}}\right)+ \left(\dfrac{c}{n_{\text{control}}}\times \text{OR} \right)}
+\]</span></p>
+<p>为了对 <em>R</em> 中的比值比进行荟萃分析，我们的数据集中应包括以下列：</p>
+<ul>
+<li><p><strong><code>event.e</code></strong>. 处理组或实验组中的事件数。</p></li>
+<li><p><strong><code>n.e</code></strong>. 处理组或实验组的样本量。</p></li>
+<li><p><strong><code>event.c</code></strong>. 控制组中的事件数。</p></li>
+<li><p><strong><code>n.c</code></strong>. 对照组的样本量。</p></li>
+</ul></section><section id="发病率比-incidence-rate-ratios" class="level3"><h3 class="anchored" data-anchor-id="发病率比-incidence-rate-ratios"><strong>发病率比 Incidence Rate Ratios</strong></h3>
+</section></section><section id="校正" class="level2"><h2 class="anchored" data-anchor-id="校正">校正</h2>
+<section id="小样本偏倚" class="level3"><h3 class="anchored" data-anchor-id="小样本偏倚">小样本偏倚</h3>
+<p>Hedges’g</p>
+<p><span class="math display">\[
+g = \text{SMD} \times (1-\frac{3}{4n-9})
+\]</span></p>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load esc package</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://strengejacke.github.io/esc">esc</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Define uncorrected SMD and sample size n</span></span>
+<span><span class="va">SMD</span> <span class="op">&lt;-</span> <span class="fl">0.5</span></span>
+<span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">30</span></span>
+<span></span>
+<span><span class="co"># Convert to Hedges g</span></span>
+<span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://strengejacke.github.io/esc/reference/hedges_g.html">hedges_g</a></span><span class="op">(</span><span class="va">SMD</span>, <span class="va">n</span><span class="op">)</span></span>
+<span><span class="va">g</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4864865</code></pre>
+</div>
+</div>
+</section><section id="不可靠" class="level3"><h3 class="anchored" data-anchor-id="不可靠">不可靠</h3>
+<p>reliability coefficient <code>rxx</code> test-retest-reliability</p>
+<p>Hunter 和 Schmidt 方法 attenuation</p>
+<p>计算相关性的校正版本</p>
+<p><span class="math display">\[
+{r_{xy}}_{c} = \frac{r_{xy}}{\sqrt{r_{xx}}}
+\]</span></p>
+<p><span class="math display">\[
+{r_{xy}}_{c} = \frac{r_{xy}}{\sqrt{r_{xx}}\sqrt{r_{yy}}}
+\]</span></p>
+<p>当结果x在两组中观察到</p>
+<p><span class="math display">\[
+\text{SMD}_c = \frac{\text{SMD}}{\sqrt{r_{xx}}}
+\]</span></p>
+<p>标准误的校正</p>
+<p><span class="math display">\[
+SE_c = \frac{SE}{\sqrt{r_{xx}}}
+\]</span></p>
+<p><span class="math display">\[
+SE_c = \frac{SE}{\sqrt{r_{xx}}\sqrt{r_{yy}}}
+\]</span></p>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Define uncorrected correlation and SMD with their standard error</span></span>
+<span><span class="va">r_xy</span> <span class="op">&lt;-</span> <span class="fl">0.34</span></span>
+<span><span class="va">se_r_xy</span> <span class="op">&lt;-</span> <span class="fl">0.09</span></span>
+<span><span class="va">smd</span> <span class="op">&lt;-</span> <span class="fl">0.65</span></span>
+<span><span class="va">se_smd</span> <span class="op">&lt;-</span> <span class="fl">0.18</span></span>
+<span></span>
+<span><span class="co"># Define reliabilities of x and y</span></span>
+<span><span class="va">r_xx</span> <span class="op">&lt;-</span> <span class="fl">0.8</span></span>
+<span><span class="va">r_yy</span> <span class="op">&lt;-</span> <span class="fl">0.7</span></span>
+<span></span>
+<span><span class="co"># Correct SMD for unreliability in x</span></span>
+<span><span class="va">smd_c</span> <span class="op">&lt;-</span> <span class="va">smd</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">r_xx</span><span class="op">)</span></span>
+<span><span class="va">smd_c</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7267221</code></pre>
+</div>
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">se_c</span> <span class="op">&lt;-</span> <span class="va">se_smd</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">r_xx</span><span class="op">)</span></span>
+<span><span class="va">se_c</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2012461</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Correct correlation for unreliability in x and y</span></span>
+<span><span class="va">r_xy_c</span> <span class="op">&lt;-</span> <span class="va">r_xy</span><span class="op">/</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">r_xx</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">r_yy</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">r_xy_c</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4543441</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">se_c</span> <span class="op">&lt;-</span> <span class="va">se_r_xy</span><span class="op">/</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">r_xx</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">r_yy</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">se_c</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1202676</code></pre>
+</div>
+</div>
+</section><section id="范围限制" class="level3"><h3 class="anchored" data-anchor-id="范围限制">范围限制</h3>
+<p><span class="math display">\[
+U =  \frac{s_{\text{unrestricted}}}{s_{\text{restricted}}}
+\]</span></p>
+<p><span class="math display">\[
+{r_{xy}}_c = \frac{U\times r_{xy}}{\sqrt{(U^2-1)r_{xy}^2+1}}
+\]</span></p>
+<p><span class="math display">\[
+\text{SMD}_c = \frac{U\times \text{SMD}}{\sqrt{(U^2-1)\text{SMD}^2+1}}
+\]</span></p>
+<p><span class="math display">\[
+SE_{{r_{xy}}_c} = \frac{{r_{xy}}_c}{r_{xy}}SE_{r_{xy}}
+\]</span></p>
+<p><span class="math display">\[
+SE_{{\text{SMD}}_c} = \frac{{\text{SMD}}_c}{\text{SMD}}SE_{\text{SMD}}
+\]</span></p>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Define correlation to correct</span></span>
+<span><span class="va">r_xy</span> <span class="op">&lt;-</span> <span class="fl">0.34</span></span>
+<span><span class="va">se_r_xy</span> <span class="op">&lt;-</span> <span class="fl">0.09</span></span>
+<span></span>
+<span><span class="co"># Define restricted and unrestricted SD</span></span>
+<span><span class="va">sd_restricted</span> <span class="op">&lt;-</span> <span class="fl">11</span></span>
+<span><span class="va">sd_unrestricted</span> <span class="op">&lt;-</span> <span class="fl">18</span></span>
+<span></span>
+<span><span class="co"># Calculate U</span></span>
+<span><span class="va">U</span> <span class="op">&lt;-</span> <span class="va">sd_unrestricted</span><span class="op">/</span><span class="va">sd_restricted</span></span>
+<span></span>
+<span><span class="co"># Correct the correlation</span></span>
+<span><span class="va">r_xy_c</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">U</span><span class="op">*</span><span class="va">r_xy</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="op">(</span><span class="va">U</span><span class="op">^</span><span class="fl">2</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">*</span><span class="va">r_xy</span><span class="op">^</span><span class="fl">2</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">r_xy_c</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5091754</code></pre>
+</div>
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Correct the standard error</span></span>
+<span><span class="va">se_r_xy_c</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">r_xy_c</span><span class="op">/</span><span class="va">r_xy</span><span class="op">)</span><span class="op">*</span><span class="va">se_r_xy</span></span>
+<span><span class="va">se_r_xy_c</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1347817</code></pre>
+</div>
+</div>
+
+
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -62,7 +62,7 @@ py_module_available("polars")
 
 ## 调用Python
 
-```{r eval=TRUE}
+```{r}
 # python脚本
 py_run_file("helloworld.py")
 

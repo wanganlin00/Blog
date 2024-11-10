@@ -7,7 +7,7 @@ execute:
   eval: false
 ---
 
-## 初始化 
+## 初始化
 
 ### \~\etc\Rconsole 
 
@@ -75,7 +75,7 @@ needed <- c(
 
 optional <- c(
   "ggpubr","pROC", "ggprism", "ggpattern", 
-  "pheatmap", "ggfortify", "ggrepel", "ggthemes","ggcorrplot", "ggpmisc", 
+  "pheatmap", "ggfortify", "ggrepel", "ggthemes","ggcorrplot", "ggpmisc", "ggforce",
   "ggraph", "tidygraph", "svglite",
   
   

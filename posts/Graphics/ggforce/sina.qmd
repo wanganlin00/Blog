@@ -9,10 +9,6 @@ image: "sina.png"
 （小提琴图 + 抖散图）= sina 图
 
 ```{r}
-if(!require(ggforce)) install.packages("ggforce")
-```
-
-```{r}
 library(ggforce)
 
 

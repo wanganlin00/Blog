@@ -2,13 +2,15 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Statistics/RMANOVA.html",
+      "/posts/Statistics/margin_mean_effect.html",
       "/posts/BioProtocols/animal_models.html",
       "/posts/literature_retrieval/export_format.html",
       "/posts/Graphics/ggforce/sina.html",
       "/posts/Config/conda.html",
       "/posts/MetaAnalysis/SubgroupAnalysis.html",
       "/posts/MetaAnalysis/Meta_Regression.html",
-      "/posts/MetaAnalysis/ forest_plots.html",
+      "/posts/MetaAnalysis/forest_plots.html",
       "/posts/literature_retrieval/Scopus.html",
       "/posts/Language/English.html",
       "/posts/MetaAnalysis/BetweenStudyHeterogeneity.html",

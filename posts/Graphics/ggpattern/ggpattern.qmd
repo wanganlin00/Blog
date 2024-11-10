@@ -11,10 +11,19 @@ ggpattern 填充几何纹理或图像
 ## 先决条件
 
 ```{r}
-library(ggplot2)
+
+library(ggforce)
 library(patchwork)
+if(!require(ggpattern)) 
+    install.packages("ggpattern")
 library(ggpattern)
+
+if(!require(gridpattern)) 
+    install.packages("gridpattern")
 library(gridpattern)
+if(!require(ggh4x)) 
+    install.packages("ggh4x")
+library(ggh4x)
 ```
 
 ```{r}

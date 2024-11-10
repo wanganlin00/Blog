@@ -34,15 +34,15 @@ $$
 
 ```{r}
 library(dmetar)
+library(meta)
 data(SuicidePrevention)
-
 # Calculate Hedges' g and the Standard Error
 # - We save the study names in "study".
 # - We use the pmap_dfr function to calculate the effect size for each row.
 SP_calc <- pmap_dfr(SuicidePrevention, 
                     function(mean.e, sd.e, n.e, mean.c,
                              sd.c, n.c, author, ...){
-                      esc_mean_sd(grp1m = mean.e,
+                      esc::esc_mean_sd(grp1m = mean.e,
                                   grp1sd = sd.e,
                                   grp1n = n.e,
                                   grp2m = mean.c,
@@ -132,12 +132,11 @@ summary(m.gen)
 
 3.  随机效应模型效果大小：Knapp-Hartung 调整 t分布,估计值g≈0.58，并且 95% 置信区间范围为0.38 至 0.78。 ，
 
-4.  研究间异质性：`Quantifying heterogeneity` τ2=0.08（0.03-0.35） ,置信区间不包含零，表明我们的数据中存在一些研究间异质性。
-$\tau$=0.29表示真实的效应大小具有估计的标准偏差SD=0.29，以效应大小度量的尺度表示（这里为Hedges’g）。I2=63%，H（H2的平方根）为1.64。这意味着，我们数据中超过一半的变化估计源于真实的效应大小差异
+4.  研究间异质性：`Quantifying heterogeneity` τ2=0.08（0.03-0.35） ,置信区间不包含零，表明我们的数据中存在一些研究间异质性。 $\tau$=0.29表示真实的效应大小具有估计的标准偏差SD=0.29，以效应大小度量的尺度表示（这里为Hedges’g）。I2=63%，H（H2的平方根）为1.64。这意味着，我们数据中超过一半的变化估计源于真实的效应大小差异
 
 所有这些都表明我们的数据中存在研究间异质性，随机效应模型是一个不错的选择。
 
-5.  异质性检验：Q=45.5和`Test of heterogeneity`。K−1=17 个自由度。因此，异质性检验是显著的 （p<0.001）
+5.  异质性检验：Q=45.5和`Test of heterogeneity`。K−1=17 个自由度。因此，异质性检验是显著的 （p\<0.001）
 
 ### 连续
 

@@ -1,0 +1,15 @@
+{
+  "hash": "8f73a37d690c18674d29236112426383",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Rprofile.site\"\ndate: \"2024-10-19\"\ndate-modified: today\ncategories: [config, R]\nexecute: \n  eval: false\n---\n\n\n\n\n## 初始化 \n\n### \\~\\etc\\Rconsole \n\n```         \nlanguage=en\n```\n\n### \\~etc\\Rprofile.site\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\noptions(\"timeout\")\noptions(timeout = 180)\n\n# set a CRAN mirror\ngetOption(\"repos\")\noptions(\"BioC_mirror\")\n\n# \"https://mirrors.ustc.edu.cn/CRAN/\"\noptions(repos = c(CRAN = \"https://cran.rstudio.com/\"))\noptions(BioC_mirror = \"https://mirrors.tuna.tsinghua.edu.cn/bioconductor\")\n\n.First <- function() {\n  library(showtext, quietly = T)\n  # font_add(\"Times New Roman Regular\", \"C:/Windows/Fonts/times.ttf\")\n  # font_add(\"Times New Roman Bold\", \"C:/Windows/Fonts/timesbd.ttf\")\n  # font_add(\"Times New Roman Bold Italic\", \"C:/Windows/Fonts/timesbi.ttf\")\n  # font_add(\"Times New Roman Italic\", \"C:/Windows/Fonts/timesi.ttf\")\n  # font_add(\"黑体 常规\", \"C:/Windows/Fonts/simhei.ttf\")\n  # font_add(\"楷体 常规\", \"C:/Windows/Fonts/simkai.ttf\")\n  showtext_auto()\n  # library(data.table)\n  library(conflicted)\n  library(tidyverse)\n  library(patchwork)\n  # library(BiocManager)\n  library(readxl)\n  library(writexl)\n  conflicted::conflict_scout()\n  message(today())\n}\n\n\n.Last <- function() {\n\n}\n```\n:::\n\n\n\n\n如果希望永久删除安装路径，可以直接编辑R的环境配置文件（例如 .Renviron），去掉相应的路径条目，然后重启R使更改生效。\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# 更新 R Gui\n\n# installr::updateR()\n\ntools <- c(\n  \"installr\", \"devtools\",\"remotes\",\"conflicted\", \"reticulate\", \"BiocManager\")\n\n\nneeded <- c(\n  \"tidyverse\", \"tidymodels\", \"readxl\", \"writexl\",\"plotly\",\"survminer\",\n  \"ggsurvfit\",\"arrow\"\n)\n\n# remotes::install_github(\"jbryer/psa\", build_vignettes = TRUE, dependencies = \"Enhances\")\n\noptional <- c(\n  \"ggpubr\",\"pROC\", \"ggprism\", \"ggpattern\", \n  \"pheatmap\", \"ggfortify\", \"ggrepel\", \"ggthemes\",\"ggcorrplot\", \"ggpmisc\", \n  \"ggraph\", \"tidygraph\", \"svglite\",\n  \n  \n  \"gt\", \"gtsummary\", \"tableone\", \"flextable\",\n)\n\n\nlapply(tools, require)\n```\n:::\n\n\n\n\n### 安装路径\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n.libPaths()\n\n#> [1] \"C:/Users/DELL/AppData/Local/R/win-library/4.4\" \"D:/R-4.4.1/library\"  \n#.libPaths(c(\"/envs/新路径\", .libPaths()))\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n.libPaths(.libPaths()[.libPaths() != \"C:/Users/DELL/AppData/Local/R/win-library/4.4\"])\n.libPaths()\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

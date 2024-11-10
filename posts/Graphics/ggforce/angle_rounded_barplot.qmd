@@ -11,6 +11,7 @@ image: "angle_rounded_barplot.svg"
 ## 先决条件
 
 ```{r}
+if(!require(ggforce)) install.packages("ggforce")
 library(ggforce)
 ```
 
