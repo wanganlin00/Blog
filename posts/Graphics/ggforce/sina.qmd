@@ -7,8 +7,9 @@ categories: [graphics, ggplot2 extension]
 
 （小提琴图 + 抖散图）= sina 图
 
-
-
+```{r}
+if(!require(ggforce)) install.packages("ggforce")
+```
 
 ```{r}
 library(ggforce)
@@ -20,10 +21,8 @@ ggplot(mpg,aes(x = drv, y = hwy ))+
 
 ```
 
-
 ```{r}
 ggplot(mpg,aes(x = drv, y = hwy ))+
     geom_violin()+
     geom_jitter(width = 0.25, size = 0.85)
 ```
-

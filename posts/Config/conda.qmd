@@ -3,22 +3,13 @@ title: "conda"
 date: "2024-11-01"
 date-modified: today
 categories: [config]
+execute: 
+  eval: false
 ---
 
-<https://docs.anaconda.com/miniconda/>
+<https://conda.io/projects/conda/en/latest/user-guide/getting-started.html> <https://docs.anaconda.com>
 
-## Miniconda
-
-```{r eval=FALSE}
-# 安装miniconda环境
-install_miniconda()
-
-# 显示miniconda安装地址
-miniconda_path()
-
-# 更新miniconda环境
-miniconda_update()
-```
+miniconda内置包不全
 
 ## conda环境管理
 
@@ -26,7 +17,7 @@ miniconda_update()
 library(reticulate)
 # 查看当前可用conda环境
 conda_list()
-py_config()
+py_config(
 ```
 
 ```{r eval=FALSE}
@@ -34,7 +25,7 @@ use_condaenv(condaenv = "base", required = TRUE)
 
 
 conda_create(envname = "r-reticulate") 
-conda_install(envname = "r-reticulate", packages = c("polars"))
+conda_install(envname = "base", packages = c("polars"))
 ```
 
 ```{r eval=FALSE}
@@ -42,32 +33,34 @@ conda_remove(envname = "r-reticulate")
 conda_clone()
 conda_export()
 conda_update()
-conda_version()
+conda_version() # conda版本信息
 ```
 
-![](images/clipboard-3323027827.png){fig-align="center"}
-
-```{r}
-.libPaths()
-
-#> [1] "C:/Users/DELL/AppData/Local/R/win-library/4.4" "D:/R-4.4.1/library"  
-#.libPaths(c("/envs/新路径", .libPaths()))
-```
-
-```{r}
-.libPaths(.libPaths()[.libPaths() != "C:/Users/DELL/AppData/Local/R/win-library/4.4"])
-.libPaths()
-```
-
-## 调用Python
+## conda/pip安装
 
 ```{r}
 py_module_available("pip")
-py_module_available("pandas")
-#py_install(packages = "polars", envname = "base")
-
+py_module_available("numpy")
 py_module_available("polars")
 ```
+
++------------------------------------------------------------------------------+
+| ***pip \<command\> \[options\]***                                            |
++==============================================================================+
+| pip install \<module\>                                                       |
+|                                                                              |
+| pip install SpeechRecognition -i <https://pypi.tuna.tsinghua.edu.cn/simple/> |
++------------------------------------------------------------------------------+
+| pip uninstall \<module\>                                                     |
++------------------------------------------------------------------------------+
+| pip list                                                                     |
++------------------------------------------------------------------------------+
+| pip --version pip -V                                                         |
++------------------------------------------------------------------------------+
+| python -m pip install --upgrade pip                                          |
++------------------------------------------------------------------------------+
+
+## 调用Python
 
 ```{r}
 # python脚本

@@ -1,0 +1,41 @@
+---
+title: "RIS：Research Information Systems"
+date: "2024-11-05"
+date-modified: today
+categories: [database]
+---
+
+Reference Manager
+
+RIS 文件格式是一种用于表示书目引文的标记格式,以两个字母、两个空格和一个连字符， 各行必须以 ASCII 回车符和换行符结尾（ Microsoft Windows）。
+
+记录以"end record" `ER  -`结束，记录之间没有额外的空行
+
+[RIS 维基百科](https://en.wikipedia.org/wiki/RIS_(file_format))
+
+Claude E. Shannon. A mathematical theory of communication. *Bell System Technical Journal*, 27:379–423, July 1948
+
+RIS Tags
+
+```         
+TY  - JOUR
+AU  - Shannon, Claude E.
+PY  - 1948
+DA  - July
+TI  - A Mathematical Theory of Communication
+T2  - Bell System Technical Journal
+SP  - 379
+EP  - 423
+VL  - 27
+ER  - 
+TY  - JOUR
+T1  - On computable numbers, with an application to the Entscheidungsproblem
+A1  - Turing, Alan Mathison
+JO  - Proc. of London Mathematical Society
+VL  - 47
+IS  - 1
+SP  - 230
+EP  - 265
+Y1  - 1937
+ER  - 
+```

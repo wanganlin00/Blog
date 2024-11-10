@@ -5,7 +5,6 @@ date-modified: today
 categories: [config, R]
 ---
 
-
 ```{r eval=FALSE}
 # ~\etc\Rprofile.site
 
@@ -63,14 +62,7 @@ options(help_type = "html")
 }
 ```
 
-
-
 如果希望永久删除安装路径，可以直接编辑R的环境配置文件（例如 .Renviron），去掉相应的路径条目，然后重启R使更改生效。
-
-
-
-
-
 
 ```{r eval=FALSE}
 # 更新 R Gui
@@ -82,28 +74,33 @@ tools <- c(
 
 
 needed <- c(
-  "tidyverse", "tidymodels", "readxl", "writexl", "survminer", "ggsurvfit"
+  "tidyverse", "tidymodels", "readxl", "writexl","plotly","survminer",
+  "ggsurvfit","arrow"
 )
 
 # remotes::install_github("jbryer/psa", build_vignettes = TRUE, dependencies = "Enhances")
 
 optional <- c(
   "ggpubr","pROC", "ggprism", "ggpattern", 
-  "pheatmap", "ggfortify", "ggrepel", "ggthemes","ggcorrplot", "ggpmisc", "plotly",
+  "pheatmap", "ggfortify", "ggrepel", "ggthemes","ggcorrplot", "ggpmisc", 
   "ggraph", "tidygraph", "svglite",
   
   
   "gt", "gtsummary", "tableone", "flextable",
-  
-  "esquisse", "styler"
 )
 
 
 lapply(tools, require)
 ```
 
+```{r}
+.libPaths()
 
+#> [1] "C:/Users/DELL/AppData/Local/R/win-library/4.4" "D:/R-4.4.1/library"  
+#.libPaths(c("/envs/新路径", .libPaths()))
+```
 
-
-
-##
+```{r}
+.libPaths(.libPaths()[.libPaths() != "C:/Users/DELL/AppData/Local/R/win-library/4.4"])
+.libPaths()
+```

@@ -1,0 +1,18 @@
+---
+title: "动物模型"
+date: "2024-11-06"
+date-modified: today
+categories: [protocols, animal]
+---
+
+肿瘤动物模型
+
+## 原位肿瘤
+
+尾静脉高压水动力注射
+
+## 皮下肿瘤
+
+脱毛：电推+脱毛膏
+
+皮下注射 100 μl

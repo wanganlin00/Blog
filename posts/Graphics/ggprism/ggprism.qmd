@@ -11,8 +11,10 @@ GraphPad Prism 主题风格
 ## 先决条件
 
 ```{r}
-# install.packages("ggprism")
-library(ggprism)
+if(!require(ggprism)) install.packages("ggprism")
+```
+
+```{r}
 library(patchwork)
 ToothGrowth$dose <- as.factor(ToothGrowth$dose)
 

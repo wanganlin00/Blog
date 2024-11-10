@@ -3,8 +3,5 @@
 .RData
 .Ruserdata
 
-/.quarto
-*_cache
-
 /.quarto/
 
