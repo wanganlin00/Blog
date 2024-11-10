@@ -219,7 +219,7 @@ statistics
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/Statistics/RMANOVA.html" class="no-external"></a>
+<a href="./posts/Statistics/RMANOVA.html" class="no-external">含分组因子的重复测量</a>
 </div>
 </div>
 <div class="metadata">
@@ -233,7 +233,7 @@ Nov 10, 2024
 <div class="quarto-post image-right" data-index="1" data-categories="c3RhdGlzdGljcw==" data-listing-date-sort="1731168000000" data-listing-file-modified-sort="1731241102438" data-listing-date-modified-sort="1731168000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="54">
 <div class="thumbnail">
 <p><a href="./posts/Statistics/margin_mean_effect.html" class="no-external"></a></p><a href="./posts/Statistics/margin_mean_effect.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+<p class="card-img-top"><img src="posts\Statistics\margin_mean_effect_files\figure-html\unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/Statistics/margin_mean_effect.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -249,7 +249,7 @@ statistics
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/Statistics/margin_mean_effect.html" class="no-external"></a>
+<a href="./posts/Statistics/margin_mean_effect.html" class="no-external"><strong>ggeffects</strong>&nbsp;描述单个自变量的作用，Petal.Length 对Petal.Width 的边际效应</a>
 </div>
 </div>
 <div class="metadata">
@@ -312,7 +312,7 @@ database
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/literature_retrieval/export_format.html" class="no-external"></a>
+<a href="./posts/literature_retrieval/export_format.html" class="no-external">Reference Manager</a>
 </div>
 </div>
 <div class="metadata">
@@ -405,7 +405,7 @@ meta
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/MetaAnalysis/SubgroupAnalysis.html" class="no-external"></a>
+<a href="./posts/MetaAnalysis/SubgroupAnalysis.html" class="no-external">亚组分析只是元回归的一个特例</a>
 </div>
 </div>
 <div class="metadata">
@@ -435,7 +435,7 @@ meta
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/MetaAnalysis/Meta_Regression.html" class="no-external"></a>
+<a href="./posts/MetaAnalysis/Meta_Regression.html" class="no-external">Meta-regression 通过假设混合效应模型来实现。由于抽样误差和研究之间的异质性，观察到的研究偏离了真实的总体效应，它还使用一个或多个变量来预测真实效应大小的差异。</a>
 </div>
 </div>
 <div class="metadata">
@@ -449,7 +449,7 @@ Oct 31, 2024
 <div class="quarto-post image-right" data-index="8" data-categories="bWV0YQ==" data-listing-date-sort="1730217600000" data-listing-file-modified-sort="1731240353944" data-listing-date-modified-sort="1731168000000" data-listing-reading-time-sort="3" data-listing-word-count-sort="534">
 <div class="thumbnail">
 <p><a href="./posts/MetaAnalysis/forest_plots.html" class="no-external"></a></p><a href="./posts/MetaAnalysis/forest_plots.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+<p class="card-img-top"><img src="posts\MetaAnalysis\forest_plots_files\figure-html\unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/MetaAnalysis/forest_plots.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -465,7 +465,14 @@ meta
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/MetaAnalysis/forest_plots.html" class="no-external"></a>
+<a href="./posts/MetaAnalysis/forest_plots.html" class="no-external">
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">meta</span><span class="op">)</span></span>
+<span><span class="va">m.gen</span> <span class="op">&lt;-</span> <span class="fu">metagen</span><span class="op">(</span>TE <span class="op">=</span> <span class="va">TE</span>,</span>
+<span>                 seTE <span class="op">=</span> <span class="va">seTE</span>,</span>
+<span>                 studlab <span class="op">=</span> <span class="va">Author</span>,</span>
+<span>                 data <span class="op">=</span> <span class="fu">dmetar</span><span class="fu">::</span><span class="va">ThirdWave</span>,</span>
+<span>          …<span class="op"></span><span class="st"></span></span><span><span class="op"></span><span class="cn"></span></span><span><span class="op"></span><span class="cn"></span></span><span><span class="op"></span><span class="st"></span></span><span><span class="op"></span><span class="st"></span></span><span><span class="op"></span><span class="cn"></span></span><span><span class="op"></span><span class="st"></span><span class="op"></span></span></code></pre></div></details></div><div class="cell"><details class="code-fold"><summary></summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"></span><span class="fu"></span><span class="fu"></span><span class="op"></span><span class="va"></span></span><span><span class="op"></span><span class="va"></span></span><span><span class="op"></span><span class="cn"></span></span><span><span class="op"></span><span class="cn"></span></span><span><span class="op"></span><span class="fu"></span><span class="op"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="op"></span><span class="op"></span></span></code></pre></div></details><div class="cell-output-display"><div><figure class="figure"><p></p></figure></div></div></div><div class="cell"><details class="code-fold"><summary></summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"></span><span class="fu"></span><span class="fu"></span><span class="op"></span><span class="va"></span></span><span><span class="op"></span><span class="va"></span></span><span><span class="op"></span><span class="cn"></span></span><span><span class="op"></span><span class="cn"></span></span><span><span class="op"></span><span class="fu"></span><span class="op"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="op"></span></span><span><span class="op"></span><span class="fu"></span><span class="op"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="op"></span><span class="op"></span></span></code></pre></div></details><div class="cell-output-display"><div><figure class="figure"><p></p></figure></div></div></div><div class="cell"><details class="code-fold"><summary></summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"></span><span class="fu"></span><span class="fu"></span><span class="op"></span><span class="va"></span><span class="op"></span><span class="st"></span><span class="op"></span></span></code></pre></div></details><div class="cell-output-display"><div><figure class="figure"><p></p></figure></div></div></div><div class="cell"><details class="code-fold"><summary></summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"></span><span class="fu"></span><span class="fu"></span><span class="op"></span><span class="va"></span><span class="op"></span><span class="st"></span><span class="op"></span></span></code></pre></div></details><div class="cell-output-display"><div><figure class="figure"><p></p></figure></div></div></div><div class="cell"><details class="code-fold"><summary></summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"></span><span class="op"></span><span class="op"></span><span class="st"></span><span class="op"></span><span class="fl"></span><span class="op"></span><span class="fl"></span><span class="op"></span></span><span></span><span><span class="fu"></span><span class="fu"></span><span class="fu"></span><span class="op"></span><span class="va"></span></span><span><span class="op"></span><span class="va"></span></span><span><span class="op"></span><span class="cn"></span></span><span><span class="op"></span><span class="cn"></span></span><span><span class="op"></span><span class="fu"></span><span class="op"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="op"></span><span class="op"></span></span><span></span><span><span class="fu"></span><span class="op"></span><span class="op"></span></span></code></pre></div></details><div class="cell-output cell-output-stdout"><pre><code></code></pre></div></div><div class="cell"><details class="code-fold"><summary></summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"></span><span class="op"></span><span class="op"></span><span class="st"></span><span class="op"></span><span class="fl"></span><span class="op"></span><span class="fl"></span><span class="op"></span></span><span></span><span><span class="fu"></span><span class="fu"></span><span class="fu"></span><span class="op"></span><span class="va"></span></span><span><span class="op"></span><span class="va"></span></span><span><span class="op"></span><span class="cn"></span></span><span><span class="op"></span><span class="cn"></span></span><span><span class="op"></span><span class="fu"></span><span class="op"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="op"></span><span class="op"></span></span><span></span><span><span class="fu"></span><span class="op"></span><span class="op"></span></span></code></pre></div></details><div class="cell-output cell-output-stdout"><pre><code></code></pre></div></div></a>
 </div>
 </div>
 <div class="metadata">
@@ -479,7 +486,7 @@ Oct 30, 2024
 <div class="quarto-post image-right" data-index="9" data-categories="ZGF0YWJhc2U=" data-listing-date-sort="1730217600000" data-listing-file-modified-sort="1730631575871" data-listing-date-modified-sort="1731168000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
 <div class="thumbnail">
 <p><a href="./posts/literature_retrieval/Scopus.html" class="no-external"></a></p><a href="./posts/literature_retrieval/Scopus.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+<p class="card-img-top"><img src="posts\literature_retrieval\images\clipboard-3044001958.png"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/literature_retrieval/Scopus.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -495,7 +502,7 @@ database
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/literature_retrieval/Scopus.html" class="no-external"></a>
+<a href="./posts/literature_retrieval/Scopus.html" class="no-external">图书馆首页 =&gt; 讲座培训 =&gt; 信息检索培训</a>
 </div>
 </div>
 <div class="metadata">
@@ -509,7 +516,7 @@ Oct 30, 2024
 <div class="quarto-post image-right" data-index="10" data-categories="bGFuZ3VhZ2U=" data-listing-date-sort="1730217600000" data-listing-file-modified-sort="1730631575891" data-listing-date-modified-sort="1731168000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="15">
 <div class="thumbnail">
 <p><a href="./posts/Language/English.html" class="no-external"></a></p><a href="./posts/Language/English.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+<p class="card-img-top"><img src="posts\Language\images\clipboard-2570615556.png"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/Language/English.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -525,7 +532,7 @@ language
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/Language/English.html" class="no-external"></a>
+<a href="./posts/Language/English.html" class="no-external">意群分割：chunk by chunk</a>
 </div>
 </div>
 <div class="metadata">
@@ -539,7 +546,7 @@ Oct 30, 2024
 <div class="quarto-post image-right" data-index="11" data-categories="bWV0YQ==" data-listing-date-sort="1729699200000" data-listing-file-modified-sort="1730198313989" data-listing-date-modified-sort="1731168000000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1315">
 <div class="thumbnail">
 <p><a href="./posts/MetaAnalysis/BetweenStudyHeterogeneity.html" class="no-external"></a></p><a href="./posts/MetaAnalysis/BetweenStudyHeterogeneity.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+<p class="card-img-top"><img src="posts\MetaAnalysis\BetweenStudyHeterogeneity_files\figure-html\unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/MetaAnalysis/BetweenStudyHeterogeneity.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -555,7 +562,7 @@ meta
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/MetaAnalysis/BetweenStudyHeterogeneity.html" class="no-external"></a>
+<a href="./posts/MetaAnalysis/BetweenStudyHeterogeneity.html" class="no-external">Between-Study Heterogeneity <span class="math inline">\(\zeta_k\)</span></a>
 </div>
 </div>
 <div class="metadata">
@@ -599,7 +606,7 @@ Oct 24, 2024
 <div class="quarto-post image-right" data-index="13" data-categories="bWV0YQ==" data-listing-date-sort="1729699200000" data-listing-file-modified-sort="1731240528231" data-listing-date-modified-sort="1731168000000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1241">
 <div class="thumbnail">
 <p><a href="./posts/MetaAnalysis/pooling_effect_sizes.html" class="no-external"></a></p><a href="./posts/MetaAnalysis/pooling_effect_sizes.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+<p class="card-img-top"><img src="posts\MetaAnalysis\images\clipboard-3750106771.png"  class="thumbnail-image card-img"/></p>
 </a><p><a href="./posts/MetaAnalysis/pooling_effect_sizes.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -615,7 +622,7 @@ meta
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/MetaAnalysis/pooling_effect_sizes.html" class="no-external"></a>
+<a href="./posts/MetaAnalysis/pooling_effect_sizes.html" class="no-external">聚合效应大小</a>
 </div>
 </div>
 <div class="metadata">
@@ -640,7 +647,7 @@ Oct 24, 2024
 <a href="./posts/Software/RecCloud.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<a href="./posts/Software/RecCloud.html" class="no-external"></a>
+<a href="./posts/Software/RecCloud.html" class="no-external">睿客网（REC），即中国科学技术大学科研教学资源中心，为科大师生用户提供数据存储、备份、分享等服务的在线平台。</a>
 </div>
 </div>
 <div class="metadata">
@@ -651,7 +658,7 @@ Oct 19, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="Y29uZmlnLFI=" data-listing-date-sort="1729267200000" data-listing-file-modified-sort="1731237860761" data-listing-date-modified-sort="1731168000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="164">
+<div class="quarto-post image-right" data-index="15" data-categories="Y29uZmlnLFI=" data-listing-date-sort="1729267200000" data-listing-file-modified-sort="1731241532421" data-listing-date-modified-sort="1731168000000" data-listing-reading-time-sort="1" data-listing-word-count-sort="164">
 <div class="thumbnail">
 <p><a href="./posts/Config/Rprofile.site.html" class="no-external"></a></p><a href="./posts/Config/Rprofile.site.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -703,7 +710,7 @@ database
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/literature_retrieval/PubMed.html" class="no-external"></a>
+<a href="./posts/literature_retrieval/PubMed.html" class="no-external">AND</a>
 </div>
 </div>
 <div class="metadata">
@@ -1078,7 +1085,7 @@ propensity score
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/PropensityScore/psm.html" class="no-external"></a>
+<a href="./posts/PropensityScore/psm.html" class="no-external">Propensity score matching (Nature Methods)</a>
 </div>
 </div>
 <div class="metadata">
@@ -1108,7 +1115,7 @@ Zotero
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/Software/Zotero.html" class="no-external"></a>
+<a href="./posts/Software/Zotero.html" class="no-external">Zotero 7</a>
 </div>
 </div>
 <div class="metadata">
@@ -1141,7 +1148,7 @@ ggplot2 extension
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/Graphics/ggprism/ggprism.html" class="no-external"></a>
+<a href="./posts/Graphics/ggprism/ggprism.html" class="no-external">GraphPad Prism 主题风格</a>
 </div>
 </div>
 <div class="metadata">
@@ -1174,7 +1181,7 @@ ggplot2 extension
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/Graphics/ggpattern/ggpattern.html" class="no-external"></a>
+<a href="./posts/Graphics/ggpattern/ggpattern.html" class="no-external">ggpattern 填充几何纹理或图像</a>
 </div>
 </div>
 <div class="metadata">
