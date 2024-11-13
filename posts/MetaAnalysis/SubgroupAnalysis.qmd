@@ -35,15 +35,8 @@ Comparing the Subgroup Effects using a statistical test
 **子组分析：注意 事项**
 
 1.  子组分析取决于统计功效，因此它通常 当研究数量很少时进行一次研究是没有意义的 （即K\< 10）。
-
-<!-- -->
-
 2.  如果未发现子组之间的效应大小存在差异， 这**并不意味着**子组 产生**等效**的结果。
-
-<!-- -->
-
 3.  亚组分析纯粹是**观察性的**，因此，我们应该始终牢记，效果差异也可能是由混杂变量引起的
-
 4.  在亚组分析中使用汇总研究信息是一个坏主意，因为这可能会引入系统偏差。
 :::
 
@@ -61,7 +54,7 @@ m.gen <- metagen(TE = TE,
                  studlab = Author,
                  data = dmetar::ThirdWave,
                  sm = "SMD",
-                 fixed = FALSE,
+                 common = FALSE,
                  random = TRUE,
                  method.tau = "REML",
                  method.random.ci = "HK",

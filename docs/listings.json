@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/MetaAnalysis/PublicationBias.html",
       "/posts/Statistics/RMANOVA.html",
       "/posts/Statistics/margin_mean_effect.html",
       "/posts/BioProtocols/animal_models.html",

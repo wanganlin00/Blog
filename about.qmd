@@ -9,6 +9,8 @@ about:
       href: https://github.com/wanganlin00
 ---
 
-博客
+$$
+     {\color{red} { life=\int_{birth}^{death}study \ dt } }  
+$$
 
 一些简要的笔记，方便查阅
