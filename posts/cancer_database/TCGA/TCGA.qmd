@@ -3,89 +3,185 @@ title: "TCGA"
 date: "2024-09-24"
 date-modified: today
 categories: [bioinformatics, database]
+execute: 
+  cache: true
 ---
 
-# TCGA数据库
+参考资料
 
-<https://portal.gdc.cancer.gov/>
+-   <https://portal.gdc.cancer.gov/>
 
-<https://www.jingege.wang/2024/02/25/tcga-gdc-data-portal-2-0/>
+-   <https://www.jingege.wang/2024/02/25/tcga-gdc-data-portal-2-0/>
 
-<https://www.jingege.wang/2022/07/16/tcgar/>
+-   <https://www.jingege.wang/2022/07/16/tcgar/>
+
+## 数据下载
+
+可以从Projects中查找，也可以自定义队列。
+
+### 已有项目
+
+**以肺腺癌数据（TCGA-LUAD）为例。首先要先整理出该癌症的基因表达矩阵。**（也有一些数据库提供整理好的TCGA癌症数据，如*UCSC xena数据库*对TCGA数据进行了整理，可直接下载表达矩阵和临床数据用于研究**）**
+
+![](images/clipboard-4037497718.png)
+
+```         
+Projects --> 
+             Primary Site: bronchus and lung
+             Program: TCGA
+             Data Category: transcriptome profiling
+             Experimental Strategy: RNA-Seq
+    
+project: TCGA-LUAD
+```
+
+![](images/clipboard-1503211737.png)
+
+### 自定义项目
+
+![](images/clipboard-4190718251.png)
+
+```         
+Cohort Builder --> 
+
+    general --> 
+             Program: TCGA
+             project: TCGA-LUAD
+             Disease Type: adenomas and adenocarcinomas
+             
+    Available data --> 
+             Data Category: transcriptome profiling
+             Data Type: Gene Expression Quantification
+             Experimental Strategy: RNA-Seq
+             Workflow Type: STAR-Counts（即HTSeq-Counts、HTSeq-FPKM、HTSeq-FPKM-UQ数据都放入了文件STAR–Counts中）
+```
+
+![](images/clipboard-3269993218.png)
+
+转到存储库（Repository），选择自己的cohort，选择自己需要的数据类型
+
+![](images/clipboard-4148895831.png)
+
+全部添加到cart
+
+![](images/clipboard-92313651.png)
+
+![](images/clipboard-2551723785.png)
+
+![](images/clipboard-2258074177.png)
+
+## 样本id
+
+包括文件信息和样本barcode的关系
 
 ```{r}
 library(jsonlite)
 
-json <- jsonlite::fromJSON("data/metadata.cart.2024-07-04.json") |> as_tibble()
-
-json |> select(associated_entities)
-json$associated_entities[[1]]
-
-# sample_id <- map_vec(json$associated_entities,~ .x[,1])
-sample_id <- sapply(json$associated_entities,function(x){x[,1]})
+metadata <- jsonlite::fromJSON("data/metadata.cart.2024-07-04.json") |> as_tibble()
 
 
-file_sample <- tibble(sample_id,file_name=json$file_name) 
+sample_info <- metadata %>% 
+    select(associated_entities,file_name) %>% 
+    unnest(associated_entities) %>% 
+    select(sample_id =entity_submitter_id,file_name) 
+    
+
+sample_info %>% head()
+```
+
+## 表达矩阵
+
+```{r}
+#获取gdc_download文件夹下的所有TSV表达文件的 路径+文件名
+counts_file <- list.files("data/gdc_download_20240704_131631.625023",pattern = "*.tsv",recursive = TRUE,full.names = T)
+counts_file[1]
+# 使用 basename() 获取最终的文件名
+counts_file_names <- basename(counts_file)
+
+counts_file_names[1]
+
+
 
 ```
 
 ```{r}
-#获取gdc_download文件夹下的所有TSV表达文件的 路径+文件名
-count_file <- list.files("data/gdc_download_20240704_131631.625023",pattern = "*.tsv",recursive = TRUE)
-#在count_file中分割出文件名
-count_file_name <- str_split(count_file,pattern = '/') 
-
-count_file_name <- sapply(count_file_name,function(x){x[2]})
-
+path = counts_file[1]
+data.table::fread(input = counts_file[1],sep = "\t") %>% 
+    select(1,4) %>% 
+    filter(row_number()>4) %>% 
+    column_to_rownames(var = "gene_id") %>% 
+    head() ->x
+colnames(x) <-sample_info %>% 
+    filter(file_name == counts_file_names[1]) %>%
+    pull(sample_id)
+x
 ```
 
-## 计数矩阵
+![](images/clipboard-2405009584.png)
+
+```{r}
+gene_expr <- function(file_path, file_basename) {
+    
+    # 读取并处理数据
+    expr <- data.table::fread(input = file_path,sep = "\t") %>%
+        select(1, 4) %>%
+        dplyr::filter(row_number() > 4) %>%
+        column_to_rownames(var = "gene_id")
+    
+    # 将列名替换为样本ID
+    colnames(expr) <- sample_info %>%
+        dplyr::filter(file_name == file_basename) %>%
+        pull(sample_id)
+    
+    return(expr)
+}
+
+
+expr1 <- gene_expr(file_path = counts_file[1],
+                   file_basename = counts_file_names[1]) 
+expr1 %>% head()
+```
 
 ```{r eval=FALSE}
-matrix = data.frame(matrix(nrow=60660,ncol=0))
 
+expr_list <- vector("list", length(counts_file))
+expr_list <- purrr::map2(counts_file,counts_file_names, gene_expr)
 
-for (i in 1:length(count_file)) {
-    path = paste0('data/gdc_download_20240704_131631.625023/',
-                  count_file[i])
-    data <- read_tsv(path, col_names = T, skip = 1)
-    data <- data[-c(1:4), c(1, 4)] |> column_to_rownames(var = "gene_id")  #取出ESEMBL_id列1 和 unstranded列 4，即count数据，对应其它数据，第2列为gene symbol
-    colnames(data) <- file_sample$sample_id[which(file_sample$file_name == count_file_name[i])]
-    
-    matrix <- cbind(matrix, data)
-}
-write.csv(matrix,'data/COUNT_matrix.csv',row.names = TRUE)
+expr_counts <- do.call(cbind, expr_list)
+
+write.csv(expr_counts,'data/Counts_matrix.csv',row.names = TRUE)
 ```
 
-## normal 和 tumor
+### normal 和 tumor
 
 根据TCGA样本的命名可以区分正常组织和肿瘤样本的测序结果 其中 14、15位置编号大于10 表示正常
 
 ```{r}
-COUNT_matrix <- read_csv('data/COUNT_matrix.csv') |> column_to_rownames(var = "...1")
+COUNT_matrix <- data.table::fread('data/COUNT_matrix.csv') 
 
 
 str_sub(colnames(COUNT_matrix),14,15) |> table()
 ```
 
-## 表型矩阵
+## 临床表型数据
 
 ```{r}
-json <- jsonlite::fromJSON("data/metadata.cart.2024-07-04.json")
+metadata <- jsonlite::fromJSON("data/metadata.cart.2024-07-04.json")
 
-entity_submitter_id <- sapply(json$associated_entities,function(x){x[,1]})
-case_id <- sapply(json$associated_entities,function(x){x[,3]})
-sample_case <- t(rbind(entity_submitter_id,case_id)) |> as_tibble()
+case_info <- metadata %>% 
+    select(associated_entities,file_name) %>% 
+    unnest(associated_entities) %>% 
+    select(sample_id = entity_submitter_id,case_id) 
+case_info %>% head()
 
-clinical <- read.delim('data/clinical.cart.2024-07-04/clinical.tsv',header = T)
+
+clinical <- read_delim('data/clinical.cart.2024-07-04/clinical.tsv',col_names =  T)
 
 clinical <- clinical |> distinct(case_id,.keep_all = TRUE)
 
 
 
-
-
-clinical_matrix <- left_join(sample_case,clinical,by = join_by(case_id))
+clinical_matrix <- left_join(case_info ,clinical,by = join_by(case_id))
 
 clinical_matrix <- clinical_matrix |> select(-case_id)
 ```

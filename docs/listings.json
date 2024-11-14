@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/cancer_database/GEO/GEO.html",
       "/posts/MetaAnalysis/PublicationBias.html",
       "/posts/Statistics/RMANOVA.html",
       "/posts/Statistics/margin_mean_effect.html",

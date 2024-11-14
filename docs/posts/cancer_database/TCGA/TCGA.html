@@ -150,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">November 10, 2024</p>
+        <p class="date-modified">November 14, 2024</p>
       </div>
     </div>
       
@@ -165,113 +165,209 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li>
-<a href="#tcga%E6%95%B0%E6%8D%AE%E5%BA%93" id="toc-tcga数据库" class="nav-link active" data-scroll-target="#tcga%E6%95%B0%E6%8D%AE%E5%BA%93">TCGA数据库</a>
+<a href="#%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD" id="toc-数据下载" class="nav-link active" data-scroll-target="#%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD">数据下载</a>
   <ul class="collapse">
-<li><a href="#%E8%AE%A1%E6%95%B0%E7%9F%A9%E9%98%B5" id="toc-计数矩阵" class="nav-link" data-scroll-target="#%E8%AE%A1%E6%95%B0%E7%9F%A9%E9%98%B5">计数矩阵</a></li>
-  <li><a href="#normal-%E5%92%8C-tumor" id="toc-normal-和-tumor" class="nav-link" data-scroll-target="#normal-%E5%92%8C-tumor">normal 和 tumor</a></li>
-  <li><a href="#%E8%A1%A8%E5%9E%8B%E7%9F%A9%E9%98%B5" id="toc-表型矩阵" class="nav-link" data-scroll-target="#%E8%A1%A8%E5%9E%8B%E7%9F%A9%E9%98%B5">表型矩阵</a></li>
-  <li><a href="#tcgaworkflow" id="toc-tcgaworkflow" class="nav-link" data-scroll-target="#tcgaworkflow">TCGAWorkflow</a></li>
+<li><a href="#%E5%B7%B2%E6%9C%89%E9%A1%B9%E7%9B%AE" id="toc-已有项目" class="nav-link" data-scroll-target="#%E5%B7%B2%E6%9C%89%E9%A1%B9%E7%9B%AE">已有项目</a></li>
+  <li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B9%E7%9B%AE" id="toc-自定义项目" class="nav-link" data-scroll-target="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B9%E7%9B%AE">自定义项目</a></li>
   </ul>
 </li>
+  <li><a href="#%E6%A0%B7%E6%9C%ACid" id="toc-样本id" class="nav-link" data-scroll-target="#%E6%A0%B7%E6%9C%ACid">样本id</a></li>
+  <li>
+<a href="#%E8%A1%A8%E8%BE%BE%E7%9F%A9%E9%98%B5" id="toc-表达矩阵" class="nav-link" data-scroll-target="#%E8%A1%A8%E8%BE%BE%E7%9F%A9%E9%98%B5">表达矩阵</a>
+  <ul class="collapse">
+<li><a href="#normal-%E5%92%8C-tumor" id="toc-normal-和-tumor" class="nav-link" data-scroll-target="#normal-%E5%92%8C-tumor">normal 和 tumor</a></li>
+  </ul>
+</li>
+  <li><a href="#%E4%B8%B4%E5%BA%8A%E8%A1%A8%E5%9E%8B%E6%95%B0%E6%8D%AE" id="toc-临床表型数据" class="nav-link" data-scroll-target="#%E4%B8%B4%E5%BA%8A%E8%A1%A8%E5%9E%8B%E6%95%B0%E6%8D%AE">临床表型数据</a></li>
+  <li><a href="#tcgaworkflow" id="toc-tcgaworkflow" class="nav-link" data-scroll-target="#tcgaworkflow">TCGAWorkflow</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="tcga数据库" class="level1"><h1>TCGA数据库</h1>
-<p><a href="https://portal.gdc.cancer.gov/" class="uri">https://portal.gdc.cancer.gov/</a></p>
-<p><a href="https://www.jingege.wang/2024/02/25/tcga-gdc-data-portal-2-0/" class="uri">https://www.jingege.wang/2024/02/25/tcga-gdc-data-portal-2-0/</a></p>
-<p><a href="https://www.jingege.wang/2022/07/16/tcgar/" class="uri">https://www.jingege.wang/2022/07/16/tcgar/</a></p>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p>参考资料</p>
+<ul>
+<li><p><a href="https://portal.gdc.cancer.gov/" class="uri">https://portal.gdc.cancer.gov/</a></p></li>
+<li><p><a href="https://www.jingege.wang/2024/02/25/tcga-gdc-data-portal-2-0/" class="uri">https://www.jingege.wang/2024/02/25/tcga-gdc-data-portal-2-0/</a></p></li>
+<li><p><a href="https://www.jingege.wang/2022/07/16/tcgar/" class="uri">https://www.jingege.wang/2022/07/16/tcgar/</a></p></li>
+</ul>
+<section id="数据下载" class="level2"><h2 class="anchored" data-anchor-id="数据下载">数据下载</h2>
+<p>可以从Projects中查找，也可以自定义队列。</p>
+<section id="已有项目" class="level3"><h3 class="anchored" data-anchor-id="已有项目">已有项目</h3>
+<p><strong>以肺腺癌数据（TCGA-LUAD）为例。首先要先整理出该癌症的基因表达矩阵。</strong>（也有一些数据库提供整理好的TCGA癌症数据，如<em>UCSC xena数据库</em>对TCGA数据进行了整理，可直接下载表达矩阵和临床数据用于研究<strong>）</strong></p>
+<p><img src="images/clipboard-4037497718.png" class="img-fluid"></p>
+<pre><code>Projects --&gt; 
+             Primary Site: bronchus and lung
+             Program: TCGA
+             Data Category: transcriptome profiling
+             Experimental Strategy: RNA-Seq
+    
+project: TCGA-LUAD</code></pre>
+<p><img src="images/clipboard-1503211737.png" class="img-fluid"></p>
+</section><section id="自定义项目" class="level3"><h3 class="anchored" data-anchor-id="自定义项目">自定义项目</h3>
+<p><img src="images/clipboard-4190718251.png" class="img-fluid"></p>
+<pre><code>Cohort Builder --&gt; 
+
+    general --&gt; 
+             Program: TCGA
+             project: TCGA-LUAD
+             Disease Type: adenomas and adenocarcinomas
+             
+    Available data --&gt; 
+             Data Category: transcriptome profiling
+             Data Type: Gene Expression Quantification
+             Experimental Strategy: RNA-Seq
+             Workflow Type: STAR-Counts（即HTSeq-Counts、HTSeq-FPKM、HTSeq-FPKM-UQ数据都放入了文件STAR–Counts中）</code></pre>
+<p><img src="images/clipboard-3269993218.png" class="img-fluid"></p>
+<p>转到存储库（Repository），选择自己的cohort，选择自己需要的数据类型</p>
+<p><img src="images/clipboard-4148895831.png" class="img-fluid"></p>
+<p>全部添加到cart</p>
+<p><img src="images/clipboard-92313651.png" class="img-fluid"></p>
+<p><img src="images/clipboard-2551723785.png" class="img-fluid"></p>
+<p><img src="images/clipboard-2258074177.png" class="img-fluid"></p>
+</section></section><section id="样本id" class="level2"><h2 class="anchored" data-anchor-id="样本id">样本id</h2>
+<p>包括文件信息和样本barcode的关系</p>
 <div class="cell">
-<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://jeroen.r-universe.dev/jsonlite">jsonlite</a></span><span class="op">)</span></span>
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://jeroen.r-universe.dev/jsonlite">jsonlite</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">json</span> <span class="op">&lt;-</span> <span class="fu">jsonlite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html">fromJSON</a></span><span class="op">(</span><span class="st">"data/metadata.cart.2024-07-04.json"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">as_tibble</span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">json</span> <span class="op">|&gt;</span> <span class="fu">select</span><span class="op">(</span><span class="va">associated_entities</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 536 × 1
-   associated_entities
-   &lt;list&gt;             
- 1 &lt;df [1 × 4]&gt;       
- 2 &lt;df [1 × 4]&gt;       
- 3 &lt;df [1 × 4]&gt;       
- 4 &lt;df [1 × 4]&gt;       
- 5 &lt;df [1 × 4]&gt;       
- 6 &lt;df [1 × 4]&gt;       
- 7 &lt;df [1 × 4]&gt;       
- 8 &lt;df [1 × 4]&gt;       
- 9 &lt;df [1 × 4]&gt;       
-10 &lt;df [1 × 4]&gt;       
-# ℹ 526 more rows</code></pre>
-</div>
-<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">json</span><span class="op">$</span><span class="va">associated_entities</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code>           entity_submitter_id entity_type                              case_id
-1 TCGA-38-7271-01A-11R-2039-07     aliquot 8214a0d1-5e2d-4a7a-acb1-e5580755db83
-                             entity_id
-1 8d895d3d-9598-459b-813e-3fc84dd3efe8</code></pre>
-</div>
-<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># sample_id &lt;- map_vec(json$associated_entities,~ .x[,1])</span></span>
-<span><span class="va">sample_id</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">json</span><span class="op">$</span><span class="va">associated_entities</span>,<span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span><span class="va">x</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">}</span><span class="op">)</span></span>
+<span><span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu">jsonlite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html">fromJSON</a></span><span class="op">(</span><span class="st">"data/metadata.cart.2024-07-04.json"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">as_tibble</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span></span>
-<span><span class="va">file_sample</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span><span class="va">sample_id</span>,file_name<span class="op">=</span><span class="va">json</span><span class="op">$</span><span class="va">file_name</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#获取gdc_download文件夹下的所有TSV表达文件的 路径+文件名</span></span>
-<span><span class="va">count_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span><span class="op">(</span><span class="st">"data/gdc_download_20240704_131631.625023"</span>,pattern <span class="op">=</span> <span class="st">"*.tsv"</span>,recursive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#在count_file中分割出文件名</span></span>
-<span><span class="va">count_file_name</span> <span class="op">&lt;-</span> <span class="fu">str_split</span><span class="op">(</span><span class="va">count_file</span>,pattern <span class="op">=</span> <span class="st">'/'</span><span class="op">)</span> </span>
-<span></span>
-<span><span class="va">count_file_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">count_file_name</span>,<span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span><span class="va">x</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">}</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<section id="计数矩阵" class="level2"><h2 class="anchored" data-anchor-id="计数矩阵">计数矩阵</h2>
-<div class="cell">
-<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">matrix</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span>nrow<span class="op">=</span><span class="fl">60660</span>,ncol<span class="op">=</span><span class="fl">0</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span></span>
-<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">count_file</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">path</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">'data/gdc_download_20240704_131631.625023/'</span>,</span>
-<span>                  <span class="va">count_file</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span>
-<span>    <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">read_tsv</span><span class="op">(</span><span class="va">path</span>, col_names <span class="op">=</span> <span class="cn">T</span>, skip <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span>    <span class="va">data</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">4</span><span class="op">)</span><span class="op">]</span> <span class="op">|&gt;</span> <span class="fu">column_to_rownames</span><span class="op">(</span>var <span class="op">=</span> <span class="st">"gene_id"</span><span class="op">)</span>  <span class="co">#取出ESEMBL_id列1 和 unstranded列 4，即count数据，对应其它数据，第2列为gene symbol</span></span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">file_sample</span><span class="op">$</span><span class="va">sample_id</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">file_sample</span><span class="op">$</span><span class="va">file_name</span> <span class="op">==</span> <span class="va">count_file_name</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="va">sample_info</span> <span class="op">&lt;-</span> <span class="va">metadata</span> <span class="op">%&gt;%</span> </span>
+<span>    <span class="fu">select</span><span class="op">(</span><span class="va">associated_entities</span>,<span class="va">file_name</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>    <span class="fu">unnest</span><span class="op">(</span><span class="va">associated_entities</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>    <span class="fu">select</span><span class="op">(</span>sample_id <span class="op">=</span><span class="va">entity_submitter_id</span>,<span class="va">file_name</span><span class="op">)</span> </span>
 <span>    </span>
-<span>    <span class="va">matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">matrix</span>, <span class="va">data</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">sample_info</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  sample_id                    file_name                                        
+  &lt;chr&gt;                        &lt;chr&gt;                                            
+1 TCGA-38-7271-01A-11R-2039-07 98d020b1-0467-4131-a3cc-64d288d0e9e7.rna_seq.aug…
+2 TCGA-55-7914-01A-11R-2170-07 22002e84-1d7a-4f93-9934-9d74f45195c0.rna_seq.aug…
+3 TCGA-95-7043-01A-11R-1949-07 d067f93b-7182-4a34-ba8e-be73589b7420.rna_seq.aug…
+4 TCGA-73-4658-01A-01R-1755-07 367864dd-ccd2-473e-9661-6ff4342a4e64.rna_seq.aug…
+5 TCGA-86-8076-01A-31R-2241-07 34774d7b-1184-4b5f-b6a9-e16c428ca7ce.rna_seq.aug…
+6 TCGA-55-7726-01A-11R-2170-07 74ab82a4-a55b-4e4c-b3f5-1f9317860914.rna_seq.aug…</code></pre>
+</div>
+</div>
+</section><section id="表达矩阵" class="level2"><h2 class="anchored" data-anchor-id="表达矩阵">表达矩阵</h2>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#获取gdc_download文件夹下的所有TSV表达文件的 路径+文件名</span></span>
+<span><span class="va">counts_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span><span class="op">(</span><span class="st">"data/gdc_download_20240704_131631.625023"</span>,pattern <span class="op">=</span> <span class="st">"*.tsv"</span>,recursive <span class="op">=</span> <span class="cn">TRUE</span>,full.names <span class="op">=</span> <span class="cn">T</span><span class="op">)</span></span>
+<span><span class="va">counts_file</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] "data/gdc_download_20240704_131631.625023/0052ae83-7ae5-470a-a125-5cd94a9fa9e9/a6a6b9c6-9db7-42b3-a09f-770b7e126fbb.rna_seq.augmented_star_gene_counts.tsv"</code></pre>
+</div>
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 使用 basename() 获取最终的文件名</span></span>
+<span><span class="va">counts_file_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/basename.html">basename</a></span><span class="op">(</span><span class="va">counts_file</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">counts_file_names</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] "a6a6b9c6-9db7-42b3-a09f-770b7e126fbb.rna_seq.augmented_star_gene_counts.tsv"</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">path</span> <span class="op">=</span> <span class="va">counts_file</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
+<span><span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span>input <span class="op">=</span> <span class="va">counts_file</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,sep <span class="op">=</span> <span class="st">"\t"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>    <span class="fu">select</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="fu">row_number</span><span class="op">(</span><span class="op">)</span><span class="op">&gt;</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>    <span class="fu">column_to_rownames</span><span class="op">(</span>var <span class="op">=</span> <span class="st">"gene_id"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-&gt;</span><span class="va">x</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">&lt;-</span><span class="va">sample_info</span> <span class="op">%&gt;%</span> </span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">file_name</span> <span class="op">==</span> <span class="va">counts_file_names</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">pull</span><span class="op">(</span><span class="va">sample_id</span><span class="op">)</span></span>
+<span><span class="va">x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>                   TCGA-35-5375-01A-01R-1628-07
+ENSG00000000003.15                         3715
+ENSG00000000005.6                             0
+ENSG00000000419.13                         2468
+ENSG00000000457.14                          249
+ENSG00000000460.17                          395
+ENSG00000000938.13                          150</code></pre>
+</div>
+</div>
+<p><img src="images/clipboard-2405009584.png" class="img-fluid"></p>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gene_expr</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">file_path</span>, <span class="va">file_basename</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    </span>
+<span>    <span class="co"># 读取并处理数据</span></span>
+<span>    <span class="va">expr</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span>input <span class="op">=</span> <span class="va">file_path</span>,sep <span class="op">=</span> <span class="st">"\t"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">select</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu">row_number</span><span class="op">(</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">column_to_rownames</span><span class="op">(</span>var <span class="op">=</span> <span class="st">"gene_id"</span><span class="op">)</span></span>
+<span>    </span>
+<span>    <span class="co"># 将列名替换为样本ID</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">expr</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">sample_info</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">file_name</span> <span class="op">==</span> <span class="va">file_basename</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>        <span class="fu">pull</span><span class="op">(</span><span class="va">sample_id</span><span class="op">)</span></span>
+<span>    </span>
+<span>    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">expr</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">matrix</span>,<span class="st">'data/COUNT_matrix.csv'</span>,row.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span></span>
+<span></span>
+<span><span class="va">expr1</span> <span class="op">&lt;-</span> <span class="fu">gene_expr</span><span class="op">(</span>file_path <span class="op">=</span> <span class="va">counts_file</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,</span>
+<span>                   file_basename <span class="op">=</span> <span class="va">counts_file_names</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span> </span>
+<span><span class="va">expr1</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>                   TCGA-35-5375-01A-01R-1628-07
+ENSG00000000003.15                         3715
+ENSG00000000005.6                             0
+ENSG00000000419.13                         2468
+ENSG00000000457.14                          249
+ENSG00000000460.17                          395
+ENSG00000000938.13                          150</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">expr_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span><span class="st">"list"</span>, <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">counts_file</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">expr_list</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">map2</a></span><span class="op">(</span><span class="va">counts_file</span>,<span class="va">counts_file_names</span>, <span class="va">gene_expr</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">expr_counts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="va">cbind</span>, <span class="va">expr_list</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">expr_counts</span>,<span class="st">'data/Counts_matrix.csv'</span>,row.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section><section id="normal-和-tumor" class="level2"><h2 class="anchored" data-anchor-id="normal-和-tumor">normal 和 tumor</h2>
+<section id="normal-和-tumor" class="level3"><h3 class="anchored" data-anchor-id="normal-和-tumor">normal 和 tumor</h3>
 <p>根据TCGA样本的命名可以区分正常组织和肿瘤样本的测序结果 其中 14、15位置编号大于10 表示正常</p>
 <div class="cell">
-<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">COUNT_matrix</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">'data/COUNT_matrix.csv'</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">column_to_rownames</span><span class="op">(</span>var <span class="op">=</span> <span class="st">"...1"</span><span class="op">)</span></span>
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">COUNT_matrix</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">'data/COUNT_matrix.csv'</span><span class="op">)</span> </span>
 <span></span>
 <span></span>
 <span><span class="fu">str_sub</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">COUNT_matrix</span><span class="op">)</span>,<span class="fl">14</span>,<span class="fl">15</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
- 01  02  11 
-481   2  53 </code></pre>
+     01  02  11 
+  1 481   2  53 </code></pre>
 </div>
 </div>
-</section><section id="表型矩阵" class="level2"><h2 class="anchored" data-anchor-id="表型矩阵">表型矩阵</h2>
+</section></section><section id="临床表型数据" class="level2"><h2 class="anchored" data-anchor-id="临床表型数据">临床表型数据</h2>
 <div class="cell">
-<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">json</span> <span class="op">&lt;-</span> <span class="fu">jsonlite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html">fromJSON</a></span><span class="op">(</span><span class="st">"data/metadata.cart.2024-07-04.json"</span><span class="op">)</span></span>
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu">jsonlite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html">fromJSON</a></span><span class="op">(</span><span class="st">"data/metadata.cart.2024-07-04.json"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">entity_submitter_id</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">json</span><span class="op">$</span><span class="va">associated_entities</span>,<span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span><span class="va">x</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">}</span><span class="op">)</span></span>
-<span><span class="va">case_id</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">json</span><span class="op">$</span><span class="va">associated_entities</span>,<span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span><span class="va">x</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span><span class="op">}</span><span class="op">)</span></span>
-<span><span class="va">sample_case</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">entity_submitter_id</span>,<span class="va">case_id</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">as_tibble</span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">clinical</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.delim</a></span><span class="op">(</span><span class="st">'data/clinical.cart.2024-07-04/clinical.tsv'</span>,header <span class="op">=</span> <span class="cn">T</span><span class="op">)</span></span>
+<span><span class="va">case_info</span> <span class="op">&lt;-</span> <span class="va">metadata</span> <span class="op">%&gt;%</span> </span>
+<span>    <span class="fu">select</span><span class="op">(</span><span class="va">associated_entities</span>,<span class="va">file_name</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>    <span class="fu">unnest</span><span class="op">(</span><span class="va">associated_entities</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>    <span class="fu">select</span><span class="op">(</span>sample_id <span class="op">=</span> <span class="va">entity_submitter_id</span>,<span class="va">case_id</span><span class="op">)</span> </span>
+<span><span class="va">case_info</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  sample_id                    case_id                             
+  &lt;chr&gt;                        &lt;chr&gt;                               
+1 TCGA-38-7271-01A-11R-2039-07 8214a0d1-5e2d-4a7a-acb1-e5580755db83
+2 TCGA-55-7914-01A-11R-2170-07 69dba721-a168-47a4-b7ff-80a448bad654
+3 TCGA-95-7043-01A-11R-1949-07 c650b1ff-8a4c-4ee9-b7c1-268c28c83827
+4 TCGA-73-4658-01A-01R-1755-07 afb91740-2668-46d7-ba01-bb26153ad1c7
+5 TCGA-86-8076-01A-31R-2241-07 8609edfc-119d-4d63-9188-c86aabd5ca52
+6 TCGA-55-7726-01A-11R-2170-07 923b37e4-fcf7-46a0-8cb2-9139711fec7b</code></pre>
+</div>
+<details class="code-fold"><summary>Show the code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">clinical</span> <span class="op">&lt;-</span> <span class="fu">read_delim</span><span class="op">(</span><span class="st">'data/clinical.cart.2024-07-04/clinical.tsv'</span>,col_names <span class="op">=</span>  <span class="cn">T</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">clinical</span> <span class="op">&lt;-</span> <span class="va">clinical</span> <span class="op">|&gt;</span> <span class="fu">distinct</span><span class="op">(</span><span class="va">case_id</span>,.keep_all <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span></span>
 <span></span>
-<span></span>
-<span></span>
-<span><span class="va">clinical_matrix</span> <span class="op">&lt;-</span> <span class="fu">left_join</span><span class="op">(</span><span class="va">sample_case</span>,<span class="va">clinical</span>,by <span class="op">=</span> <span class="fu">join_by</span><span class="op">(</span><span class="va">case_id</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">clinical_matrix</span> <span class="op">&lt;-</span> <span class="fu">left_join</span><span class="op">(</span><span class="va">case_info</span> ,<span class="va">clinical</span>,by <span class="op">=</span> <span class="fu">join_by</span><span class="op">(</span><span class="va">case_id</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">clinical_matrix</span> <span class="op">&lt;-</span> <span class="va">clinical_matrix</span> <span class="op">|&gt;</span> <span class="fu">select</span><span class="op">(</span><span class="op">-</span><span class="va">case_id</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -280,7 +376,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://bioconductor.org/packages/release/workflows/html/TCGAWorkflow.html" class="uri">https://bioconductor.org/packages/release/workflows/html/TCGAWorkflow.html</a></p>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
