@@ -29,32 +29,32 @@ options("BioC_mirror")
 options(repos = c(CRAN = "https://cran.rstudio.com/"))
 options(BioC_mirror = "https://mirrors.tuna.tsinghua.edu.cn/bioconductor")
 
+
 .First <- function() {
-  library(showtext, quietly = T)
-  # font_add("Times New Roman Regular", "C:/Windows/Fonts/times.ttf")
-  # font_add("Times New Roman Bold", "C:/Windows/Fonts/timesbd.ttf")
-  # font_add("Times New Roman Bold Italic", "C:/Windows/Fonts/timesbi.ttf")
-  # font_add("Times New Roman Italic", "C:/Windows/Fonts/timesi.ttf")
-  # font_add("黑体 常规", "C:/Windows/Fonts/simhei.ttf")
-  # font_add("楷体 常规", "C:/Windows/Fonts/simkai.ttf")
-  showtext_auto()
-  # library(data.table)
-  library(conflicted)
-  library(tidyverse)
-  library(patchwork)
-  # library(BiocManager)
-  library(readxl)
-  library(writexl)
-  conflicted::conflict_scout()
-  # conflicts_prefer(GenomicRanges::setdiff)
-  conflicts_prefer(dplyr::filter)
-  conflicts_prefer(dplyr::select)
-  message(today())
+    library(showtext, quietly = T)
+    font_add("Times New Roman Regular", "C:/Windows/Fonts/times.ttf")
+    font_add("Times New Roman Bold", "C:/Windows/Fonts/timesbd.ttf")
+    font_add("Times New Roman Bold Italic", "C:/Windows/Fonts/timesbi.ttf")
+    font_add("Times New Roman Italic", "C:/Windows/Fonts/timesi.ttf")
+    font_add("黑体 常规", "C:/Windows/Fonts/simhei.ttf")
+    font_add("楷体 常规", "C:/Windows/Fonts/simkai.ttf")
+    showtext_auto()
+
+    library(tidyverse)
+    library(conflicted)
+    conflict_scout()
+    conflicts_prefer(GenomicRanges::setdiff)
+    conflicts_prefer(dplyr::filter)
+    conflicts_prefer(dplyr::select)
+    library(readxl)
+    library(writexl)
+    # library(data.table)
+    # library(BiocManager)
 }
 
 
 .Last <- function() {
-
+    now()
 }
 ```
 
