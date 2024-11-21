@@ -46,6 +46,9 @@ options(BioC_mirror = "https://mirrors.tuna.tsinghua.edu.cn/bioconductor")
   library(readxl)
   library(writexl)
   conflicted::conflict_scout()
+  # conflicts_prefer(GenomicRanges::setdiff)
+  conflicts_prefer(dplyr::filter)
+  conflicts_prefer(dplyr::select)
   message(today())
 }
 
