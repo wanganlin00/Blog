@@ -10,6 +10,10 @@ Zotero 7
 
 <https://zotero-zh.netlify.app/user-guide/plugins/style>
 
+## 组设置
+
+![](images/group_setting.png){fig-align="center" width="60%"}
+
 ## 标题进度条
 
 在标题列上右击，选择列设置（标题），进入设置窗口。
