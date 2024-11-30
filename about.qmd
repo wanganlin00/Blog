@@ -13,4 +13,12 @@ $$
      {\color{red} { life=\int_{birth}^{death}study \ dt } }  
 $$
 
+<a
+id="cy-effective-orcid-url"
+class="underline"
+ href="https://orcid.org/0009-0003-7561-3856"
+ target="orcid.widget"
+ rel="me noopener noreferrer"
+ style="vertical-align: top"> <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID iD icon" style="width: 1em; margin-inline-start: 0.5em"/> <https://orcid.org/0009-0003-7561-3856> </a>
+
 一些简要的笔记，方便查阅

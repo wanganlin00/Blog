@@ -2,12 +2,12 @@
 title: "RIS：Research Information Systems"
 date: "2024-11-05"
 date-modified: today
-categories: [database]
+categories: [bibliography]
 ---
 
 Reference Manager
 
-RIS 文件格式是一种用于表示书目引文的标记格式,以两个字母、两个空格和一个连字符， 各行必须以 ASCII 回车符和换行符结尾（ Microsoft Windows）。
+RIS 文件格式是一种用于表示书目引文的标记格式,以两个字母、两个空格和一个连字符， 各行必须以 ASCII 回车符和换行符结尾（Microsoft Windows）。
 
 记录以"end record" `ER  -`结束，记录之间没有额外的空行
 

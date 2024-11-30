@@ -1,0 +1,79 @@
+---
+title: "PubMed 文献检索技巧"
+date: "2024-10-15"
+date-modified: today
+categories: [bibliography]
+---
+
+[医学文献信息检索](https://wvpn.ustc.edu.cn/https/77726476706e69737468656265737421fcfe43d232237c53300d8db9d6562d/uncategorized/%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2%E6%95%99%E5%AD%A6/)
+
+## 检索运算符
+
+逻辑运算符：AND，OR，NOT
+
+圆括号（）：改变运算顺序，silicosis AND (treatment OR therapy)\
+括号运算优先
+
+通配符：wildcard ：randomi?ed (randomised, randomized)
+
+双引号："gene therapy"，表示对引号中的短语进行精确检索
+
+截词符：\*，后面加上，可替代 零个或多个字符，gene\* =gene ， genetics，generation......
+
+例如：Heart attack\*会关闭自动转换匹配检索词，myocardial infarction等词会\
+匹配不到
+
+| 检索词                             | 结果 2024-10-15 |
+|------------------------------------|-----------------|
+| Osteoarthr\*\[Title/Abstract\]     | 104,730         |
+| Osteoarthrosis\[Title/Abstract\]   | 3,585           |
+| osteoarthritis\[Title/Abstract\]   | 95,813          |
+| Osteoarthritides\[Title/Abstract\] | 5               |
+
+## 字段检索
+
+检索字段标识符：\[tag\]，tag为字段名称。\
+\[ti\]，\[au\]，\[ta\]，\[so\]，\[la\]，\[pt\]。
+
+```         
+标识符 字段名称
+TI Title
+AU Author
+AD Affiliation   作者单位
+AB Abstract
+DP Publication Date
+EDAT Entrez Date
+SO Source
+TA Journal Title Abbreviation
+MH MeSH Terms
+PT Publication Type
+```
+
+GENE THERAPY\[TA\]
+
+JAMA\[TA\]
+
+Smith\[au\]
+
+"Clinical Trial" \[Publication Type\]
+
+"Randomized Controlled Trial" \[Publication Type\]
+
+## MSH
+
+MeSH (Medical Subject Headings)
+
+主题词 + 自由词
+
+```         
+过滤器筛选限定检索
+ Article types（文献类型）
+ Text availability（文本利用，文摘和全文）
+ Article attribute文章属性（相关数据Associated data ）
+ Publication dates（出版日期）
+ Species（研究对象）
+ Languages（语种）
+ Sex（性别）
+ Journal （MEDLINE）
+ Ages（年龄组）
+```
