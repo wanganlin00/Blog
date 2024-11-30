@@ -10,7 +10,7 @@ read_bib <- function(file_path,
     current_entry <- list()
     in_entry <- FALSE
     
-    type_pattern <- "^@(\\w+)\\{(.*),?$"
+    type_pattern <- "^@(\\w+)\\{([a-zA-Z0-9]*),?"
     field_pattern <- "\\s*(\\w+)\\s*=\\s*\\{(.*)\\},?"
     
     for (line in raw_lines) {
