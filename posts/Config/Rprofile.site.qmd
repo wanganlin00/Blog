@@ -12,14 +12,14 @@ execute:
 ### \~\etc\Rconsole 
 
 ```         
-language=en
+language = en
 ```
 
 ### \~etc\Rprofile.site
 
 ```{r}
 options("timeout")
-options(timeout = 180)
+options(timeout = 300)
 
 # set a CRAN mirror
 getOption("repos")
@@ -56,49 +56,4 @@ options(BioC_mirror = "https://mirrors.tuna.tsinghua.edu.cn/bioconductor")
 .Last <- function() {
     now()
 }
-```
-
-如果希望永久删除安装路径，可以直接编辑R的环境配置文件（例如 .Renviron），去掉相应的路径条目，然后重启R使更改生效。
-
-```{r eval=FALSE}
-# 更新 R Gui
-
-# installr::updateR()
-
-tools <- c(
-  "installr", "devtools","remotes","conflicted", "reticulate", "BiocManager")
-
-
-needed <- c(
-  "tidyverse", "tidymodels", "readxl", "writexl","plotly","survminer",
-  "ggsurvfit","arrow"
-)
-
-# remotes::install_github("jbryer/psa", build_vignettes = TRUE, dependencies = "Enhances")
-
-optional <- c(
-  "ggpubr","pROC", "ggprism", "ggpattern", 
-  "pheatmap", "ggfortify", "ggrepel", "ggthemes","ggcorrplot", "ggpmisc", "ggforce",
-  "ggraph", "tidygraph", "svglite",
-  
-  
-  "gt", "gtsummary", "tableone", "flextable",
-)
-
-
-lapply(tools, require)
-```
-
-### 安装路径
-
-```{r}
-.libPaths()
-
-#> [1] "C:/Users/DELL/AppData/Local/R/win-library/4.4" "D:/R-4.4.1/library"  
-#.libPaths(c("/envs/新路径", .libPaths()))
-```
-
-```{r}
-.libPaths(.libPaths()[.libPaths() != "C:/Users/DELL/AppData/Local/R/win-library/4.4"])
-.libPaths()
 ```
