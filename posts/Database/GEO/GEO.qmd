@@ -1,0 +1,16 @@
+---
+title: "GEO (Gene Expression Omnibus)"
+date: "2024-11-14"
+date-modified: today
+categories: [bioinformatics, database]
+execute: 
+  cache: true
+---
+
+参考资料
+
+1.  <https://www.ncbi.nlm.nih.gov/gds>
+
+## 数据下载
+
+![](images/clipboard-3726766082.png)

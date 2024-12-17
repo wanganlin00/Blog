@@ -1,0 +1,16 @@
+---
+title: "SEER: The Surveillance, Epidemiology, and End Results Program"
+date: "2024-09-17"
+date-modified: today
+categories: [database] 
+---
+
+[The Surveillance, Epidemiology, and End Results (SEER)](https://seer.cancer.gov/)
+
+## SEER\*Stat
+
+[SEER\*Stat statistical software](https://seer.cancer.gov/seerstat/)
+
+[下载SEER\*Stat](https://seer.cancer.gov/seerstat/software/index.html)
+
+[SEER\*Stat Beta](https://seer.cancer.gov/seerstat/beta/index.html)

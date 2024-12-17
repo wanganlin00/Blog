@@ -2,7 +2,7 @@
 title: "immunoprecipitation"
 date: "2024-10-14"
 date-modified: today
-categories: [protocols,protein]
+categories: [protocols, immune]
 ---
 
 免疫沉淀

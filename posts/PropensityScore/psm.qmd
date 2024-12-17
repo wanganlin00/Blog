@@ -1,8 +1,0 @@
----
-title: "Propensity score matching"
-date: "2024-10-11"
-date-modified: today
-categories: [propensity score]
----
-
-[Propensity score matching (Nature Methods)](https://www.nature.com/articles/s41592-024-02405-4)
