@@ -140,7 +140,7 @@ summary(m.gen)
 
 ### 连续
 
-#### **（标准化）平均差**
+#### （标准化）平均差
 
 ```{r}
 # Load dataset from dmetar (or download and open manually)
