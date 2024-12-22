@@ -1,11 +1,11 @@
 ---
-title: "polymerase chain reaction (PCR)"
+title: "聚合酶链式反应（polymerase chain reaction，PCR）"
 date: "2024-10-14"
 date-modified: today
 categories: [protocols, DNA]
 ---
 
-聚合酶链式反应
+聚合酶链式反应：体外DNA复制，模板DNA，引物（3'-OH末端）、热稳定DNA聚合酶、dNTP、含Mg2+的缓冲液
 
 ## 试剂和仪器
 
@@ -63,6 +63,7 @@ categories: [protocols, DNA]
     1.  Denaturation 高温95℃变性
     2.  Annealing 低温50\~65℃，55℃退火
     3.  Synthesis 中温72℃延伸
+    4.  循环25——30次
 6.  产物鉴定
     1.  DNA凝胶电泳
     2.  EB染色

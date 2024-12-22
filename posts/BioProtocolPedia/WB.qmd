@@ -1,11 +1,11 @@
 ---
-title: "Western Blot"
+title: "蛋白质印迹（Western Blotting，WB）"
 date: "2024-09-24"
 date-modified: today
 categories: [protocols, immune]
 ---
 
-蛋白质免疫印迹（protein immunoblot）
+蛋白质免疫印迹（protein immunoblotting）
 
 ## <mark>试剂和仪器</mark>
 
@@ -57,7 +57,7 @@ categories: [protocols, immune]
     1.  预制胶，撕掉红色条膜
     2.  电泳液
     3.  恒压100-140V，60min
-6.  转膜
+6.  转膜 膜：硝酸纤维素（NC）膜和聚偏二氟乙烯（PVDF）膜
     1.  甲醇激活膜
     2.  凝胶水冲，转膜液激活，**"黑胶"**
     3.  转膜液平衡膜
@@ -67,11 +67,11 @@ categories: [protocols, immune]
 7.  封闭
     1.  5%奶粉TBST溶液
     2.  摇床50，1h
-8.  一抗孵育
+8.  一抗孵育 特异性抗体
     1.  一抗稀释液1：1000
     2.  摇床50，4℃ .pm\~ .am,
     3.  TBST洗涤，3min×3
-9.  二抗孵育
+9.  二抗孵育 碱性磷酸酶、辣根过氧化物酶或放射性核素标记的第二抗体
     1.  二抗稀释液1：4000\~5000
     2.  摇床50，室温1h
     3.  TBST洗涤，3min×3

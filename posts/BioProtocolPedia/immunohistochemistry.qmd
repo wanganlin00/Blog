@@ -1,0 +1,7 @@
+---
+title: "免疫组织化学（immunohistochemistry）"
+date: "2024-12-20"
+date-modified: today
+categories: [protocols, immune]
+---
+
