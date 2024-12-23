@@ -1,6 +1,0 @@
----
-title: "小鼠肿瘤辐照"
-date: "2024-12-27"
-date-modified: today
-categories: [protocols, animal]
----
