@@ -1,0 +1,9 @@
+---
+title: "染色质免疫沉淀（Chromatin-immunoprecipitation，ChIP）"
+date-modified: today
+categories: [protocols, immune]
+---
+
+[染色质免疫沉淀]{style="color:red"}
+
+## Chromatin immunoprecipitation (ChIP)

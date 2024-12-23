@@ -1,19 +1,24 @@
 ---
-title: "（Co-）immuno precipitation"
-date: "2024-10-14"
+title: "免疫共沉淀（Co-immunoprecipitation，Co-IP）"
 date-modified: today
 categories: [protocols, immune]
 ---
 
 免疫沉淀：用固定在磁珠上的特定抗体（固相化抗体），从复杂的混合物中，纯化单一抗原的实验。
 
-## [免疫共沉淀]{style="color:red"}co-immunoprecipitation (Co-IP)
-
 已知抗原称为诱饵蛋白，与之结合的蛋白质或配体称为靶蛋白
 
 在免疫共沉淀实验中，加入诱饵蛋白的特异性抗体，该抗体与诱饵蛋白结合使诱饵蛋白沉淀，同时细胞内与诱饵蛋白相互作用结合在一起的其他蛋白也会沉淀下来。
 
 当复合物中涉及的蛋白质彼此紧密结合时，这种方法就会起作用，从而可以通过用抗体锁定一个成员来将复合物的多个成员从溶液中拉出。这种将蛋白质复合物从溶液中拉出的概念有时被称为“pull-down”。Co-IP 是一种强大的技术，分子生物学家经常使用它来分析[蛋白质-蛋白质相互作用](https://en.wikipedia.org/wiki/Protein%E2%80%93protein_interaction "Protein–protein interaction")。
+
+## [免疫共沉淀]{style="color:red"}co-immunoprecipitation (Co-IP)
+
+## 仪器与试剂
+
+1.  Co-Ip裂解液
+
+## 方法与步骤
 
 1.  细胞密度达到80%左右收集细胞到15mL离心管中国，以1000r/min离心5min
 
@@ -42,7 +47,3 @@ categories: [protocols, immune]
 13. 上样
 
 14. 电泳
-
-## Chromatin immunoprecipitation (ChIP)
-
-[染色质免疫沉淀]{style="color:red"}

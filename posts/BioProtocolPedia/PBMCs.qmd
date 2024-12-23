@@ -1,15 +1,13 @@
 ---
-title: "Peripheral Blood Mononuclear Cells: Isolation, Freezing, Thawing, and Culture"
+title: "外周血单个核细胞的分离、冻存、复苏和培养（Peripheral Blood Mononuclear Cells: Isolation, Freezing, Thawing, and Culture）"
 date: "2024-10-14"
 date-modified: today
 categories: [protocols,cell]
 ---
 
-PBMC分离、冻存、解冻和培养
-
 [Peripheral Blood Mononuclear Cells: Isolation, Freezing, Thawing, and Culture](https://doi.org/10.1007/7651_2014_99)
 
-**外周血单个核细胞** Peripheral Blood Mononuclear Cells，包括淋巴细胞（Lymphocyte）、单核细胞（Monocyte）、树突状细胞（DC）和其他少量细胞
+**外周血单个核细胞**（Peripheral Blood Mononuclear Cells，PBMCs）包括T、B淋巴细胞（Lymphocyte）、NK细胞、单核细胞（Monocyte）、树突状细胞（DC）和其他少量细胞
 
 ![](images/pbmc_proportion.bmp)
 
@@ -52,7 +50,7 @@ PBMC分离、冻存、解冻和培养
 
 8.  细胞计数或培养：加入5-10ml培养基重悬细胞，进行后续计数培养或者铺板；
 
-9.  **细胞冻存**：将细胞离心收集之后，用细胞冻存液重悬。取1-1.5ml细胞至冻存管中，放入冻存盒（冻存盒可事先在4℃冰箱预冷）。再将冻存盒放置于-80℃冰箱过夜。第二天将细胞转入液氮中长期保存。
+9.  **细胞冻存**：将细胞离心收集之后，用细胞冻存液重悬。取1-1.5ml细胞至冻存管中，放入冻存盒（冻存盒可事先在4℃冰箱预冷）。再将冻存盒放置于-80℃冰箱过夜。第二天将细胞转入液氮（-196℃）中长期保存。
 
-> 1.  Ficoll Histopaque和人类血液样本、==*PBS* **?**==之间的比例为\***1:1:1**。对于其它物种的PBMC的纯化比例可以是不同的。
+> 1.  Ficoll Histopaque和人类血液样本、***PBS*** **?**之间的比例为\***1:1:1**。对于其它物种的PBMC的纯化比例可以是不同的。
 > 2.  Ficoll Histopaque储存在4°C温度下。使用前需要在室温下保持1-2小时，因为如果PBMC在预冷的Ficoll Histopaqueon血样中分层，PBMC会受到冷休克，有时会聚集

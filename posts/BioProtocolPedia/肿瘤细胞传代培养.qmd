@@ -1,8 +1,0 @@
----
-title: "细胞传代培养"
-date: "2024-12-27"
-date-modified: today
-categories: [protocols, cell]
----
-
-贴壁细胞的传代培养
